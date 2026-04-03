@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BHG Plantales - Clínica Ortopédica</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <aside class="sidebar" id="sidebar" aria-label="Menú de navegación">
+        <div class="sidebar-header">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+            <circle cx="12" cy="12" r="4" fill="#ff6a00" />
+            <circle cx="24" cy="12" r="4" fill="#bdbdbd" />
+            <circle cx="18" cy="24" r="4" fill="#bdbdbd" />
+          </svg>
+          <span class="brand-text"
+            ><span class="brand-b">B</span
+            ><span class="brand-hg">HG</span></span
+          >
+        </div>
+        <nav>
+          <button id="menuInicio" class="menu-item active">🏠 Inicio</button>
+          <button id="menuPerfil" class="menu-item">👤 Perfil</button>
+          <button id="menuCalculadora" class="menu-item">🧮 Calculadora</button>
+          <button id="menuHistorico" class="menu-item">📊 Historial</button>
+          <button id="btnCerrarSesion" class="menu-item danger">
+            🚪 Cerrar sesión
+          </button>
+        </nav>
+      </aside>
+
+      <main class="panel" id="panel">
+        <header class="topbar">
+          <div class="top-left">
+            <button
+              id="btnToggleSidebar"
+              class="icon-btn"
+              aria-label="Toggle sidebar"
+            >
+              ☰
+            </button>
+          </div>
+          <div class="top-right">
+            <div id="userBadge" class="user-badge">
+              <span id="userInitial">G</span>
+              <div class="user-info">
+                <span id="userNameDisplay">Invitado</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- LOGIN -->
+        <section id="loginSection" class="page">
+          <div class="auth-container">
+            <div class="auth-logo">
+              <svg width="60" height="60" viewBox="0 0 40 40" fill="none">
+                <circle cx="12" cy="12" r="4" fill="#ff6a00" />
+                <circle cx="24" cy="12" r="4" fill="#bdbdbd" />
+                <circle cx="18" cy="24" r="4" fill="#bdbdbd" />
+              </svg>
+              <h1>BHG Plantales</h1>
+              <p>Clínica ortopédica especializada</p>
+            </div>
+            <div class="card box">
+              <h2>Iniciar sesión</h2>
+              <div class="field">
+                <label for="usuarioInput">Usuario</label>
+                <input
+                  id="usuarioInput"
+                  type="text"
+                  placeholder="usuario"
+                  autocomplete="username"
+                />
+              </div>
+              <div class="field">
+                <label for="passwordInput">Contraseña</label>
+                <input
+                  id="passwordInput"
+                  type="password"
+                  placeholder="contraseña"
+                  autocomplete="current-password"
+                />
+              </div>
+              <button id="btnLogin" class="button primary full">
+                Ingresar
+              </button>
+              <p class="text-center text-muted">
+                ¿No tienes cuenta?
+                <button id="btnIrRegistro" class="link-button">
+                  Regístrate aquí
+                </button>
+              </p>
+              <p id="loginError" class="text-error"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- REGISTRO -->
+        <section id="registroSection" class="page">
+          <div class="auth-container">
+            <h1>Crear cuenta</h1>
+            <div class="card box">
+              <div class="field">
+                <label for="nombreRegistro">Nombre completo</label>
+                <input
+                  id="nombreRegistro"
+                  type="text"
+                  placeholder="Tu nombre"
+                />
+              </div>
+              <div class="field">
+                <label for="usuarioRegistro">Usuario</label>
+                <input id="usuarioRegistro" type="text" placeholder="usuario" />
+              </div>
+              <div class="field">
+                <label for="passwordRegistro">Contraseña</label>
+                <input
+                  id="passwordRegistro"
+                  type="password"
+                  placeholder="contraseña"
+                />
+              </div>
+              <div class="field">
+                <label for="confirmPasswordRegistro"
+                  >Confirmar contraseña</label
+                >
+                <input
+                  id="confirmPasswordRegistro"
+                  type="password"
+                  placeholder="confirmar contraseña"
+                />
+              </div>
+              <div class="field">
+                <label for="fechaRegistro">Fecha nacimiento (opcional)</label>
+                <input id="fechaRegistro" type="date" />
+              </div>
+              <div class="field">
+                <label for="sucursalRegistro">Sucursal (opcional)</label>
+                <input
+                  id="sucursalRegistro"
+                  type="text"
+                  placeholder="Sucursal"
+                />
+              </div>
+              <button id="btnRegister" class="button primary full">
+                Crear cuenta
+              </button>
+              <p class="text-center text-muted">
+                <button id="btnIrLogin" class="link-button">
+                  Volver a iniciar sesión
+                </button>
+              </p>
+              <p id="registerError" class="text-error"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HOME -->
+        <section id="homeSection" class="page">
+          <div class="home-header">
+            <h1 id="homeTitle">Dashboard</h1>
+            <p id="homeMessage">
+              Por favor inicia sesión para acceder a tus datos.
+            </p>
+          </div>
+
+          <div id="guestActions" class="card box guest-cta">
+            <h3>¿Aún no tienes cuenta?</h3>
+            <p class="text-muted">
+              Inicia sesión o crea una cuenta para gestionar tu deuda.
+            </p>
+            <div class="button-group">
+              <button id="btnMostrarLogin" class="button primary">
+                Iniciar sesión
+              </button>
+              <button id="btnMostrarRegistro" class="button secondary">
+                Registrarse
+              </button>
+            </div>
+          </div>
+
+          <div class="grid-3" id="authWidgets" style="display: none">
+            <div class="widget">
+              <strong>Deuda actual</strong>
+              <span id="deudaActualDisplay" class="value">$0.00</span>
+            </div>
+            <div class="widget">
+              <strong>Interés aplicado</strong>
+              <span id="interesActualDisplay" class="value">0%</span>
+            </div>
+            <div class="widget">
+              <strong>Total final</strong>
+              <span id="totalDisplay" class="value">$0.00</span>
+            </div>
+          </div>
+
+          <div
+            class="card box"
+            id="authActions"
+            style="display: none; margin-top: 20px"
+          >
+            <div class="button-group">
+              <button id="btnAplicarInteres" class="button secondary">
+                📈 Aplicar interés (5%)
+              </button>
+              <button id="btnReiniciar" class="button secondary">
+                🔄 Reiniciar deuda
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERFIL -->
+        <section id="perfilSection" class="page">
+          <h1>Mi Perfil</h1>
+          <div class="card box">
+            <div class="field">
+              <label for="ciPerfil">CI de usuario</label>
+              <input id="ciPerfil" type="text" disabled />
+            </div>
+            <div class="field">
+              <label for="nombrePerfil">Nombre completo</label>
+              <input id="nombrePerfil" type="text" />
+            </div>
+            <div class="field">
+              <label for="usuarioPerfil">Usuario</label>
+              <input id="usuarioPerfil" type="text" disabled />
+            </div>
+            <div class="field">
+              <label for="emailPerfil">Correo electrónico</label>
+              <input id="emailPerfil" type="email" disabled />
+            </div>
+            <div class="field">
+              <label for="fechaPerfil">Fecha nacimiento</label>
+              <input id="fechaPerfil" type="date" />
+            </div>
+            <div class="field">
+              <label for="rolPerfil">Rol</label>
+              <input id="rolPerfil" type="text" disabled />
+            </div>
+            <div class="field">
+              <label for="sucursalPerfil">Sucursal</label>
+              <input id="sucursalPerfil" type="text" />
+            </div>
+            <div class="field">
+              <label for="passwordPerfil"
+                >Nueva contraseña (dejar en blanco para no cambiar)</label
+              >
+              <input id="passwordPerfil" type="password" />
+            </div>
+            <div class="button-group">
+              <button id="guardarPerfilBtn" class="button primary">
+                💾 Guardar cambios
+              </button>
+              <button id="cancelarPerfilBtn" class="button secondary">
+                ✖ Cancelar
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- CALCULADORA -->
+        <section id="calculadoraSection" class="page">
+          <h1>Calculadora de Interés</h1>
+          <div class="card box">
+            <div class="field">
+              <label for="deudaInicialInput">Deuda inicial ($)</label>
+              <input
+                id="deudaInicialInput"
+                type="number"
+                min="0"
+                step="0.01"
+                value="5000"
+              />
+            </div>
+            <div class="field">
+              <label for="interesInput">Tasa de interés (%)</label>
+              <input
+                id="interesInput"
+                type="number"
+                min="0"
+                step="0.01"
+                value="5"
+              />
+            </div>
+            <div class="field">
+              <label for="periodosInput">Número de períodos</label>
+              <input id="periodosInput" type="number" min="1" value="1" />
+            </div>
+            <button id="btnCalcular" class="button primary full">
+              Calcular
+            </button>
+            <div id="calcResultados" style="margin-top: 16px">
+              <p id="resultadoCalc" class="resultado" style="display: none">
+                Deuda final: <strong>$0.00</strong>
+              </p>
+              <p id="errorCalc" class="text-error"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- HISTORIAL -->
+        <section id="historicoSection" class="page">
+          <h1>Historial de movimientos</h1>
+          <div class="card box" id="historialLista">
+            <p class="text-muted">No hay movimientos aún.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div id="overlay" class="overlay" aria-hidden="true"></div>
+
+    <!-- Scripts modulares en orden -->
+    <script src="./js/api.js"></script>
+    <script src="./js/appstate.js"></script>
+    <script src="./js/ui.js"></script>
+    <script src="./js/auth.js"></script>
+    <script src="./js/dashboard.js"></script>
+    <script src="./js/perfil.js"></script>
+    <script src="./js/calculadora.js"></script>
+    <script src="./js/historial.js"></script>
+    <script src="./js/main.js"></script>
+
+    <div id="toastContainer" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

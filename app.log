@@ -1,0 +1,84 @@
+2026-04-03 16:57:03,478 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:57:03,478 - __main__ - INFO - Frontend: c:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:57:03,478 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:57:03,478 - __main__ - INFO - Debug: True
+2026-04-03 16:57:03,478 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:57:03,495 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:57:03,495 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:57:03,495 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:03,496 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("users")
+2026-04-03 16:57:03,496 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:03,497 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:57:03,497 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:03,497 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("calculations")
+2026-04-03 16:57:03,497 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:03,498 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	usuario VARCHAR(80) NOT NULL, 
+	password_hash VARCHAR(255) NOT NULL, 
+	nombre VARCHAR(120) NOT NULL, 
+	fecha_nacimiento VARCHAR(10), 
+	sucursal VARCHAR(120), 
+	created_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2026-04-03 16:57:03,498 - sqlalchemy.engine.Engine - INFO - [no key 0.00040s] ()
+2026-04-03 16:57:03,504 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_users_usuario ON users (usuario)
+2026-04-03 16:57:03,505 - sqlalchemy.engine.Engine - INFO - [no key 0.00026s] ()
+2026-04-03 16:57:03,509 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE calculations (
+	id INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	deuda_inicial FLOAT NOT NULL, 
+	interes FLOAT NOT NULL, 
+	periodos INTEGER NOT NULL, 
+	deuda_final FLOAT NOT NULL, 
+	created_at DATETIME, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2026-04-03 16:57:03,510 - sqlalchemy.engine.Engine - INFO - [no key 0.00042s] ()
+2026-04-03 16:57:03,517 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:57:03,517 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:57:03,524 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:57:03,549 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 16:57:03,549 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 16:57:03,552 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:57:04,016 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:57:04,016 - __main__ - INFO - Frontend: c:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:57:04,016 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:57:04,017 - __main__ - INFO - Debug: True
+2026-04-03 16:57:04,017 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:57:04,037 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:57:04,037 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:57:04,037 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:04,038 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:57:04,038 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:04,039 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:57:04,039 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:57:04,042 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:57:04,048 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:57:04,050 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:57:31,103 - werkzeug - INFO -  * Detected change in 'c:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:57:31,212 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:57:31,692 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:57:31,692 - __main__ - INFO - Frontend: c:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:57:31,693 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:57:31,693 - __main__ - INFO - Debug: True
+2026-04-03 16:57:31,693 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:57:31,710 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:57:31,710 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:57:31,710 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:31,711 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:57:31,711 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:31,712 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:57:31,712 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:57:31,716 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:57:31,720 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:57:31,722 - werkzeug - INFO -  * Debugger PIN: 113-109-955

@@ -1,0 +1,1230 @@
+2026-04-03 15:36:58,343 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:36:58,345 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:04,365 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:04,920 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:04,920 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:04,921 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:04,921 - __main__ - INFO - Debug: False
+2026-04-03 15:37:04,921 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:04,944 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:04,946 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:08,962 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:09,534 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:09,534 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:09,534 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:09,535 - __main__ - INFO - Debug: False
+2026-04-03 15:37:09,535 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:09,563 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:09,566 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:10,577 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:11,133 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:11,133 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:11,133 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:11,133 - __main__ - INFO - Debug: False
+2026-04-03 15:37:11,133 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:11,152 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:11,160 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:11,163 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:13,175 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:13,729 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:13,730 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:13,730 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:13,730 - __main__ - INFO - Debug: False
+2026-04-03 15:37:13,730 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:13,746 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:13,754 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:13,756 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:14,767 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:15,323 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:15,324 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:15,324 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:15,324 - __main__ - INFO - Debug: False
+2026-04-03 15:37:15,324 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:15,342 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:15,350 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:15,352 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:17,364 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:17,900 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:17,900 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:17,900 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:17,900 - __main__ - INFO - Debug: False
+2026-04-03 15:37:17,900 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:17,917 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:17,925 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:17,927 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:23,775 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,881 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,881 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,881 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,881 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,885 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,885 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,903 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,903 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,904 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:23,905 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:37:23] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:37:24,948 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:25,527 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:25,527 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:25,527 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:25,527 - __main__ - INFO - Debug: False
+2026-04-03 15:37:25,527 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:25,546 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:25,553 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:25,556 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:27,568 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:37:28,103 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:37:28,103 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:37:28,103 - __main__ - INFO - Database: sqlite:///C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\backend\data\bhg.db
+2026-04-03 15:37:28,103 - __main__ - INFO - Debug: False
+2026-04-03 15:37:28,103 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:37:28,120 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:37:28,127 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:37:28,130 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:37:30,142 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:40:48,560 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:40:48,560 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:40:48,560 - __main__ - INFO - Database: sqlite:///src/backend/data/bhg.db
+2026-04-03 15:40:48,560 - __main__ - INFO - Debug: True
+2026-04-03 15:40:48,560 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:40:48,577 - __main__ - ERROR - ❌ Error en BD: (sqlite3.OperationalError) unable to open database file
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-04-03 15:41:22,907 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:41:22,908 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:41:22,908 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:41:22,908 - __main__ - INFO - Debug: True
+2026-04-03 15:41:22,908 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:41:22,924 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:41:22,924 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:41:22,925 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:22,925 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("users")
+2026-04-03 15:41:22,925 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:22,926 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:41:22,926 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:22,926 - sqlalchemy.engine.Engine - INFO - PRAGMA temp.table_info("calculations")
+2026-04-03 15:41:22,926 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:22,927 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE users (
+	id INTEGER NOT NULL, 
+	usuario VARCHAR(80) NOT NULL, 
+	password_hash VARCHAR(255) NOT NULL, 
+	nombre VARCHAR(120) NOT NULL, 
+	fecha_nacimiento VARCHAR(10), 
+	sucursal VARCHAR(120), 
+	created_at DATETIME, 
+	PRIMARY KEY (id)
+)
+
+
+2026-04-03 15:41:22,927 - sqlalchemy.engine.Engine - INFO - [no key 0.00032s] ()
+2026-04-03 15:41:22,933 - sqlalchemy.engine.Engine - INFO - CREATE UNIQUE INDEX ix_users_usuario ON users (usuario)
+2026-04-03 15:41:22,933 - sqlalchemy.engine.Engine - INFO - [no key 0.00030s] ()
+2026-04-03 15:41:22,938 - sqlalchemy.engine.Engine - INFO - 
+CREATE TABLE calculations (
+	id INTEGER NOT NULL, 
+	user_id INTEGER NOT NULL, 
+	deuda_inicial FLOAT NOT NULL, 
+	interes FLOAT NOT NULL, 
+	periodos INTEGER NOT NULL, 
+	deuda_final FLOAT NOT NULL, 
+	created_at DATETIME, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY(user_id) REFERENCES users (id)
+)
+
+
+2026-04-03 15:41:22,938 - sqlalchemy.engine.Engine - INFO - [no key 0.00031s] ()
+2026-04-03 15:41:22,942 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:41:22,943 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:41:22,946 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:41:22,962 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-04-03 15:41:22,962 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 15:41:22,964 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:41:23,409 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:41:23,409 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:41:23,409 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:41:23,409 - __main__ - INFO - Debug: True
+2026-04-03 15:41:23,409 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:41:23,424 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:41:23,424 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:41:23,425 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:23,425 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:41:23,425 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:23,426 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:41:23,426 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:41:23,429 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:41:23,435 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:41:23,436 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:41:28,225 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "GET / HTTP/1.1" 200 -
+2026-04-03 15:41:28,701 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "GET /js/api.js HTTP/1.1" 200 -
+2026-04-03 15:41:28,701 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:28,701 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:28,702 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:28,705 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "GET /styles.css HTTP/1.1" 200 -
+2026-04-03 15:41:28,716 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:28,718 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:28,718 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "GET /js/calculadora.js HTTP/1.1" 200 -
+2026-04-03 15:41:28,726 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:28] "GET /js/historial.js HTTP/1.1" 200 -
+2026-04-03 15:41:34,836 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,905 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,906 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,906 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "GET /js/main.js HTTP/1.1" 200 -
+2026-04-03 15:41:34,908 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,908 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,924 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,925 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,925 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:34,924 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:34] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,441 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,488 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,489 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "GET /js/historial.js HTTP/1.1" 200 -
+2026-04-03 15:41:36,489 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,491 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,492 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,505 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,505 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,506 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:36,509 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:41:36] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:41:53,301 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:41:53,301 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:41:53,301 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:41:53,302 - __main__ - INFO - Debug: True
+2026-04-03 15:41:53,302 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:41:53,319 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:41:53,319 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:41:53,319 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:53,320 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:41:53,320 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:53,321 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:41:53,321 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:41:53,324 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:41:53,339 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.4:5000
+2026-04-03 15:41:53,339 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 15:41:53,340 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:41:53,786 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:41:53,786 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:41:53,786 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:41:53,786 - __main__ - INFO - Debug: True
+2026-04-03 15:41:53,786 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:41:53,801 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:41:53,802 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:41:53,802 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:53,802 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:41:53,803 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:41:53,803 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:41:53,803 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:41:53,807 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:41:53,812 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:41:53,814 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:42:30,909 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:42:30,909 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:42:30,909 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:42:30,909 - __main__ - INFO - Debug: True
+2026-04-03 15:42:30,909 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:42:30,924 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:42:30,924 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:42:30,925 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:30,925 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:42:30,926 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:30,926 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:42:30,926 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:42:30,930 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:42:30,943 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 15:42:30,944 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 15:42:30,944 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:42:31,359 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:42:31,360 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:42:31,360 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:42:31,360 - __main__ - INFO - Debug: True
+2026-04-03 15:42:31,360 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:42:31,375 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:42:31,375 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:42:31,376 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:31,376 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:42:31,376 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:31,377 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:42:31,377 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:42:31,380 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:42:31,385 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:42:31,387 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:42:34,540 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET / HTTP/1.1" 200 -
+2026-04-03 15:42:34,556 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /styles.css HTTP/1.1" 200 -
+2026-04-03 15:42:34,563 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/api.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,564 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/appstate.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,565 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/ui.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,569 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/auth.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,572 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/dashboard.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,575 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/perfil.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,581 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/calculadora.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,582 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/historial.js HTTP/1.1" 200 -
+2026-04-03 15:42:34,586 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:42:34] "GET /js/main.js HTTP/1.1" 200 -
+2026-04-03 15:42:52,017 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:42:52,018 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:42:52,018 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:42:52,018 - __main__ - INFO - Debug: True
+2026-04-03 15:42:52,018 - __main__ - INFO - Host: bhg.uy:5000
+2026-04-03 15:42:52,034 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:42:52,034 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:42:52,034 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:52,035 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:42:52,035 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:42:52,036 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:42:52,036 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:42:52,039 - __main__ - INFO - 🚀 Inicia el servidor en: http://bhg.uy:5000
+2026-04-03 15:43:08,771 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:43:08,771 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:43:08,771 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:43:08,772 - __main__ - INFO - Debug: True
+2026-04-03 15:43:08,772 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:43:08,788 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:43:08,789 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:43:08,789 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:43:08,790 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:43:08,790 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:43:08,790 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:43:08,790 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:43:08,794 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:43:08,808 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 15:43:08,808 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 15:43:08,809 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:43:09,263 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:43:09,263 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:43:09,263 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:43:09,263 - __main__ - INFO - Debug: True
+2026-04-03 15:43:09,263 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:43:09,279 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:43:09,280 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:43:09,280 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:43:09,280 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:43:09,280 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:43:09,281 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:43:09,281 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:43:09,285 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:43:09,290 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:43:09,293 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:43:12,145 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,166 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,168 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,168 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,170 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,173 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,180 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,187 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,187 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,188 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:12,197 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:12] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:43:22,089 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:43:22,092 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 15:43:22,092 - sqlalchemy.engine.Engine - INFO - [generated in 0.00057s] ('Tom', 1, 0)
+2026-04-03 15:43:22,093 - __main__ - WARNING - ❌ Intento fallido: Tom
+2026-04-03 15:43:22,094 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 15:43:22,094 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:43:22] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+2026-04-03 15:44:37,322 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:44:37,323 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 15:44:37,323 - sqlalchemy.engine.Engine - INFO - [cached since 75.23s ago] ('Tom', 1, 0)
+2026-04-03 15:44:37,645 - sqlalchemy.engine.Engine - INFO - INSERT INTO users (usuario, password_hash, nombre, fecha_nacimiento, sucursal, created_at) VALUES (?, ?, ?, ?, ?, ?)
+2026-04-03 15:44:37,646 - sqlalchemy.engine.Engine - INFO - [generated in 0.00061s] ('Tom', 'pbkdf2:sha256:600000$rz8Rx8ODvxTYSLvK$dc807fb899cb6b6f6759fce1ac2100e8eb33106f051f1bbacc712d5cb6de5e05', 'Tomas Alvez Sapin', '2004-03-09', 'BHG - Central', '2026-04-03 18:44:37.645575')
+2026-04-03 15:44:37,648 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:44:37,652 - __main__ - INFO - ✅ Usuario registrado: Tom
+2026-04-03 15:44:37,653 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:44:37,655 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.id = ?
+2026-04-03 15:44:37,655 - sqlalchemy.engine.Engine - INFO - [generated in 0.00048s] (1,)
+2026-04-03 15:44:37,656 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 15:44:37,657 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:44:37] "[35m[1mPOST /api/register HTTP/1.1[0m" 201 -
+2026-04-03 15:44:49,059 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:44:49,059 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 15:44:49,060 - sqlalchemy.engine.Engine - INFO - [cached since 86.97s ago] ('Tom', 1, 0)
+2026-04-03 15:44:49,381 - __main__ - INFO - ✅ Login exitoso: Tom
+2026-04-03 15:44:49,382 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 15:44:49,382 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:44:49] "POST /api/login HTTP/1.1" 200 -
+2026-04-03 15:45:21,080 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-03 15:45:55,445 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,515 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,525 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,527 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,530 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,536 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,549 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,552 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,552 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,555 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:55,556 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:55] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:45:57,008 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:45:57] "GET / HTTP/1.1" 200 -
+2026-04-03 15:47:25,601 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:47:25,601 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:47:25,601 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:47:25,601 - __main__ - INFO - Debug: True
+2026-04-03 15:47:25,601 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:47:25,618 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:47:25,618 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:47:25,618 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:47:25,619 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:47:25,619 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:47:25,619 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:47:25,619 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:47:25,623 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:47:25,637 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 15:47:25,637 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 15:47:25,638 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:47:26,081 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:47:26,082 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:47:26,082 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:47:26,082 - __main__ - INFO - Debug: True
+2026-04-03 15:47:26,082 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:47:26,098 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:47:26,098 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:47:26,098 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:47:26,099 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:47:26,100 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:47:26,100 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:47:26,100 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:47:26,104 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:47:26,109 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:47:26,111 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:47:46,276 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,297 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,327 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,344 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,366 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "GET /js/ui.js HTTP/1.1" 200 -
+2026-04-03 15:47:46,381 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,396 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,415 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,416 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,422 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:46,423 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:47:46] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,344 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,442 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,453 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,456 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "GET /js/ui.js HTTP/1.1" 200 -
+2026-04-03 15:47:53,456 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,459 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,461 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,463 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,464 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,476 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:47:53,476 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:47:53] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:48:02,722 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:48:02,723 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 15:48:02,723 - sqlalchemy.engine.Engine - INFO - [cached since 280.6s ago] ('Tom', 1, 0)
+2026-04-03 15:48:02,726 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 15:48:02,726 - sqlalchemy.engine.Engine - INFO - [generated in 0.00050s] (1,)
+2026-04-03 15:48:02,727 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 15:48:02,727 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 15:48:02] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 15:50:00,241 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:00,332 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:00,400 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:00,479 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:00,557 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:00,659 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:00,861 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:00,861 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:00,862 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:00,862 - __main__ - INFO - Debug: True
+2026-04-03 15:50:00,862 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:00,880 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:00,880 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:00,880 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:00,881 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:00,881 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:00,882 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:00,882 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:00,886 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:00,891 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:00,895 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:00,984 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:00,985 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:00,985 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:00,985 - __main__ - INFO - Debug: True
+2026-04-03 15:50:00,985 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:01,001 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:01,001 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:01,002 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:01,002 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:01,003 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:01,003 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:01,004 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:01,008 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:01,013 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:01,015 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:01,147 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:01,147 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:01,148 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:01,148 - __main__ - INFO - Debug: True
+2026-04-03 15:50:01,148 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:50:01,164 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:01,165 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:01,165 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:01,166 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:01,166 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:01,166 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:01,166 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:01,170 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:50:01,175 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:01,177 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:02,188 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:02,284 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:02,790 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:02,790 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:02,790 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:02,790 - __main__ - INFO - Debug: True
+2026-04-03 15:50:02,790 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:50:02,806 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:02,807 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:02,807 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:02,808 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:02,808 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:02,809 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:02,809 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:02,813 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:50:02,819 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:02,821 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:02,908 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:02,987 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:03,028 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:03,120 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:03,484 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:03,484 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:03,484 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:03,484 - __main__ - INFO - Debug: True
+2026-04-03 15:50:03,484 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:03,500 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:03,501 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:03,501 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:03,502 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:03,502 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:03,502 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:03,503 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:03,507 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:03,511 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:03,514 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:03,607 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:03,607 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:03,607 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:03,607 - __main__ - INFO - Debug: True
+2026-04-03 15:50:03,607 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:03,625 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:03,625 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:03,626 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:03,626 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:03,627 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:03,627 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:03,627 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:03,631 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:03,637 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:03,639 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:07,326 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,346 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,348 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,349 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,349 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,353 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,354 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,357 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,364 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,367 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:07,370 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 15:50:07] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 15:50:26,877 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:26,963 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:27,425 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:27,425 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:27,425 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:27,425 - __main__ - INFO - Debug: True
+2026-04-03 15:50:27,425 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 15:50:27,441 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:27,442 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:27,442 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:27,443 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:27,443 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:27,443 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:27,444 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:27,447 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+2026-04-03 15:50:27,452 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:27,454 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:27,571 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:27,639 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:27,693 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 15:50:27,767 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 15:50:28,085 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:28,085 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:28,085 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:28,085 - __main__ - INFO - Debug: True
+2026-04-03 15:50:28,085 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:28,101 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:28,102 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:28,102 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:28,103 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:28,103 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:28,104 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:28,104 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:28,108 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:28,113 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:28,115 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 15:50:28,216 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 15:50:28,217 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 15:50:28,217 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 15:50:28,217 - __main__ - INFO - Debug: True
+2026-04-03 15:50:28,217 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 15:50:28,233 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 15:50:28,233 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 15:50:28,234 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:28,235 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 15:50:28,235 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 15:50:28,235 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 15:50:28,236 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 15:50:28,239 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 15:50:28,245 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 15:50:28,247 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:05:27,860 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,880 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,880 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,882 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,885 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,887 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,894 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,890 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,899 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,903 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:27,905 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:27] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:05:49,623 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:05:49,626 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:05:49,627 - sqlalchemy.engine.Engine - INFO - [generated in 0.00052s] ('Tom', 1, 0)
+2026-04-03 16:05:49,629 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:05:49,630 - sqlalchemy.engine.Engine - INFO - [generated in 0.00050s] (1,)
+2026-04-03 16:05:49,631 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:05:49,631 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:49] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:05:50,921 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:05:50,921 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:05:50,922 - sqlalchemy.engine.Engine - INFO - [cached since 1.296s ago] ('Tom', 1, 0)
+2026-04-03 16:05:50,923 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:05:50,924 - sqlalchemy.engine.Engine - INFO - [cached since 1.295s ago] (1,)
+2026-04-03 16:05:50,925 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:05:50,925 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:50] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:05:56,217 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:05:56,218 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:05:56,218 - sqlalchemy.engine.Engine - INFO - [cached since 6.592s ago] ('Tom', 1, 0)
+2026-04-03 16:05:56,219 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:05:56,220 - sqlalchemy.engine.Engine - INFO - [cached since 6.591s ago] (1,)
+2026-04-03 16:05:56,221 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:05:56,221 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:05:56] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:19:49,845 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:19:49,845 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:19:49,845 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:19:49,845 - __main__ - INFO - Debug: True
+2026-04-03 16:19:49,846 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:19:49,861 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:19:49,862 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:19:49,862 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:19:49,862 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:19:49,863 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:19:49,863 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:19:49,863 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:19:49,867 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:19:49,880 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 16:19:49,880 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 16:19:49,881 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:19:50,307 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:19:50,307 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:19:50,307 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:19:50,307 - __main__ - INFO - Debug: True
+2026-04-03 16:19:50,307 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:19:50,321 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:19:50,322 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:19:50,322 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:19:50,322 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:19:50,323 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:19:50,323 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:19:50,323 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:19:50,326 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:19:50,332 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:19:50,334 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:20:17,798 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,821 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,823 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,824 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,825 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,829 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,833 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,838 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,843 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,843 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:20:17,844 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:20:17] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:24,542 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:21:24,542 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:21:24,542 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:21:24,542 - __main__ - INFO - Debug: True
+2026-04-03 16:21:24,542 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:21:24,559 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:21:24,559 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:21:24,559 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:24,560 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:21:24,560 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:24,561 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:21:24,561 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:21:24,564 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:21:24,578 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 16:21:24,578 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 16:21:24,579 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:21:24,992 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:21:24,992 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:21:24,992 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:21:24,992 - __main__ - INFO - Debug: True
+2026-04-03 16:21:24,993 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:21:25,008 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:21:25,009 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:21:25,009 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:25,010 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:21:25,010 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:25,010 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:21:25,011 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:21:25,014 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:21:25,021 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:21:25,023 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:21:36,198 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:21:36,198 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:21:36,198 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:21:36,199 - __main__ - INFO - Debug: True
+2026-04-03 16:21:36,199 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:21:36,214 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:21:36,214 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:21:36,214 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:36,215 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:21:36,215 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:36,216 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:21:36,216 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:21:36,219 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:21:36,233 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 16:21:36,233 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 16:21:36,234 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:21:36,649 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:21:36,650 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:21:36,650 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:21:36,650 - __main__ - INFO - Debug: True
+2026-04-03 16:21:36,650 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:21:36,666 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:21:36,666 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:21:36,667 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:36,667 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:21:36,667 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:21:36,668 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:21:36,668 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:21:36,671 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:21:36,677 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:21:36,679 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:21:43,150 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,165 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,166 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,171 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,178 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,182 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,183 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,189 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,190 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,194 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:21:43,196 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:21:43] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,947 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,976 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,978 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,980 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,979 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,981 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,983 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,987 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,994 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:02,995 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:02] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:26:03,000 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:26:03] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:27:05,651 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:27:05,655 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:27:05,655 - sqlalchemy.engine.Engine - INFO - [generated in 0.00057s] ('Tom', 1, 0)
+2026-04-03 16:27:05,658 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:27:05,658 - sqlalchemy.engine.Engine - INFO - [generated in 0.00047s] (1,)
+2026-04-03 16:27:05,659 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:27:05,660 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:27:05] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:29:17,367 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:29:17,368 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:29:17,369 - sqlalchemy.engine.Engine - INFO - [cached since 131.7s ago] ('Tom', 1, 0)
+2026-04-03 16:29:17,371 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:29:17,372 - sqlalchemy.engine.Engine - INFO - [cached since 131.7s ago] (1,)
+2026-04-03 16:29:17,374 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:29:17,377 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:29:17] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:31:21,601 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:31:21,602 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:31:21,602 - sqlalchemy.engine.Engine - INFO - [cached since 255.9s ago] ('Tom', 1, 0)
+2026-04-03 16:31:21,604 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:31:21,604 - sqlalchemy.engine.Engine - INFO - [cached since 255.9s ago] (1,)
+2026-04-03 16:31:21,605 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:31:21,605 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:31:21] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:33:27,006 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:33:27,006 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:33:27,007 - sqlalchemy.engine.Engine - INFO - [cached since 381.4s ago] ('Tom', 1, 0)
+2026-04-03 16:33:27,008 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:33:27,009 - sqlalchemy.engine.Engine - INFO - [cached since 381.4s ago] (1,)
+2026-04-03 16:33:27,009 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:33:27,010 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:33:27] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:36:25,777 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:36:25,778 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:36:25,778 - sqlalchemy.engine.Engine - INFO - [cached since 560.1s ago] ('Tom', 1, 0)
+2026-04-03 16:36:25,779 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:36:25,780 - sqlalchemy.engine.Engine - INFO - [cached since 560.1s ago] (1,)
+2026-04-03 16:36:25,781 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:36:25,781 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:36:25] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:39:20,013 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:39:20,014 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:39:20,014 - sqlalchemy.engine.Engine - INFO - [cached since 734.4s ago] ('Tom', 1, 0)
+2026-04-03 16:39:20,330 - __main__ - INFO - ✅ Login exitoso: Tom
+2026-04-03 16:39:20,331 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:39:20,332 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:39:20] "POST /api/login HTTP/1.1" 200 -
+2026-04-03 16:39:29,626 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:39:29,627 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:39:29,627 - sqlalchemy.engine.Engine - INFO - [cached since 744s ago] ('Tom', 1, 0)
+2026-04-03 16:39:29,628 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:39:29,629 - sqlalchemy.engine.Engine - INFO - [cached since 744s ago] (1,)
+2026-04-03 16:39:29,630 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:39:29,630 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:39:29] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:39:38,313 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:39:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-04-03 16:39:49,841 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:39:49,841 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:39:49,842 - sqlalchemy.engine.Engine - INFO - [cached since 764.2s ago] ('Tom', 1, 0)
+2026-04-03 16:39:49,844 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:39:49,845 - sqlalchemy.engine.Engine - INFO - [cached since 764.2s ago] (1,)
+2026-04-03 16:39:49,848 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:39:49,855 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:39:49] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:39:55,426 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:39:55,427 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:39:55,427 - sqlalchemy.engine.Engine - INFO - [cached since 769.8s ago] ('Tom', 1, 0)
+2026-04-03 16:39:55,428 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:39:55,429 - sqlalchemy.engine.Engine - INFO - [cached since 769.8s ago] (1,)
+2026-04-03 16:39:55,430 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:39:55,430 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:39:55] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:07,029 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:07,029 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:07,030 - sqlalchemy.engine.Engine - INFO - [cached since 781.4s ago] ('Tom', 1, 0)
+2026-04-03 16:40:07,341 - __main__ - INFO - ✅ Login exitoso: Tom
+2026-04-03 16:40:07,341 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:07,342 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:07] "POST /api/login HTTP/1.1" 200 -
+2026-04-03 16:40:08,613 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:08,613 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:08,614 - sqlalchemy.engine.Engine - INFO - [cached since 783s ago] ('Tom', 1, 0)
+2026-04-03 16:40:08,615 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:08,616 - sqlalchemy.engine.Engine - INFO - [cached since 783s ago] (1,)
+2026-04-03 16:40:08,617 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:08,617 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:08] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:13,338 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,410 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,436 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,451 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,452 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,452 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,455 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,456 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,461 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,480 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:13,483 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:13] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:15,549 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:15,550 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:15,550 - sqlalchemy.engine.Engine - INFO - [cached since 789.9s ago] ('Tom', 1, 0)
+2026-04-03 16:40:15,551 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:15,552 - sqlalchemy.engine.Engine - INFO - [cached since 789.9s ago] (1,)
+2026-04-03 16:40:15,553 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:15,553 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:15] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:32,488 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:32,490 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:32,490 - sqlalchemy.engine.Engine - INFO - [cached since 806.8s ago] ('Tom', 1, 0)
+2026-04-03 16:40:32,492 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:32,493 - sqlalchemy.engine.Engine - INFO - [cached since 806.8s ago] (1,)
+2026-04-03 16:40:32,494 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:32,494 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:32] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:47,426 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:47,426 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:47,427 - sqlalchemy.engine.Engine - INFO - [cached since 821.8s ago] ('Tom', 1, 0)
+2026-04-03 16:40:47,428 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:47,428 - sqlalchemy.engine.Engine - INFO - [cached since 821.8s ago] (1,)
+2026-04-03 16:40:47,429 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:47,430 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:47] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:48,055 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,108 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,119 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,123 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,124 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,126 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,128 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,129 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,132 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,135 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:48,139 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:48] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:49,982 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:49,982 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:49,983 - sqlalchemy.engine.Engine - INFO - [cached since 824.3s ago] ('Tom', 1, 0)
+2026-04-03 16:40:49,984 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:49,985 - sqlalchemy.engine.Engine - INFO - [cached since 824.3s ago] (1,)
+2026-04-03 16:40:49,986 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:49,986 - werkzeug - INFO - 192.168.1.7 - - [03/Apr/2026 16:40:49] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:40:52,601 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,624 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,625 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,627 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,628 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,631 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,634 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,640 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,643 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,645 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:52,648 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:52] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:40:53,474 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:40:53,475 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:40:53,476 - sqlalchemy.engine.Engine - INFO - [cached since 827.8s ago] ('Tom', 1, 0)
+2026-04-03 16:40:53,477 - sqlalchemy.engine.Engine - INFO - SELECT calculations.id AS calculations_id, calculations.user_id AS calculations_user_id, calculations.deuda_inicial AS calculations_deuda_inicial, calculations.interes AS calculations_interes, calculations.periodos AS calculations_periodos, calculations.deuda_final AS calculations_deuda_final, calculations.created_at AS calculations_created_at 
+FROM calculations 
+WHERE calculations.user_id = ? ORDER BY calculations.created_at DESC
+2026-04-03 16:40:53,477 - sqlalchemy.engine.Engine - INFO - [cached since 827.8s ago] (1,)
+2026-04-03 16:40:53,478 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:40:53,479 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:40:53] "GET /api/calculations/Tom HTTP/1.1" 200 -
+2026-04-03 16:41:27,102 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:27] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,360 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,386 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,387 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,389 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,393 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,396 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,396 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,402 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,404 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,411 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:41:38,413 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:41:38] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,530 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "GET / HTTP/1.1" 200 -
+2026-04-03 16:44:11,553 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,555 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,556 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,559 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,563 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,566 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,568 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,572 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,574 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:11,580 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:11] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:44:15,102 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:44:15,103 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:44:15,104 - sqlalchemy.engine.Engine - INFO - [cached since 1029s ago] ('Tom', 1, 0)
+2026-04-03 16:44:15,509 - __main__ - INFO - ✅ Login exitoso: Tom
+2026-04-03 16:44:15,509 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:44:15,510 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:44:15] "POST /api/login HTTP/1.1" 200 -
+2026-04-03 16:45:54,071 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "GET / HTTP/1.1" 200 -
+2026-04-03 16:45:54,092 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,096 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,098 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,102 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,103 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,104 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,109 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,111 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,114 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:45:54,117 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:45:54] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,893 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "GET / HTTP/1.1" 200 -
+2026-04-03 16:46:01,916 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,919 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,922 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,923 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,924 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,926 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,930 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,932 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,942 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:01,943 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:01] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,837 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "GET / HTTP/1.1" 200 -
+2026-04-03 16:46:27,857 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,860 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,862 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,865 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,867 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,870 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,872 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,873 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,879 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:46:27,881 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:46:27] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,860 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "GET / HTTP/1.1" 200 -
+2026-04-03 16:49:21,879 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,881 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,881 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,886 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,889 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,890 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,902 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,915 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "GET /js/perfil.js HTTP/1.1" 200 -
+2026-04-03 16:49:21,908 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:21,917 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:21] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:49:33,009 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:49:33,009 - sqlalchemy.engine.Engine - INFO - SELECT users.id AS users_id, users.usuario AS users_usuario, users.password_hash AS users_password_hash, users.nombre AS users_nombre, users.fecha_nacimiento AS users_fecha_nacimiento, users.sucursal AS users_sucursal, users.created_at AS users_created_at 
+FROM users 
+WHERE users.usuario = ?
+ LIMIT ? OFFSET ?
+2026-04-03 16:49:33,010 - sqlalchemy.engine.Engine - INFO - [cached since 1347s ago] ('Tom', 1, 0)
+2026-04-03 16:49:33,335 - __main__ - INFO - ✅ Login exitoso: Tom
+2026-04-03 16:49:33,336 - sqlalchemy.engine.Engine - INFO - ROLLBACK
+2026-04-03 16:49:33,336 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:49:33] "POST /api/login HTTP/1.1" 200 -
+2026-04-03 16:50:58,808 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:50:58] "[33mGET /bhg.db HTTP/1.1[0m" 404 -
+2026-04-03 16:51:02,353 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,375 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,376 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,377 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,380 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,383 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,390 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,390 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,391 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,396 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:02,401 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:02] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:51:24,090 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:24] "[33mGET /src/backend/bhg.db HTTP/1.1[0m" 404 -
+2026-04-03 16:51:40,791 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:51:40] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:52:14,082 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:52:14] "[33mGET /backend/bhg.db HTTP/1.1[0m" 404 -
+2026-04-03 16:52:20,238 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:52:20] "[33mGET /login HTTP/1.1[0m" 404 -
+2026-04-03 16:52:23,921 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:52:23] "GET /api HTTP/1.1" 200 -
+2026-04-03 16:52:45,257 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:52:45] "GET /api/ping HTTP/1.1" 200 -
+2026-04-03 16:53:10,760 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:53:10] "[33mGET /api/login HTTP/1.1[0m" 404 -
+2026-04-03 16:54:34,620 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,644 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,649 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,651 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,652 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,655 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,664 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,668 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,669 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,671 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:54:34,679 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:54:34] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:05,898 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:05,969 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:06,493 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:55:06,494 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:55:06,494 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:55:06,494 - __main__ - INFO - Debug: True
+2026-04-03 16:55:06,494 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:55:06,511 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:55:06,511 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:55:06,511 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:06,512 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:55:06,512 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:06,513 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:55:06,513 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:55:06,516 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:55:06,522 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:55:06,524 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:55:06,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:06,695 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:06,823 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:06,826 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:07,294 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:55:07,294 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:55:07,294 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:55:07,294 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:55:07,294 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:55:07,294 - __main__ - INFO - Debug: True
+2026-04-03 16:55:07,294 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:55:07,294 - __main__ - INFO - Host: 0.0.0.0:5000
+2026-04-03 16:55:07,294 - __main__ - INFO - Debug: True
+2026-04-03 16:55:07,294 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:55:07,309 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:55:07,309 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:07,310 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:07,311 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:55:07,311 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:55:07,311 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:55:07,311 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:55:07,315 - __main__ - INFO - 🚀 Inicia el servidor en: http://0.0.0.0:5000
+00
+2026-04-03 16:55:07,319 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:55:07,320 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:55:07,321 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:55:07,322 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:55:08,334 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:08,334 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:08,437 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:08,446 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:08,536 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:55:08,652 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:43,414 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:55:43,414 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:55:43,414 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:55:43,414 - __main__ - INFO - Debug: True
+2026-04-03 16:55:43,414 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:55:43,429 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:55:43,430 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:55:43,430 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:43,430 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:55:43,431 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:43,431 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:55:43,431 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:55:43,435 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:55:43,448 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://192.168.1.4:5000
+2026-04-03 16:55:43,448 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2026-04-03 16:55:43,449 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:55:43,898 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:55:43,898 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:55:43,898 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:55:43,898 - __main__ - INFO - Debug: True
+2026-04-03 16:55:43,898 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:55:43,914 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:55:43,915 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:55:43,915 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:43,916 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:55:43,916 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:55:43,917 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:55:43,917 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:55:43,920 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:55:43,925 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:55:43,928 - werkzeug - INFO -  * Debugger PIN: 113-109-955
+2026-04-03 16:55:46,032 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET / HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,056 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/api.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,057 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /styles.css HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,060 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/appstate.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,063 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/ui.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,065 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/auth.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,067 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/dashboard.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,069 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/perfil.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,072 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/calculadora.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,075 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/historial.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:46,076 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:46] "[36mGET /js/main.js HTTP/1.1[0m" 304 -
+2026-04-03 16:55:55,596 - werkzeug - INFO - 192.168.1.4 - - [03/Apr/2026 16:55:55] "GET /api HTTP/1.1" 200 -
+2026-04-03 16:57:31,137 - werkzeug - INFO -  * Detected change in 'C:\\Users\\alvez\\Documentos\\proyectoBHG\\BioHealthGroup\\src\\backend\\app.py', reloading
+2026-04-03 16:57:31,244 - werkzeug - INFO -  * Restarting with stat
+2026-04-03 16:57:31,703 - __main__ - INFO - 🚀 BHG Plantales Backend
+2026-04-03 16:57:31,703 - __main__ - INFO - Frontend: C:\Users\alvez\Documentos\proyectoBHG\BioHealthGroup\src\frontend
+2026-04-03 16:57:31,703 - __main__ - INFO - Database: sqlite:///bhg.db
+2026-04-03 16:57:31,703 - __main__ - INFO - Debug: True
+2026-04-03 16:57:31,704 - __main__ - INFO - Host: 192.168.1.4:5000
+2026-04-03 16:57:31,721 - sqlalchemy.engine.Engine - INFO - BEGIN (implicit)
+2026-04-03 16:57:31,721 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("users")
+2026-04-03 16:57:31,721 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:31,722 - sqlalchemy.engine.Engine - INFO - PRAGMA main.table_info("calculations")
+2026-04-03 16:57:31,723 - sqlalchemy.engine.Engine - INFO - [raw sql] ()
+2026-04-03 16:57:31,723 - sqlalchemy.engine.Engine - INFO - COMMIT
+2026-04-03 16:57:31,724 - __main__ - INFO - ✅ Base de datos inicializada
+2026-04-03 16:57:31,727 - __main__ - INFO - 🚀 Inicia el servidor en: http://192.168.1.4:5000
+2026-04-03 16:57:31,732 - werkzeug - WARNING -  * Debugger is active!
+2026-04-03 16:57:31,735 - werkzeug - INFO -  * Debugger PIN: 113-109-955
