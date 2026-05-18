@@ -22,6 +22,10 @@ class EstudioPolicy < ApplicationPolicy
     administrador? || recepcionista? || medico?
   end
 
+  def edit?
+    update?
+  end
+
   def destroy?
     administrador?
   end

@@ -1,6 +1,7 @@
 class RegistrationsController < ApplicationController
-  # Permitimos que usuarios no logueados vean esta página
   allow_unauthenticated_access
+  rate_limit to: 5, within: 30.minutes, only: :create,
+    with: -> { redirect_to new_registration_path, alert: "Demasiados registros desde esta IP. Intenta de nuevo más tarde." }
 
   def new
     @user = User.new
