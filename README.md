@@ -1,170 +1,81 @@
-# BHG Plantales - Clínica Ortopédica
+# BioHealthGroup — Clínica Ortopédica
 
-Una aplicación web completa para la gestión de deudas e intereses de la Clínica Ortopédica Bio Health Group.
+Sistema de gestión integral para la Clínica Ortopédica Bio Health Group.
+Construido con **Ruby on Rails 8**, **Tailwind CSS 4**, **PostgreSQL** y **Hotwire**.
 
-## 🚀 Características
+## Stack
 
-- **Autenticación de usuarios**: Registro y login seguro
-- **Calculadora de intereses**: Cálculo de deudas con interés compuesto
-- **Dashboard interactivo**: Visualización de deuda actual y aplicación de intereses
-- **Historial de movimientos**: Registro de todas las operaciones
-- **Perfil de usuario**: Gestión de información personal
-- **API REST**: Backend robusto con SQLAlchemy
-- **Interfaz moderna**: Diseño responsive con tema oscuro
+- **Ruby 3.4.9** + **Rails 8** (main branch)
+- **PostgreSQL** — base de datos principal
+- **Tailwind CSS 4** + **Alpine.js** (CDN) — frontend
+- **Propshaft** — asset pipeline (sin Sprockets)
+- **Solid Cache / Solid Queue / Solid Cable** — adaptadores数据库
+- **Puma** + **Thruster** — servidor web y proxy
+- **Kamal** — deploy
 
-## 🛠️ Tecnologías
+## Requisitos
 
-### Backend
-- **Python 3.14+**
-- **Flask** - Framework web
-- **SQLAlchemy** - ORM de base de datos
-- **Flask-CORS** - Manejo de CORS
-- **Werkzeug** - Utilidades de seguridad
+- Ruby 3.4.9
+- PostgreSQL 14+
+- Bundler
+- Node.js (para Tailwind CSS CLI)
 
-### Frontend
-- **HTML5/CSS3** - Estructura y estilos
-- **JavaScript (ES6+)** - Lógica del cliente
-- **Fetch API** - Comunicación con backend
+## Setup local
 
-### Base de datos
-- **SQLite** - Base de datos ligera y portable
-
-## 📦 Instalación
-
-### Prerrequisitos
-- Python 3.14 o superior
-- Navegador web moderno
-
-### Configuración del entorno
-
-1. **Clona el repositorio** (si aplica) o navega al directorio del proyecto
-
-2. **Configura el entorno virtual**:
-   ```bash
-   cd src/backend
-   python -m venv venv
-   # En Windows:
-   venv\Scripts\activate
-   # En Linux/Mac:
-   source venv/bin/activate
-   ```
-
-3. **Instala las dependencias**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configura las variables de entorno** (opcional):
-   Crea un archivo `.env` en la raíz del proyecto:
-   ```env
-   DEBUG=True
-   PORT=5000
-   HOST=0.0.0.0
-   SECRET_KEY=tu-clave-secreta-aqui
-   DATABASE_URL=sqlite:///src/backend/data/bhg.db
-   ```
-
-## 🚀 Ejecución
-
-### Backend
 ```bash
-cd src/backend
-python app.py
+git clone https://github.com/tommmpy/BioHealthGroup.git
+cd BioHealthGroup
+bundle install
+bin/rails db:create db:migrate db:seed
+bin/dev
 ```
 
-El servidor se iniciará en `http://localhost:5000`
+Abre en `http://localhost:3000`.
 
-### Frontend
-El frontend se sirve automáticamente desde el backend. Abre tu navegador en `http://localhost:5000`
+### Variables de entorno
 
-## 📊 Uso
+Copiá `.env.example` a `.env` y completá según corresponda.
 
-1. **Registro**: Crea una cuenta nueva
-2. **Login**: Inicia sesión con tus credenciales
-3. **Dashboard**: Visualiza tu deuda actual
-4. **Calculadora**: Realiza cálculos de interés compuesto
-5. **Historial**: Revisa tus movimientos guardados
-6. **Perfil**: Actualiza tu información personal
+## Comandos útiles
 
-## 🏗️ Arquitectura
+| Comando | Descripción |
+|---|---|
+| `bin/dev` | Servidor + Tailwind watcher |
+| `rails test` | Tests (44 tests, 0 failures) |
+| `rails db:seed:replant` | Resembrar DB |
+| `bundle exec rubocop` | Linter (0 offenses) |
 
-```
-bhg-plantales/
-├── src/
-│   ├── backend/
-│   │   ├── app.py          # Servidor Flask principal
-│   │   ├── requirements.txt # Dependencias Python
-│   │   └── data/           # Base de datos SQLite
-│   └── frontend/
-│       ├── index.html      # Página principal
-│       ├── styles.css      # Estilos CSS
-│       └── js/             # JavaScript modular
-│           ├── api.js      # Cliente API
-│           ├── appstate.js # Estado de la aplicación
-│           ├── auth.js     # Módulo de autenticación
-│           ├── calculadora.js # Calculadora de intereses
-│           ├── dashboard.js # Dashboard principal
-│           ├── historial.js # Historial de movimientos
-│           ├── perfil.js    # Gestión de perfil
-│           ├── ui.js       # Utilidades de interfaz
-│           └── main.js     # Inicialización
-├── .env                    # Variables de entorno
-└── README.md              # Esta documentación
+## Deploy
+
+Usa Kamal. Configurar variables en `config/deploy.yml`:
+
+```bash
+kamal env push
+kamal deploy
 ```
 
-## 🔧 API Endpoints
+Requerimientos: servidor con Docker, registro de contenedores (Docker Hub / GHCR),
+dominio con SSL, y las env vars documentadas en `.env.example`.
 
-### Autenticación
-- `POST /api/register` - Registro de usuario
-- `POST /api/login` - Inicio de sesión
+## Roles de usuario
 
-### Usuarios
-- `GET /api/users` - Lista todos los usuarios
-- `GET /api/users/<usuario>` - Obtiene usuario específico
-- `PUT /api/users/<usuario>` - Actualiza usuario
-- `DELETE /api/users/<usuario>` - Elimina usuario
+`Roleable` concern: `paciente(0)`, `recepcionista(1)`, `medico(2)`, `operario(3)`,
+`administrador(4)`, `disenador(5)`.
 
-### Cálculos
-- `POST /api/calculations` - Guarda un cálculo
-- `GET /api/calculations/<usuario>` - Obtiene cálculos del usuario
+## Funcionalidades principales
 
-### Utilidades
-- `GET /api` - Información de la API
-- `GET /api/ping` - Health check
+- Autenticación con `has_secure_password` (cookies)
+- Dashboard admin con gráficos (Chartkick + Groupdate)
+- Chat en tiempo real (Action Cable)
+- Notificaciones con preferencias
+- Estudios, turnos, facturación, órdenes de producción
+- Carga de archivos (Active Storage)
+- API REST JSON
+- Auditoría (Audited gem)
+- Paginación (Pagy), búsqueda (Ransack)
+- Emails con preview (Letter Opener en dev)
+- Logs estructurados (Lograge)
 
-## 🔒 Seguridad
+## Licencia
 
-- Hashing de contraseñas con PBKDF2
-- Validación de entrada
-- Manejo de errores seguro
-- Configuración de CORS apropiada
-- Logging de actividades
-
-## 📱 Responsive Design
-
-La aplicación está optimizada para:
-- Desktop (1200px+)
-- Tablet (700-1199px)
-- Mobile (600px-)
-
-## 🤝 Contribución
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
-
-## 📞 Contacto
-
-Bio Health Group - Clínica Ortopédica
-- Sitio web: [bhg.clinicaortopedica.com](https://bhg.clinicaortopedica.com)
-- Email: info@bhg.clinicaortopedica.com
-
----
-
-Desarrollado con ❤️ para la comunidad médica
+MIT
