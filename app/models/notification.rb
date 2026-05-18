@@ -1,4 +1,5 @@
 class Notification < ApplicationRecord
+  audited
   belongs_to :user
   belongs_to :notifiable, polymorphic: true
 

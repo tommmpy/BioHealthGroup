@@ -108,7 +108,12 @@ module Authentication
     in [ "admin/branches", * ]         then "Modificó sucursales"
     in [ "admin/estudios", "iniciar" ] then "Inició el estudio ##{id}"
     in [ "admin/estudios", "finalizar" ] then "Finalizó el estudio ##{id}"
-    in [ "admin/estudios", "descargar_informe" ] then nil
+    in [ "admin/appointments", "create" ]  then "Agendó un nuevo turno"
+    in [ "admin/appointments", "update" ]  then "Actualizó el turno ##{id}"
+    in [ "admin/appointments", "destroy" ] then "Eliminó el turno ##{id}"
+    in [ "admin/appointments", "confirm" ] then "Confirmó el turno ##{id}"
+    in [ "admin/appointments", "cancel" ]  then "Canceló el turno ##{id}"
+    in [ "admin/appointments", "descargar_informe" ] then nil
     in [ "admin/dashboard", * ]        then nil  # admin dashboard views aren't mutations
     in [ "user_dashboards", * ]        then nil
     in [ "pages", * ]                  then nil

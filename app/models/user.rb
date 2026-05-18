@@ -23,6 +23,8 @@ class User < ApplicationRecord
   has_many :conversations, through: :chat_room_participants, source: :conversation
   has_many :messages, class_name: "Chat::Message", dependent: :destroy, foreign_key: :user_id
   has_many :notifications, dependent: :destroy
+  has_many :appointments, dependent: :nullify
+  has_many :assigned_appointments, class_name: "Appointment", foreign_key: :medico_id, dependent: :nullify
 
   validates :user_type, presence: true
   attr_accessor :skip_contacto_root

@@ -1,4 +1,5 @@
 class HeroSlide < ApplicationRecord
+  audited
   has_one_attached :image
 
   scope :active, -> { where(active: true) }

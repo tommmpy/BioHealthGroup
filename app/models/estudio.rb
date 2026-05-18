@@ -4,6 +4,7 @@ class Estudio < ApplicationRecord
   belongs_to :branch    # La Sucursal
 
   before_validation :calcular_cantidad_productos
+  has_many_attached :files
   # Opcional: Relación con el médico (que también es un User)
   belongs_to :medico, class_name: "User", optional: true
 

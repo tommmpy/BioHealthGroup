@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.2].define(version: 2026_05_18_014906) do
+ActiveRecord::Schema[8.2].define(version: 2026_05_18_173000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,6 +40,25 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_014906) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
+  end
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "branch_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "ends_at", null: false
+    t.bigint "estudio_id"
+    t.bigint "medico_id"
+    t.text "notes"
+    t.datetime "starts_at", null: false
+    t.integer "status", default: 0
+    t.string "title", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["branch_id"], name: "index_appointments_on_branch_id"
+    t.index ["estudio_id"], name: "index_appointments_on_estudio_id"
+    t.index ["medico_id"], name: "index_appointments_on_medico_id"
+    t.index ["starts_at"], name: "index_appointments_on_starts_at"
+    t.index ["user_id"], name: "index_appointments_on_user_id"
   end
 
   create_table "audits", force: :cascade do |t|
@@ -205,6 +224,10 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_014906) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "appointments", "branches"
+  add_foreign_key "appointments", "estudios"
+  add_foreign_key "appointments", "users"
+  add_foreign_key "appointments", "users", column: "medico_id"
   add_foreign_key "chat_room_participants", "chat_rooms"
   add_foreign_key "chat_room_participants", "users"
   add_foreign_key "chat_rooms", "users", column: "assigned_to_id"

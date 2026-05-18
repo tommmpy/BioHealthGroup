@@ -16,12 +16,79 @@
         <%= @estudios.count %> ESTUDIOS
       </div>
     </div>
-    <% if is_administrador? || is_recepcionista? %>
-      <%= link_to new_admin_estudio_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-5 py-3 rounded-xl text-sm font-black uppercase tracking-wider shadow-lg shadow-orange-500/25 inline-flex items-center gap-2 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105 shrink-0" do %>
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
-        Agendar estudio
+    <div class="flex items-center gap-2.5">
+      <%= link_to admin_estudios_path(format: :csv, params: request.query_parameters.except(:format)), class: "border border-white/10 text-gray-400 no-underline px-4 py-3 rounded-xl text-[11px] font-bold transition-all duration-200 hover:border-orange-500/50 hover:text-orange-400 hover:bg-orange-500/5 inline-flex items-center gap-2" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+        CSV
       <% end %>
-    <% end %>
+      <% if is_administrador? || is_recepcionista? %>
+        <%= link_to new_admin_estudio_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-5 py-3 rounded-xl text-sm font-black uppercase tracking-wider shadow-lg shadow-orange-500/25 inline-flex items-center gap-2 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105 shrink-0" do %>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+          Agendar estudio
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div x-data="{ advancedOpen: false }" class="mb-5">
+    <button @click="advancedOpen = !advancedOpen" class="flex items-center gap-2 text-gray-400 text-sm font-semibold transition-colors duration-200 hover:text-orange-400 bg-transparent border-none cursor-pointer">
+      <svg class="w-4 h-4" :class="{ 'rotate-180': advancedOpen }" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100-4m0 4v2m0-6V4"/></svg>
+      Búsqueda avanzada
+      <% if params[:q].present? %>
+        <span class="bg-orange-500/10 text-orange-400 text-[10px] font-bold px-2 py-0.5 rounded-full">activo</span>
+      <% end %>
+    </button>
+    <div x-show="advancedOpen"
+         x-transition:enter="transition ease-out duration-200"
+         x-transition:enter-start="opacity-0 -translate-y-2"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         class="mt-3">
+      <%= search_form_for @q, url: admin_estudios_path, method: :get, local: true, class: "bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 lg:p-5 relative",
+          style: "box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);" do |f| %>
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4">
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Nombre</label>
+            <%= f.search_field :nombre_completo_cont, value: params.dig(:q, :nombre_completo_cont), placeholder: "Buscar por nombre...", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Cédula</label>
+            <%= f.search_field :user_ci_cont, value: params.dig(:q, :user_ci_cont), placeholder: "Buscar por CI...", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Paciente (nombre)</label>
+            <%= f.search_field :user_first_name_or_user_last_name_cont, value: params.dig(:q, :user_first_name_or_user_last_name_cont), placeholder: "Nombre del paciente...", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Estado</label>
+            <%= f.select :estado_eq, options_for_select(Estudio.estados.keys.map { |k| [k.humanize, k] }, params.dig(:q, :estado_eq)), { include_blank: "Todos" }, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Sucursal</label>
+            <%= f.collection_select :branch_id_eq, Branch.all, :id, :name, { include_blank: "Todas", selected: params.dig(:q, :branch_id_eq) }, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Médico</label>
+            <%= f.collection_select :medico_id_eq, User.where(role: User.roles[:medico]), :id, ->(u) { "#{u.first_name} #{u.last_name}" }, { include_blank: "Todos", selected: params.dig(:q, :medico_id_eq) }, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Fecha desde</label>
+            <%= f.date_field :fecha_estudio_gteq, value: params.dig(:q, :fecha_estudio_gteq), class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          </div>
+          <div>
+            <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Fecha hasta</label>
+            <%= f.date_field :fecha_estudio_lteq, value: params.dig(:q, :fecha_estudio_lteq), class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 pt-2 border-t border-white/5">
+          <%= f.submit "Filtrar", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-200 hover:shadow-orange-500/40 hover:scale-105" %>
+          <%= link_to admin_estudios_path, class: "text-gray-400 no-underline text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 hover:text-orange-400 hover:bg-white/5" do %>
+            <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            Limpiar
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
   <div x-data="{

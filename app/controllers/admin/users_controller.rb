@@ -1,6 +1,6 @@
 module Admin
   class UsersController < Admin::BaseController
-    before_action :set_user, only: [ :show, :edit, :update, :destroy ]
+    before_action :set_user, only: [ :show, :edit, :update, :destroy, :historial ]
     before_action :require_admin!
 
     def index
@@ -23,6 +23,10 @@ module Admin
     end
 
     def show
+    end
+
+    def historial
+      @estudios = @user.estudios.includes(:branch, :medico).order(fecha_estudio: :desc)
     end
 
     def edit

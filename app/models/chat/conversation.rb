@@ -1,5 +1,6 @@
 module Chat
   class Conversation < ApplicationRecord
+    audited
     self.table_name = "chat_rooms"
 
     has_many :messages, dependent: :destroy, class_name: "Chat::Message", foreign_key: :chat_room_id

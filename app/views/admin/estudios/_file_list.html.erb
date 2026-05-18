@@ -1,0 +1,31 @@
+<% if files.attached? %>
+  <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+       style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+    <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+    <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Archivos Adjuntos</h3>
+    <div class="flex flex-col gap-2.5">
+      <% files.each do |file| %>
+        <%= link_to rails_blob_path(file, disposition: "attachment"), class: "flex items-center gap-3 bg-white/5 border border-white/5 px-4 py-3 rounded-xl text-sm no-underline transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/20 group" do %>
+          <% if file.content_type&.start_with?("image/") %>
+            <div class="w-10 h-10 rounded-lg overflow-hidden shrink-0 bg-white/5">
+              <%= image_tag file.representation(resize_to_limit: [40, 40]), class: "w-full h-full object-cover" if file.representable? %>
+            </div>
+          <% elsif file.content_type == "application/pdf" %>
+            <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+            </div>
+          <% else %>
+            <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center shrink-0">
+              <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+          <% end %>
+          <div class="flex-1 min-w-0">
+            <span class="text-white font-semibold text-sm block truncate group-hover:text-orange-400 transition-colors"><%= file.filename %></span>
+            <span class="text-gray-500 text-xs"><%= number_to_human_size(file.byte_size) %></span>
+          </div>
+          <svg class="w-4 h-4 text-gray-600 shrink-0 group-hover:text-orange-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

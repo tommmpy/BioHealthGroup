@@ -1,6 +1,7 @@
 class Branch < ApplicationRecord
   audited
   has_many :users, dependent: :restrict_with_error
+  has_many :appointments, dependent: :restrict_with_error
   validates :name, presence: true, uniqueness: true
   validates :phone, presence: true
   validates :enabled, inclusion: { in: [ true, false ] }

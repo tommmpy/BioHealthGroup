@@ -1,4 +1,5 @@
 class Testimonial < ApplicationRecord
+  audited
   has_one_attached :avatar
 
   scope :active, -> { where(active: true) }

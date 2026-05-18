@@ -1,10 +1,13 @@
+require "csv"
+
 module Admin
   class EstudiosController < Admin::BaseController
     skip_before_action :require_staff!
     before_action :authorize_estudio!, except: [ :buscar_pacientes ]
 
     def index
-      @estudios = Estudio.includes(:user, :branch, :medico).order(fecha_estudio: :desc)
+      @q = Estudio.includes(:user, :branch, :medico).ransack(params[:q])
+      @estudios = @q.result.order(fecha_estudio: :desc)
 
       if is_paciente?
         @estudios = @estudios.where(user_id: current_user.id)
@@ -16,6 +19,33 @@ module Admin
           "(medico_id = ?) OR (branch_id = ? AND estado = ?)",
           current_user.id, current_user.branch_id, pendiente
         )
+      end
+
+      respond_to do |format|
+        format.html
+        format.csv do
+          headers = [ "ID", "Nombre Completo", "CI", "Estado", "Fecha Estudio", "Sucursal", "Médico", "Cantidad Productos", "Tipo Producto", "Creado" ]
+
+          csv_data = CSV.generate(headers: true) do |csv|
+            csv << headers
+            @estudios.each do |e|
+              csv << [
+                e.id,
+                e.nombre_completo,
+                e.user&.ci,
+                e.estado.humanize,
+                e.fecha_estudio.strftime("%d/%m/%Y %H:%M"),
+                e.branch&.name,
+                e.medico.present? ? "#{e.medico.first_name} #{e.medico.last_name}" : "",
+                e.cantidad_productos,
+                Array(e.tipo_producto).join(", "),
+                e.created_at.strftime("%d/%m/%Y %H:%M")
+              ]
+            end
+          end
+
+          send_data csv_data, filename: "estudios_#{Date.current}.csv"
+        end
       end
     end
 
@@ -174,7 +204,7 @@ module Admin
     end
 
     def estudio_update_params
-      params.require(:estudio).permit(:metar_paciente, :nombre_completo, :fecha_estudio, :branch_id, :medico_id, tipo_producto: [])
+      params.require(:estudio).permit(:metar_paciente, :nombre_completo, :fecha_estudio, :branch_id, :medico_id, tipo_producto: [], files: [])
     end
 
     def authorize_estudio!(record = nil)

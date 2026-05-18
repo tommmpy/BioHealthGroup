@@ -65,7 +65,11 @@ Rails.application.routes.draw do
   namespace :admin do
     get "dashboard", to: "dashboard#index"
 
-    resources :users
+    resources :users do
+      member do
+        get :historial
+      end
+    end
 
     resources :branches do
       member do
@@ -87,6 +91,16 @@ Rails.application.routes.draw do
     resources :hero_slides
     resources :process_steps
     resources :testimonials
+
+    resources :appointments do
+      member do
+        patch :confirm
+        patch :cancel
+      end
+      collection do
+        get :buscar_pacientes
+      end
+    end
 
     resources :activities, only: [ :index ]
   end

@@ -50,6 +50,7 @@ gem "premailer-rails"
 gem "audited"
 gem "active_storage_validations"
 gem "lograge"
+gem "csv"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"

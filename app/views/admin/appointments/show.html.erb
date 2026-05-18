@@ -1,0 +1,134 @@
+<div class="max-w-5xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+    <div>
+      <%= link_to admin_appointments_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Volver al listado
+      <% end %>
+      <h1 class="text-3xl lg:text-4xl font-black m-0 tracking-tight"><%= @appointment.title %></h1>
+      <p class="text-gray-500 mt-1 text-sm">Turno #<%= @appointment.id %> — <%= @appointment.starts_at.strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="flex items-center gap-2">
+      <span class="<%= Appointment::STATUS_COLORS[@appointment.status] || Appointment::STATUS_COLORS.values.first %> text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full border shadow-lg">
+        <%= @appointment.status_label %>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-5 lg:gap-6">
+
+    <div class="flex flex-col gap-5 lg:gap-6">
+      <%# Información del turno %>
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Detalles del Turno</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Inicio</label>
+            <span class="text-lg font-bold"><%= @appointment.starts_at.strftime("%d/%m/%Y %H:%M") %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Fin</label>
+            <span class="text-lg font-bold"><%= @appointment.ends_at.strftime("%d/%m/%Y %H:%M") %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Sucursal</label>
+            <span class="text-gray-400"><%= @appointment.branch&.name %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Estado</label>
+            <span class="<%= Appointment::STATUS_COLORS[@appointment.status] || Appointment::STATUS_COLORS.values.first %> text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border"><%= @appointment.status_label %></span>
+          </div>
+        </div>
+        <% if @appointment.notes.present? %>
+          <div class="mt-5 pt-5 border-t border-white/5">
+            <label class="text-gray-500 text-[11px] block mb-2">Notas</label>
+            <p class="text-gray-300 text-sm whitespace-pre-wrap"><%= @appointment.notes %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <%# Paciente %>
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Paciente</h3>
+        <div class="flex items-center gap-4">
+          <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-lg font-black text-black shadow-lg shadow-orange-500/20 shrink-0">
+            <% initials = @appointment.user.first_name[0] %><%= @appointment.user.last_name[0] %>
+          </div>
+          <div class="min-w-0">
+            <span class="text-lg font-bold"><%= @appointment.user.first_name %> <%= @appointment.user.last_name %></span>
+            <div class="text-gray-500 text-sm mt-1">
+              <span>CI: <%= @appointment.user.ci %></span>
+              <span class="text-gray-700 mx-2">·</span>
+              <span><%= @appointment.user.email_address %></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <% if @appointment.medico.present? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Médico Asignado</h3>
+          <div class="flex items-center gap-4">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-lg font-black text-black shadow-lg shadow-orange-500/20 shrink-0">
+              <% initials = @appointment.medico.first_name[0] %><%= @appointment.medico.last_name[0] %>
+            </div>
+            <div class="min-w-0">
+              <span class="text-lg font-bold"><%= @appointment.medico.first_name %> <%= @appointment.medico.last_name %></span>
+              <div class="text-gray-500 text-sm mt-1 truncate"><%= @appointment.medico.email_address %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @appointment.estudio.present? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Estudio Asociado</h3>
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="font-bold">Estudio #<%= @appointment.estudio.id %></span>
+              <div class="text-gray-500 text-sm mt-1"><%= @appointment.estudio.nombre_completo %></div>
+            </div>
+            <%= link_to "Ver estudio", admin_estudio_path(@appointment.estudio), class: "border border-white/10 text-gray-400 no-underline px-4 py-2 rounded-lg text-xs font-bold transition-all duration-200 hover:border-orange-500/50 hover:text-orange-400 hover:bg-orange-500/5" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <%# Sidebar acciones %>
+    <div class="flex flex-col gap-3">
+      <% if @appointment.pending? && (is_administrador? || is_recepcionista?) %>
+        <%= button_to "CONFIRMAR TURNO", confirm_admin_appointment_path(@appointment),
+            method: :patch,
+            class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+      <% end %>
+
+      <% if !@appointment.cancelled? && !@appointment.completed? && (is_administrador? || is_recepcionista? || (is_medico? && @appointment.medico_id == current_user.id) || (is_paciente? && @appointment.user_id == current_user.id)) %>
+        <%= button_to "CANCELAR TURNO", cancel_admin_appointment_path(@appointment),
+            method: :patch,
+            form: { data: { turbo_confirm: "¿Confirma que desea cancelar este turno?" } },
+            class: "w-full border border-red-500/30 text-red-400 bg-transparent py-4 rounded-xl font-bold text-sm cursor-pointer transition-all duration-200 hover:bg-red-500/10 hover:border-red-500/50" %>
+      <% end %>
+
+      <% if is_administrador? || is_recepcionista? || is_medico? %>
+        <%= link_to "EDITAR TURNO", edit_admin_appointment_path(@appointment),
+            class: "w-full bg-white/5 text-white no-underline py-4 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
+      <% end %>
+
+      <% if is_administrador? %>
+        <%= button_to "ELIMINAR TURNO", admin_appointment_path(@appointment),
+            method: :delete,
+            form: { data: { turbo_confirm: "¿Está seguro? Esta acción no se puede deshacer." } },
+            class: "w-full border border-red-500/30 text-red-400 bg-transparent py-4 rounded-xl font-bold text-sm cursor-pointer transition-all duration-200 hover:bg-red-500/10 hover:border-red-500/50" %>
+      <% end %>
+    </div>
+  </div>
+</div>
