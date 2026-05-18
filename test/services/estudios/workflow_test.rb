@@ -44,7 +44,7 @@ class Estudios::WorkflowTest < ActiveSupport::TestCase
     result = Estudios::Workflow.call(@estudio, :finalizar)
     assert result[:success]
     assert @estudio.reload.finalizado?
-    assert_equal "Estudio finalizado correctamente.", result[:notice]
+    assert_equal "Estudio finalizado correctamente. Orden de producción generada.", result[:notice]
   end
 
   test "finalizar without metar_paciente returns error" do

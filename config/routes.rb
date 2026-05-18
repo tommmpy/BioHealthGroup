@@ -102,6 +102,24 @@ Rails.application.routes.draw do
       end
     end
 
+    resources :invoices do
+      member do
+        patch :mark_sent
+        patch :mark_paid
+        get :download_pdf
+      end
+      resources :payments, only: [ :index, :create ]
+    end
+
+    resources :products
+
+    resources :production_orders do
+      member do
+        patch :start
+        patch :complete
+      end
+    end
+
     resources :activities, only: [ :index ]
   end
 end

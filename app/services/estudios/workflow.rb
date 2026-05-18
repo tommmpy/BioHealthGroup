@@ -31,7 +31,8 @@ class Estudios::Workflow < ApplicationService
     end
 
     if @estudio.update(estado: :finalizado)
-      { success: true, estudio: @estudio, notice: "Estudio finalizado correctamente." }
+      @estudio.create_production_order!(status: :pending)
+      { success: true, estudio: @estudio, notice: "Estudio finalizado correctamente. Orden de producción generada." }
     else
       { success: false, estudio: @estudio, alert: "No fue posible finalizar el estudio." }
     end

@@ -108,11 +108,21 @@ module Authentication
     in [ "admin/branches", * ]         then "Modificó sucursales"
     in [ "admin/estudios", "iniciar" ] then "Inició el estudio ##{id}"
     in [ "admin/estudios", "finalizar" ] then "Finalizó el estudio ##{id}"
+    in [ "admin/invoices", "create" ]    then "Creó la factura ##{id}"
+    in [ "admin/invoices", "mark_sent" ] then "Marcó la factura ##{id} como enviada"
+    in [ "admin/invoices", "mark_paid" ] then "Marcó la factura ##{id} como pagada"
+    in [ "admin/payments", "create" ]    then "Registró un pago en la factura ##{params[:invoice_id]}"
     in [ "admin/appointments", "create" ]  then "Agendó un nuevo turno"
     in [ "admin/appointments", "update" ]  then "Actualizó el turno ##{id}"
     in [ "admin/appointments", "destroy" ] then "Eliminó el turno ##{id}"
     in [ "admin/appointments", "confirm" ] then "Confirmó el turno ##{id}"
     in [ "admin/appointments", "cancel" ]  then "Canceló el turno ##{id}"
+    in [ "admin/products", "create" ]  then "Creó un nuevo producto"
+    in [ "admin/products", "update" ]  then "Actualizó el producto ##{id}"
+    in [ "admin/products", "destroy" ] then "Eliminó el producto ##{id}"
+    in [ "admin/production_orders", "start" ]    then "Inició la orden de producción ##{id}"
+    in [ "admin/production_orders", "complete" ] then "Completó la orden de producción ##{id}"
+    in [ "admin/production_orders", "update" ]   then "Actualizó la orden de producción ##{id}"
     in [ "admin/appointments", "descargar_informe" ] then nil
     in [ "admin/dashboard", * ]        then nil  # admin dashboard views aren't mutations
     in [ "user_dashboards", * ]        then nil

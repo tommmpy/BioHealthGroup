@@ -1,0 +1,231 @@
+<% status_labels = { "draft" => "Borrador", "sent" => "Enviada", "paid" => "Pagada", "overdue" => "Vencida", "cancelled" => "Anulada" } %>
+<% status_hex = { "draft" => "#6b7280", "sent" => "#3b82f6", "paid" => "#22c55e", "overdue" => "#ef4444", "cancelled" => "#6b7280" } %>
+
+<div class="max-w-5xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+    <div>
+      <%= link_to admin_invoices_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Volver al listado
+      <% end %>
+      <h1 class="text-3xl lg:text-4xl font-black m-0 tracking-tight">Factura <%= @invoice.invoice_number %></h1>
+      <p class="text-gray-500 mt-1 text-sm">Emitida el <%= @invoice.created_at.strftime("%d/%m/%Y") %> &middot; Vence el <%= @invoice.due_date.strftime("%d/%m/%Y") %></p>
+    </div>
+    <div class="text-right flex items-center gap-3">
+      <span class="text-black px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-lg" style="background: <%= status_hex[@invoice.status] %>; box-shadow: 0 0 20px <%= status_hex[@invoice.status] %>40;">
+        <%= status_labels[@invoice.status] %>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-5 lg:gap-6">
+
+    <div class="flex flex-col gap-5 lg:gap-6">
+
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Información del Paciente</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Nombre Completo</label>
+            <span class="text-lg font-bold"><%= @invoice.user.first_name %> <%= @invoice.user.last_name %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Cédula de Identidad</label>
+            <span class="text-lg font-bold"><%= @invoice.user.ci %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Email</label>
+            <span class="text-gray-400"><%= @invoice.user.email_address %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Teléfono</label>
+            <span class="text-gray-400"><%= @invoice.user.phone_number %></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Detalle de Facturación</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between items-center py-2 border-b border-white/5">
+            <span class="text-gray-400 text-sm">
+              <%= @invoice.estudio.present? ? "Estudio biomecánico - #{@invoice.estudio.nombre_completo}" : "Servicios profesionales" %>
+            </span>
+            <span class="text-white font-semibold">$ <%= number_with_delimiter(@invoice.subtotal) %></span>
+          </div>
+          <div class="flex justify-between items-center py-2 text-sm">
+            <span class="text-gray-500">Subtotal</span>
+            <span class="text-gray-300">$ <%= number_with_delimiter(@invoice.subtotal) %></span>
+          </div>
+          <div class="flex justify-between items-center py-2 text-sm">
+            <span class="text-gray-500">IVA (<%= @invoice.tax_rate %>%)</span>
+            <span class="text-gray-300">$ <%= number_with_delimiter(@invoice.tax_amount) %></span>
+          </div>
+          <div class="flex justify-between items-center py-3 border-t border-white/10">
+            <span class="text-lg font-black text-white">Total</span>
+            <span class="text-xl font-black text-orange-500">$ <%= number_with_delimiter(@invoice.total) %></span>
+          </div>
+          <% if @invoice.notes.present? %>
+            <div class="mt-4 pt-4 border-t border-white/5">
+              <label class="text-gray-500 text-[11px] block mb-2">Notas</label>
+              <p class="text-gray-400 text-sm m-0"><%= @invoice.notes %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <% if @invoice.payments.any? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Historial de Pagos</h3>
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm">
+              <thead>
+                <tr class="border-b border-white/5">
+                  <th class="text-left text-gray-500 text-[11px] font-bold uppercase tracking-wider px-3 py-3">Fecha</th>
+                  <th class="text-left text-gray-500 text-[11px] font-bold uppercase tracking-wider px-3 py-3">Monto</th>
+                  <th class="text-left text-gray-500 text-[11px] font-bold uppercase tracking-wider px-3 py-3">Método</th>
+                  <th class="text-left text-gray-500 text-[11px] font-bold uppercase tracking-wider px-3 py-3">Referencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @invoice.payments.each do |payment| %>
+                  <tr class="border-b border-white/5">
+                    <td class="px-3 py-3 text-white"><%= payment.paid_at&.strftime("%d/%m/%Y %H:%M") %></td>
+                    <td class="px-3 py-3 font-bold text-green-400">$ <%= number_with_delimiter(payment.amount) %></td>
+                    <td class="px-3 py-3 text-gray-400"><%= payment.payment_method_label %></td>
+                    <td class="px-3 py-3 text-gray-500"><%= payment.reference.presence || "—" %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+              <tfoot>
+                <tr class="font-bold">
+                  <td class="px-3 py-3 text-white">Total pagado</td>
+                  <td class="px-3 py-3 text-green-400">$ <%= number_with_delimiter(@invoice.payments.sum(:amount)) %></td>
+                  <td colspan="2"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @invoice.draft? || @invoice.sent? || @invoice.overdue? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Registrar Pago</h3>
+
+          <%= form_with model: [ :admin, @invoice, @payment ], local: true, class: "flex flex-col gap-4" do |f| %>
+            <% if @payment.errors.any? %>
+              <div class="bg-red-950/80 backdrop-blur border border-red-500/20 p-4 rounded-xl">
+                <p class="text-red-400 text-sm font-bold mb-1">Error al registrar el pago:</p>
+                <ul class="m-0 pl-5 text-gray-300 text-sm">
+                  <% @payment.errors.full_messages.each do |msg| %>
+                    <li class="mb-0.5"><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <%= f.label :amount, "Monto", class: "text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block" %>
+                <%= f.number_field :amount, step: 0.01, min: 0.01, placeholder: "0.00", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600", required: true %>
+              </div>
+              <div>
+                <%= f.label :payment_method, "Método de pago", class: "text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block" %>
+                <%= f.select :payment_method, options_for_select(Payment.payment_methods.keys.map { |k| [Payment.new.payment_method_label, k] }, "cash"), {}, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+              </div>
+              <div>
+                <%= f.label :reference, "Referencia", class: "text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block" %>
+                <%= f.text_field :reference, placeholder: "N° de comprobante...", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+              </div>
+              <div>
+                <%= f.label :paid_at, "Fecha de pago", class: "text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block" %>
+                <%= f.datetime_field :paid_at, value: Time.current.strftime("%Y-%m-%dT%H:%M"), class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+              </div>
+            </div>
+            <div>
+              <%= f.label :notes, "Notas", class: "text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block" %>
+              <%= f.text_area :notes, rows: 2, placeholder: "Notas adicionales...", class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600 resize-none" %>
+            </div>
+            <%= f.submit "Registrar pago", class: "bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-3.5 px-6 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col gap-5 lg:gap-6">
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Acciones</h3>
+        <div class="flex flex-col gap-2.5">
+          <% if @invoice.draft? %>
+            <%= button_to "Marcar como enviada", mark_sent_admin_invoice_path(@invoice), method: :patch,
+                class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-3.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+          <% end %>
+
+          <% if @invoice.sent? || @invoice.overdue? %>
+            <%= button_to "Marcar como pagada", mark_paid_admin_invoice_path(@invoice), method: :patch,
+                class: "w-full bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-3.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+          <% end %>
+
+          <%= link_to "Descargar PDF", download_pdf_admin_invoice_path(@invoice), target: "_blank",
+              class: "w-full bg-white/5 text-white no-underline py-3.5 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
+        </div>
+      </div>
+
+      <% if @invoice.estudio.present? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Estudio vinculado</h3>
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="font-bold text-white text-sm"><%= @invoice.estudio.nombre_completo %></div>
+              <div class="text-gray-500 text-xs mt-0.5"><%= @invoice.estudio.fecha_estudio.strftime("%d/%m/%Y") %></div>
+            </div>
+            <%= link_to admin_estudio_path(@invoice.estudio), class: "text-orange-500 no-underline text-sm font-bold transition-colors duration-200 hover:text-orange-400" do %>
+              Ver estudio →
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Resumen Financiero</h3>
+        <div class="space-y-3">
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Subtotal</span>
+            <span class="text-white font-semibold">$ <%= number_with_delimiter(@invoice.subtotal) %></span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">IVA</span>
+            <span class="text-white font-semibold">$ <%= number_with_delimiter(@invoice.tax_amount) %></span>
+          </div>
+          <div class="flex justify-between text-sm">
+            <span class="text-gray-500">Pagado</span>
+            <span class="text-green-400 font-bold">$ <%= number_with_delimiter(@invoice.payments.sum(:amount)) %></span>
+          </div>
+          <% balance = @invoice.total - @invoice.payments.sum(:amount) %>
+          <% if balance > 0 %>
+            <div class="flex justify-between text-sm pt-2 border-t border-white/5">
+              <span class="text-red-400 font-bold">Saldo pendiente</span>
+              <span class="text-red-400 font-bold">$ <%= number_with_delimiter(balance) %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

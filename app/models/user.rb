@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_many :notifications, dependent: :destroy
   has_one :notification_preference, dependent: :destroy
   accepts_nested_attributes_for :notification_preference
+  has_many :invoices, dependent: :nullify
   has_many :appointments, dependent: :nullify
   has_many :assigned_appointments, class_name: "Appointment", foreign_key: :medico_id, dependent: :nullify
 

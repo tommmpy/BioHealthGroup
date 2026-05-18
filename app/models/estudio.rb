@@ -5,6 +5,7 @@ class Estudio < ApplicationRecord
 
   before_validation :calcular_cantidad_productos
   has_many_attached :files
+  has_one :production_order, dependent: :destroy
   # Opcional: Relación con el médico (que también es un User)
   belongs_to :medico, class_name: "User", optional: true
 

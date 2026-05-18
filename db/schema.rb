@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
+ActiveRecord::Schema[8.2].define(version: 2026_05_18_200002) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -141,6 +141,25 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.date "due_date", null: false
+    t.bigint "estudio_id"
+    t.string "invoice_number", null: false
+    t.text "notes"
+    t.datetime "paid_at"
+    t.integer "status", default: 0
+    t.decimal "subtotal", precision: 12, scale: 2, null: false
+    t.decimal "tax_amount", precision: 12, scale: 2, default: "0.0"
+    t.decimal "tax_rate", precision: 5, scale: 2, default: "0.0"
+    t.decimal "total", precision: 12, scale: 2, null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["estudio_id"], name: "index_invoices_on_estudio_id"
+    t.index ["invoice_number"], name: "index_invoices_on_invoice_number", unique: true
+    t.index ["user_id"], name: "index_invoices_on_user_id"
+  end
+
   create_table "messages", force: :cascade do |t|
     t.bigint "chat_room_id", null: false
     t.text "content", null: false
@@ -178,6 +197,18 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
+  create_table "payments", force: :cascade do |t|
+    t.decimal "amount", precision: 12, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.bigint "invoice_id", null: false
+    t.text "notes"
+    t.datetime "paid_at", null: false
+    t.integer "payment_method", default: 0
+    t.string "reference"
+    t.datetime "updated_at", null: false
+    t.index ["invoice_id"], name: "index_payments_on_invoice_id"
+  end
+
   create_table "process_steps", force: :cascade do |t|
     t.boolean "active"
     t.datetime "created_at", null: false
@@ -186,6 +217,32 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
     t.integer "step_number"
     t.string "title"
     t.datetime "updated_at", null: false
+  end
+
+  create_table "production_orders", force: :cascade do |t|
+    t.bigint "assigned_to_id"
+    t.datetime "completed_at"
+    t.datetime "created_at", null: false
+    t.date "due_date"
+    t.bigint "estudio_id", null: false
+    t.text "notes"
+    t.integer "status", default: 0
+    t.datetime "updated_at", null: false
+    t.index ["assigned_to_id"], name: "index_production_orders_on_assigned_to_id"
+    t.index ["estudio_id"], name: "index_production_orders_on_estudio_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.boolean "active", default: true
+    t.bigint "branch_id"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.text "description"
+    t.string "name", null: false
+    t.integer "stock_quantity", default: 0
+    t.decimal "unit_price", precision: 10, scale: 2
+    t.datetime "updated_at", null: false
+    t.index ["branch_id"], name: "index_products_on_branch_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -245,10 +302,16 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
   add_foreign_key "chat_rooms", "users", column: "assigned_to_id"
   add_foreign_key "estudios", "branches"
   add_foreign_key "estudios", "users"
+  add_foreign_key "invoices", "estudios"
+  add_foreign_key "invoices", "users"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "notification_preferences", "users"
   add_foreign_key "notifications", "users"
+  add_foreign_key "payments", "invoices"
+  add_foreign_key "production_orders", "estudios"
+  add_foreign_key "production_orders", "users", column: "assigned_to_id"
+  add_foreign_key "products", "branches"
   add_foreign_key "sessions", "users"
   add_foreign_key "users", "branches"
 end
