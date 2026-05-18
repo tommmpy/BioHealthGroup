@@ -39,7 +39,7 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 gem "image_processing", "~> 1.2"
 
-gem "faker"
+gem "rack-cors"
 
 gem "pagy", "~> 9.0"
 gem "name_of_person"
@@ -57,6 +57,7 @@ group :development, :test do
   gem "bundler-audit", require: false
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
+  gem "faker"
 end
 
 group :development do

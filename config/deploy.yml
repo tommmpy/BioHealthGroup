@@ -3,19 +3,19 @@ image: bio_health_group
 
 servers:
   web:
-    - <%= ENV.fetch("DEPLOY_SERVER", "CHANGE_ME") %>
+    - <%= ENV.fetch("DEPLOY_SERVER") %>
   job:
     hosts:
-      - <%= ENV.fetch("DEPLOY_SERVER", "CHANGE_ME") %>
+      - <%= ENV.fetch("DEPLOY_SERVER") %>
     cmd: bin/jobs
 
 proxy:
   ssl: true
-  host: <%= ENV.fetch("APPLICATION_HOST", "CHANGE_ME") %>
+  host: <%= ENV.fetch("APPLICATION_HOST") %>
   app_port: 3000
 
 registry:
-  server: <%= ENV.fetch("REGISTRY_SERVER", "CHANGE_ME") %>
+  server: <%= ENV.fetch("REGISTRY_SERVER") %>
   username: <%= ENV.fetch("REGISTRY_USER", "_") %>
   password:
     - KAMAL_REGISTRY_PASSWORD
@@ -25,10 +25,10 @@ env:
     - RAILS_MASTER_KEY
   clear:
     SOLID_QUEUE_IN_PUMA: false
-    APPLICATION_HOST: <%= ENV.fetch("APPLICATION_HOST", "CHANGE_ME") %>
-    APPLICATION_URL: <%= ENV.fetch("APPLICATION_URL", "https://CHANGE_ME") %>
+    APPLICATION_HOST: <%= ENV.fetch("APPLICATION_HOST") %>
+    APPLICATION_URL: <%= ENV.fetch("APPLICATION_URL") %>
     MAILER_FROM: <%= ENV.fetch("MAILER_FROM", "noreply@biohealthgroup.uy") %>
-    CONTACT_EMAIL: <%= ENV.fetch("CONTACT_EMAIL", "alveztomas2004@gmail.com") %>
+    CONTACT_EMAIL: <%= ENV.fetch("CONTACT_EMAIL") %>
     SMTP_ADDRESS: <%= ENV.fetch("SMTP_ADDRESS", "smtp.gmail.com") %>
     SMTP_PORT: <%= ENV.fetch("SMTP_PORT", "587") %>
     SMTP_AUTHENTICATION: <%= ENV.fetch("SMTP_AUTHENTICATION", "plain") %>
