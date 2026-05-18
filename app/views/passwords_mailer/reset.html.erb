@@ -1,0 +1,11 @@
+<h1 style="margin:0 0 12px;font-size:22px;font-weight:800;color:#fff;">Restablecé tu contraseña 🔐</h1>
+<p style="margin:0 0 14px;color:#ccc;">Recibiste este correo porque solicitaste restablecer tu contraseña en <strong style="color:#fff;">BioHealthGroup</strong>.</p>
+<table cellpadding="0" cellspacing="0" style="margin:20px 0;">
+  <tr>
+    <td align="center" style="background:linear-gradient(135deg,#ff6b00,#e85d00);border-radius:10px;">
+      <%= link_to "Restablecer contraseña", edit_password_url(@token), style:"display:inline-block;padding:13px 32px;color:#000;font-size:14px;font-weight:800;text-decoration:none;border-radius:10px;letter-spacing:0.5px;" %>
+    </td>
+  </tr>
+</table>
+<p style="margin:0 0 14px;color:#999;font-size:13px;">Este enlace expirará en <strong style="color:#ccc;">15 minutos</strong>.</p>
+<p style="margin:0 0 0;color:#666;font-size:13px;">Si no solicitaste este cambio, ignorá este mensaje.</p>

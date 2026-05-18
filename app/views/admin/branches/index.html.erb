@@ -1,0 +1,79 @@
+<div class="max-w-6xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="flex justify-between items-center gap-4 mb-8 lg:mb-10">
+    <h1 class="text-2xl lg:text-3xl font-black text-white tracking-tight m-0">Panel de Sedes</h1>
+  </div>
+
+  <%= form_with url: admin_branches_path, method: :get, local: true, class: "mb-8 lg:mb-10" do |f| %>
+    <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 relative"
+         style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+      <div class="flex-1 relative flex items-center">
+        <svg class="absolute left-4 w-[18px] h-[18px] text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-width="2"/></svg>
+        <%= f.text_field :query, value: params[:query], placeholder: "Filtrar por nombre o ubicación...", 
+            class: "w-full border-none py-3.5 pl-11 pr-4 rounded-xl text-base font-medium text-white bg-transparent outline-none placeholder-gray-500" %>
+      </div>
+      <%= f.submit "Ejecutar", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none px-5 py-2.5 rounded-xl font-bold cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-200 hover:shadow-orange-500/40 hover:scale-105" %>
+
+      <div class="hidden sm:block w-px h-7 bg-orange-500/30 mx-1"></div>
+
+      <div class="flex items-center gap-2 pl-2 sm:pl-2.5">
+        <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Estado</label>
+        <%= f.select :status, [["Abiertas", "enabled"], ["Cerradas", "disabled"]], { selected: params[:status] }, 
+            { onchange: "this.form.submit();", class: "border-none bg-gradient-to-r from-orange-500 to-orange-600 px-3 lg:px-4 py-2.5 rounded-lg font-bold text-black cursor-pointer outline-none text-sm shadow-lg shadow-orange-500/20" } %>
+      </div>
+
+      <% if params[:query].present? || params[:status].present? %>
+        <%= link_to admin_branches_path, class: "p-3 text-gray-400 no-underline transition-colors hover:text-orange-400" do %>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-width="2"/></svg>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
+    <% if @branches.any? %>
+      <% @branches.each do |branch| %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden transition-all duration-300 hover:border-orange-500/20 hover:scale-[1.01]"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="p-5 lg:p-6 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+            <div class="flex justify-between items-start gap-4 mb-5">
+              <div class="min-w-0">
+                <h2 class="text-xl font-bold text-white m-0 truncate"><%= branch.name %></h2>
+                <p class="text-gray-500 text-sm mt-1 flex items-center gap-1 truncate">
+                  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                  <%= branch.address %>
+                </p>
+              </div>
+              <div class="bg-gradient-to-br from-orange-500 to-orange-600 text-black p-2.5 rounded-xl text-center min-w-[60px] shrink-0 shadow-lg shadow-orange-500/20">
+                <span class="block text-xl font-black"><%= branch.users_count %></span>
+                <span class="text-[8px] font-bold uppercase">Usuarios</span>
+              </div>
+            </div>
+
+            <div class="h-[120px] rounded-xl overflow-hidden mb-5 border border-white/5 relative"
+                 style="box-shadow: 0 0 15px rgba(255,107,0,0.05);">
+              <iframe width="100%" height="100%" style="border:0; filter: contrast(1.1) brightness(1.1);" loading="lazy"
+                src="https://maps.google.com/maps?q=<%= u(branch.address + " Uruguay") %>&t=&z=15&ie=UTF8&iwloc=&output=embed">
+              </iframe>
+            </div>
+
+            <% if is_administrador? || is_recepcionista? %>
+            <%= button_to toggle_status_admin_branch_path(branch), method: :patch, class: "w-full border-none bg-none p-0 cursor-pointer" do %>
+              <div class="flex items-center justify-center gap-2 p-3 rounded-xl text-[11px] font-bold transition-all duration-300 shadow-lg <%= branch.enabled ? 'bg-gradient-to-r from-green-500 to-green-600 text-black shadow-green-500/25 hover:shadow-green-500/40' : 'bg-white/5 text-gray-400 border border-white/10 hover:border-orange-500/50 hover:text-orange-400' %>">
+                <div class="w-1.5 h-1.5 rounded-full bg-current"></div>
+                <%= branch.enabled ? "SUCURSAL ABIERTA" : "SUCURSAL CERRADA" %>
+              </div>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="col-span-1 md:col-span-2 py-24 text-center bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl border-2 border-dashed border-orange-500/30">
+        <p class="text-gray-500 font-semibold">No se encontraron sedes con esos criterios.</p>
+        <%= link_to "Restablecer filtros", admin_branches_path, class: "text-orange-500 font-bold no-underline transition-colors hover:text-orange-400" %>
+      </div>
+    <% end %>
+  </div>
+</div>

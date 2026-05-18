@@ -1,0 +1,52 @@
+<div class="min-h-screen flex items-center justify-center px-3 sm:px-4 -mt-14 sm:-mt-16">
+  <div class="absolute inset-0 bg-gradient-to-b from-orange-500/8 via-transparent to-transparent pointer-events-none"></div>
+
+  <div class="w-full max-w-sm relative animate-fade-up">
+    <div class="absolute -top-20 -left-20 w-40 h-40 bg-orange-500/10 rounded-full blur-3xl"></div>
+    <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-orange-500/5 rounded-full blur-3xl"></div>
+
+    <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl relative transition-all duration-300 hover:border-orange-500/20 p-6 sm:p-8"
+         style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
+      <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+
+      <div class="text-center mb-6">
+        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-orange-600/20 flex items-center justify-center mx-auto mb-4 border border-orange-500/10">
+          <svg class="w-6 h-6 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <h1 class="text-xl font-black text-white m-0 tracking-tight">Actualizar contraseña</h1>
+        <p class="text-gray-500 text-sm mt-1.5">Ingresá tu nueva contraseña</p>
+      </div>
+
+      <%= form_with url: password_path(params[:token]), method: :put, class: "flex flex-col gap-4" do |form| %>
+        <div>
+          <%= form.label :password, "Nueva contraseña", class: "block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5" %>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+              <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+            </div>
+            <%= form.password_field :password, required: true, autocomplete: "new-password", placeholder: "Mínimo 8 caracteres", maxlength: 72, class: "w-full pl-8 p-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white outline-none transition-all duration-200 placeholder:text-gray-600 focus:border-orange-500/50 focus:shadow-[0_0_12px_rgba(255,107,0,0.08)]" %>
+          </div>
+        </div>
+        <div>
+          <%= form.label :password_confirmation, "Confirmar contraseña", class: "block text-[10px] font-bold text-gray-500 uppercase tracking-wider mb-1.5" %>
+          <div class="relative">
+            <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none">
+              <svg class="w-3.5 h-3.5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+            </div>
+            <%= form.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Repetí la contraseña", maxlength: 72, class: "w-full pl-8 p-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white outline-none transition-all duration-200 placeholder:text-gray-600 focus:border-orange-500/50 focus:shadow-[0_0_12px_rgba(255,107,0,0.08)]" %>
+          </div>
+        </div>
+        <%= form.submit "Guardar nueva contraseña", class: "w-full bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-3 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] mt-1" %>
+      <% end %>
+
+      <div class="mt-6 text-center border-t border-white/5 pt-5">
+        <%= link_to new_session_path, class: "text-gray-500 no-underline text-sm font-bold transition-colors duration-200 hover:text-orange-400 inline-flex items-center gap-1.5" do %>
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+          Volver al inicio de sesión
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

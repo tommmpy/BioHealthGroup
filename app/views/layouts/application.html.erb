@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BioHealthGroup</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+      <%= stylesheet_link_tag "tailwind", "application", "data-turbo-track": "reload", preload: false %>
+    <%= javascript_importmap_tags %>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  </head>
+
+  <body class="bg-black font-sans antialiased text-white min-h-screen" style="background: radial-gradient(ellipse at 50% 0%, #0f0a04 0%, #000 70%);">
+    <%= render "layouts/navbar" %>
+    <%= render "layouts/flash" %>
+    <main class="mx-auto px-3 sm:px-6 lg:px-8 pb-6 lg:pb-10 max-w-full w-full">
+      <%= yield %>
+    </main>
+
+    <% if authenticated? && !request.path.start_with?('/conversations') %>
+      <%= link_to conversations_path,
+          class: "fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50 flex items-center gap-2.5 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full shadow-2xl shadow-orange-500/40 no-underline transition-all duration-300 hover:scale-105 hover:shadow-orange-500/60 active:scale-95 p-3 sm:p-3.5 group",
+          style: "box-shadow: 0 4px 24px rgba(255,107,0,0.4), 0 0 40px rgba(255,107,0,0.15);" do %>
+        <% if current_user.paciente? %>
+          <svg class="w-6 h-6 text-black shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+            <circle cx="12" cy="7" r="4"/>
+            <path d="M5 20v-1a7 7 0 0114 0v1"/>
+            <path d="M7 5a5 3 0 0110 0"/>
+            <rect x="5" y="5" width="2.5" height="5" rx="1"/>
+            <rect x="16.5" y="5" width="2.5" height="5" rx="1"/>
+            <path d="M17.5 11v1a2 2 0 01-2 2h-2"/>
+          </svg>
+        <% else %>
+          <svg class="w-6 h-6 text-black shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        <% end %>
+        <span class="max-w-0 overflow-hidden transition-all duration-300 group-hover:max-w-[160px] text-black text-[13px] font-black uppercase tracking-wider whitespace-nowrap">
+          <%= current_user.paciente? ? "Contactar soporte" : "Ir al chat" %>
+        </span>
+      <% end %>
+    <% end %>
+  </body>
+</html>

@@ -1,0 +1,299 @@
+<% priority_style = ->(conversation) do
+  if conversation.reopen_requested?
+    { border: "border-l-red-500/60", bg: "bg-red-500/[0.03]", glow: "rgba(239,68,68,0.06)", hover: "hover:border-red-500/30", avatar: "from-red-500 to-red-600", shadow: "shadow-red-500/20", pulse: true }
+  elsif conversation.kind == "group"
+    { border: "border-l-purple-500/60", bg: "bg-purple-500/[0.03]", glow: "rgba(168,85,247,0.06)", hover: "hover:border-purple-500/30", avatar: "from-purple-500 to-purple-600", shadow: "shadow-purple-500/20", pulse: false }
+  elsif conversation.assigned? && !conversation.closed?
+    { border: "border-l-emerald-500/60", bg: "bg-emerald-500/[0.03]", glow: "rgba(16,185,129,0.06)", hover: "hover:border-emerald-500/30", avatar: "from-emerald-500 to-emerald-600", shadow: "shadow-emerald-500/20", pulse: false }
+  elsif conversation.pending?
+    { border: "border-l-amber-500/60", bg: "bg-amber-500/[0.03]", glow: "rgba(245,158,11,0.06)", hover: "hover:border-amber-500/30", avatar: "from-amber-500 to-amber-600", shadow: "shadow-amber-500/20", pulse: false }
+  else
+    { border: "border-l-gray-600/40", bg: "bg-gray-500/[0.02]", glow: "rgba(107,114,128,0.03)", hover: "hover:border-gray-500/30", avatar: "from-gray-600 to-gray-700", shadow: "shadow-gray-500/10", pulse: false }
+  end
+end %>
+
+<% conversation_card = ->(conversation) do %>
+  <% ps = priority_style.call(conversation) %>
+  <% participants = conversation.users.to_a %>
+  <% other = conversation.other_user(current_user) %>
+  <% is_group = participants.size > 2 %>
+  <%= link_to conversation_path(conversation), class: "no-underline group block" do %>
+    <div class="<%= ps[:bg] %> backdrop-blur-xl border border-white/10 <%= ps[:border] %> border-l-4 rounded-xl p-4 lg:p-5 transition-all duration-200 <%= ps[:hover] %> hover:bg-white/[0.02] relative overflow-hidden"
+         style="box-shadow: 0 0 20px <%= ps[:glow] %>, inset 0 1px 0 rgba(255,255,255,0.04);">
+      <% if ps[:pulse] %>
+        <div class="absolute inset-0 bg-gradient-to-r from-red-500/5 to-transparent rounded-xl pointer-events-none"></div>
+      <% end %>
+      <div class="flex items-center gap-3 sm:gap-4 relative">
+        <% if is_group %>
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center text-base font-black text-black shrink-0 shadow-lg shadow-purple-500/20 relative">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            <div class="absolute -bottom-0.5 -right-0.5 w-4 h-4 rounded-full bg-purple-400 border-2 border-black flex items-center justify-center text-[7px] font-black text-black"><%= participants.size %></div>
+          </div>
+        <% else %>
+          <div class="w-11 h-11 rounded-full bg-gradient-to-br <%= ps[:avatar] %> flex items-center justify-center text-base font-black text-black shrink-0 shadow-lg <%= ps[:shadow] %>">
+            <%= other ? "#{other.first_name[0]}#{other.last_name[0]}" : "??" %>
+          </div>
+        <% end %>
+        <div class="flex-1 min-w-0">
+          <div class="flex justify-between items-center gap-2">
+            <div class="flex items-center gap-2 min-w-0">
+              <h3 class="m-0 text-sm font-bold text-white truncate"><%= conversation.title %></h3>
+              <% if conversation.reopen_requested? %>
+                <span class="text-[9px] font-black text-red-400 uppercase tracking-wider bg-red-500/10 px-1.5 py-0.5 rounded shrink-0 animate-pulse">Urgente</span>
+              <% end %>
+              <% if conversation.pending? %>
+                <span class="text-[9px] font-black text-amber-400 uppercase tracking-wider bg-amber-500/10 px-1.5 py-0.5 rounded shrink-0">Espera</span>
+              <% end %>
+            </div>
+            <% if conversation.last_message %>
+              <span class="text-[10px] text-gray-600 shrink-0 whitespace-nowrap hidden sm:inline"><%= time_ago_in_words(conversation.last_message.created_at) %></span>
+            <% end %>
+          </div>
+          <div class="flex items-center gap-2 mt-1 flex-wrap">
+            <% if is_group %>
+              <% participants.reject { |u| u == current_user }.each do |p| %>
+                <span class="text-xs text-gray-400 truncate hidden sm:inline"><%= p.first_name %> <%= p.last_name %></span>
+                <span class="text-[9px] font-bold uppercase px-1.5 py-0.5 rounded bg-white/5 text-gray-500 shrink-0"><%= p.role.humanize %></span>
+              <% end %>
+            <% elsif other %>
+              <span class="text-xs text-gray-400 truncate"><%= other.first_name %> <%= other.last_name %></span>
+              <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-white/5 text-gray-500 shrink-0"><%= other.role.humanize %></span>
+            <% end %>
+            <% if conversation.assigned? && !conversation.closed? %>
+              <span class="text-[10px] text-emerald-400 font-bold shrink-0">· Activo</span>
+            <% end %>
+            <% if conversation.closed? %>
+              <span class="text-[10px] text-gray-600 font-bold uppercase shrink-0">· Cerrado</span>
+            <% end %>
+            <span class="text-xs text-gray-600 truncate hidden md:inline">
+              · <%= conversation.last_message ? conversation.last_message.content.truncate(35) : "Sin mensajes" %>
+            </span>
+          </div>
+        </div>
+        <svg class="w-4 h-4 text-gray-600 shrink-0 transition-all duration-200 group-hover:text-orange-400 group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="max-w-4xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 mb-6 lg:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 relative"
+       style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
+    <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+    <div>
+      <h1 class="text-2xl lg:text-3xl font-black text-white m-0 tracking-tight">Mensajes</h1>
+      <p class="text-gray-500 text-sm mt-1">Tus conversaciones activas</p>
+    </div>
+    <div>
+      <% if current_user.paciente? %>
+        <%= link_to new_conversation_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-5 py-3 rounded-xl text-sm font-black uppercase tracking-wider shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105 inline-flex items-center gap-2" do %>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          Contactar soporte
+        <% end %>
+      <% else %>
+        <%= link_to new_conversation_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-5 py-3 rounded-xl text-sm font-black uppercase tracking-wider shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105 inline-flex items-center gap-2" do %>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 4v16m8-8H4"/></svg>
+          Nuevo chat
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if current_user.paciente? %>
+    <!-- Mensajes del sistema -->
+    <div class="mb-8">
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-lg bg-blue-500/10 flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <h2 class="text-sm font-black text-blue-400 uppercase tracking-wider m-0">Mensajes del sistema</h2>
+      </div>
+
+      <% if @system_conversations.any? %>
+        <div class="flex flex-col gap-3">
+          <% @system_conversations.each { |c| conversation_card.call(c) } %>
+        </div>
+      <% else %>
+        <div class="bg-black/80 backdrop-blur-xl border border-blue-500/10 rounded-xl p-6 text-center relative"
+             style="box-shadow: 0 0 20px rgba(59,130,246,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="w-12 h-12 rounded-xl bg-blue-500/5 flex items-center justify-center mx-auto mb-3 border border-blue-500/10">
+            <svg class="w-5 h-5 text-blue-400/60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <p class="text-gray-500 text-sm m-0 font-semibold">No tenés mensajes del sistema por ahora.</p>
+        </div>
+      <% end %>
+    </div>
+
+    <!-- Tickets de soporte -->
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <div class="w-6 h-6 rounded-lg bg-orange-500/10 flex items-center justify-center">
+          <svg class="w-3.5 h-3.5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+        </div>
+        <h2 class="text-sm font-black text-orange-400 uppercase tracking-wider m-0">Tickets de soporte</h2>
+      </div>
+
+      <% if @support_conversations.any? %>
+        <div class="flex flex-col gap-3">
+          <% @support_conversations.each { |c| conversation_card.call(c) } %>
+        </div>
+      <% else %>
+        <div class="text-center py-20 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl relative"
+             style="box-shadow: 0 0 20px rgba(255,107,0,0.02), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 border border-white/10">
+            <svg class="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+          </div>
+          <p class="text-gray-500 font-semibold">No tenés tickets de soporte</p>
+          <p class="text-gray-600 text-sm mt-1">Iniciá un chat para contactar con nuestro equipo.</p>
+        </div>
+      <% end %>
+    </div>
+
+  <% else %>
+    <!-- Staff view -->
+    <% if is_administrador? || is_recepcionista? %>
+      <!-- Pendientes -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-lg bg-amber-500/10 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="text-sm font-black text-amber-400 uppercase tracking-wider m-0">Pendientes</h2>
+          <% if @pending_conversations.any? %>
+            <span class="text-[10px] font-black text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full"><%= @pending_conversations.size %></span>
+          <% end %>
+        </div>
+
+        <% if @pending_conversations.any? %>
+          <div class="flex flex-col gap-3">
+            <% @pending_conversations.each do |c| %>
+              <% other = c.other_user(current_user) %>
+              <div class="bg-amber-500/[0.03] backdrop-blur-xl border border-white/10 border-l-4 border-l-amber-500/60 rounded-xl p-4 lg:p-5 relative transition-all duration-200 hover:border-amber-500/30 hover:bg-white/[0.02] overflow-hidden"
+                   style="box-shadow: 0 0 20px rgba(245,158,11,0.05), inset 0 1px 0 rgba(255,255,255,0.04);">
+                <div class="flex items-center gap-4">
+                  <div class="w-11 h-11 rounded-full bg-gradient-to-br from-amber-500 to-amber-600 flex items-center justify-center text-base font-black text-black shrink-0 shadow-lg shadow-amber-500/20">
+                    <%= "#{other&.first_name&.first || '?'}#{other&.last_name&.first || '?'}" %>
+                  </div>
+                  <div class="flex-1 min-w-0">
+                    <div class="flex justify-between items-center gap-2">
+                      <h3 class="m-0 text-sm font-bold text-white truncate"><%= c.title %></h3>
+                      <span class="text-[10px] text-gray-600 shrink-0"><%= time_ago_in_words(c.created_at) %></span>
+                    </div>
+                    <div class="flex items-center gap-2 mt-1">
+                      <span class="text-xs text-gray-400 truncate"><%= other ? "#{other.first_name} #{other.last_name}" : "Sin usuario" %></span>
+                      <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-white/5 text-gray-500 shrink-0"><%= other&.role&.humanize %></span>
+                      <span class="text-[10px] text-amber-400 font-bold shrink-0">· Espera</span>
+                    </div>
+                  </div>
+                  <%= button_to accept_conversation_path(c), method: :patch,
+                      class: "bg-gradient-to-r from-amber-500 to-amber-600 text-black border-none px-4 py-2.5 rounded-xl text-[11px] font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-amber-500/25 transition-all duration-200 hover:shadow-amber-500/40 hover:scale-105 shrink-0" do %>
+                    Aceptar
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% else %>
+          <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl p-6 text-center relative"
+               style="box-shadow: 0 0 20px rgba(255,107,0,0.02), inset 0 1px 0 rgba(255,255,255,0.05);">
+            <p class="text-gray-600 text-sm m-0">No hay tickets pendientes.</p>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Mis chats -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          </div>
+          <h2 class="text-sm font-black text-emerald-400 uppercase tracking-wider m-0">Mis chats</h2>
+          <% if @my_chats.any? %>
+            <span class="text-[10px] font-black text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full"><%= @my_chats.size %></span>
+          <% end %>
+        </div>
+
+        <% if @my_chats.any? %>
+          <div class="flex flex-col gap-3">
+            <% @my_chats.each { |c| conversation_card.call(c) } %>
+          </div>
+        <% else %>
+          <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl p-6 text-center relative"
+               style="box-shadow: 0 0 20px rgba(255,107,0,0.02), inset 0 1px 0 rgba(255,255,255,0.05);">
+            <p class="text-gray-600 text-sm m-0">No tenés chats activos.</p>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Cerrados -->
+      <div>
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-lg bg-gray-500/10 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="text-sm font-black text-gray-500 uppercase tracking-wider m-0">Cerrados</h2>
+          <% if @closed_conversations.any? %>
+            <span class="text-[10px] font-black text-gray-500 bg-gray-500/10 px-2 py-0.5 rounded-full"><%= @closed_conversations.size %></span>
+          <% end %>
+        </div>
+
+        <% if @closed_conversations.any? %>
+          <div class="flex flex-col gap-3">
+            <% @closed_conversations.each { |c| conversation_card.call(c) } %>
+          </div>
+        <% else %>
+          <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-xl p-6 text-center relative"
+               style="box-shadow: 0 0 20px rgba(255,107,0,0.02), inset 0 1px 0 rgba(255,255,255,0.05);">
+            <p class="text-gray-600 text-sm m-0">No hay chats cerrados.</p>
+          </div>
+        <% end %>
+      </div>
+    <% else %>
+      <!-- Other staff (medico, operario, disenador) view -->
+      <div class="mb-8">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-6 h-6 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+          </div>
+          <h2 class="text-sm font-black text-emerald-400 uppercase tracking-wider m-0">Mis chats</h2>
+          <% if @my_chats.any? %>
+            <span class="text-[10px] font-black text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full"><%= @my_chats.size %></span>
+          <% end %>
+        </div>
+
+        <% if @my_chats.any? %>
+          <div class="flex flex-col gap-3">
+            <% @my_chats.each { |c| conversation_card.call(c) } %>
+          </div>
+        <% else %>
+          <div class="text-center py-20 bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl relative"
+               style="box-shadow: 0 0 20px rgba(255,107,0,0.02), inset 0 1px 0 rgba(255,255,255,0.05);">
+            <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+            <div class="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mx-auto mb-4 border border-white/10">
+              <svg class="w-7 h-7 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+            </div>
+            <p class="text-gray-500 font-semibold">No hay conversaciones activas</p>
+          </div>
+        <% end %>
+      </div>
+
+      <% if @closed_conversations&.any? %>
+        <div class="mb-8">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-6 h-6 rounded-lg bg-gray-500/10 flex items-center justify-center">
+              <svg class="w-3.5 h-3.5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            </div>
+            <h2 class="text-sm font-black text-gray-500 uppercase tracking-wider m-0">Cerrados</h2>
+            <span class="text-[10px] font-black text-gray-500 bg-gray-500/10 px-2 py-0.5 rounded-full"><%= @closed_conversations.size %></span>
+          </div>
+          <div class="flex flex-col gap-3">
+            <% @closed_conversations.each { |c| conversation_card.call(c) } %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
+
+</div>

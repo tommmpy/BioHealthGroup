@@ -1,0 +1,71 @@
+<% password_digest = BCrypt::Password.create("password") %>
+
+one:
+  email_address: one@example.com
+  password_digest: <%= password_digest %>
+  first_name: Juan
+  last_name: Pérez
+  ci: 37281592
+  phone_number: 099123456
+  address: Calle 123
+  branch: one
+  user_type: <%= User::USER_TYPES[:persona] %>
+  birthday: 2000-01-01
+  contacto_root: ""
+  status: <%= User::STATUSES[:desconectado] %>
+
+two:
+  email_address: two@example.com
+  password_digest: <%= password_digest %>
+  first_name: María
+  last_name: García
+  ci: 41936270
+  phone_number: 099765432
+  address: Avenida 456
+  branch: one
+  user_type: <%= User::USER_TYPES[:empresa] %>
+  birthday: 1990-05-15
+  contacto_root: BioHealthGroup S.A. - 099 111 222
+  status: <%= User::STATUSES[:desconectado] %>
+
+menor:
+  email_address: menor@example.com
+  password_digest: <%= password_digest %>
+  first_name: Alex
+  last_name: López
+  ci: 11111111
+  phone_number: 099111111
+  address: Calle Menor 789
+  branch: one
+  user_type: <%= User::USER_TYPES[:persona] %>
+  birthday: 2010-06-01
+  contacto_root: "099 888 777"
+  status: <%= User::STATUSES[:desconectado] %>
+
+sin_birthday:
+  email_address: sinbirth@example.com
+  password_digest: <%= password_digest %>
+  first_name: Sin
+  last_name: Cumple
+  ci: 29143681
+  phone_number: 099222222
+  address: Calle 222
+  branch: one
+  user_type: <%= User::USER_TYPES[:persona] %>
+  contacto_root: ""
+  status: <%= User::STATUSES[:desconectado] %>
+
+admin:
+  email_address: admin@example.com
+  password_digest: <%= password_digest %>
+  first_name: Admin
+  last_name: User
+  ci: 87523162
+  phone_number: 099555555
+  address: Admin 123
+  branch: one
+  user_type: <%= User::USER_TYPES[:persona] %>
+  role: <%= User::ROLES[:administrador] %>
+  birthday: 1985-01-01
+  contacto_root: ""
+  status: <%= User::STATUSES[:desconectado] %>

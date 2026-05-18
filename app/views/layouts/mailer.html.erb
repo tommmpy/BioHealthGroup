@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      body{ margin:0; padding:0; background-color:#0a0a0f; font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+      a{ color:#ff6b00; text-decoration:none; }
+      a:hover{ text-decoration:underline; }
+      @media only screen and (max-width:600px){ .container{ width:100%!important; } .content{ padding:24px 20px!important; } }
+    </style>
+  </head>
+  <body style="margin:0;padding:0;background-color:#0a0a0f;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color:#0a0a0f;">
+      <tr>
+        <td align="center" style="padding:40px 20px;">
+          <!--[if mso]><table width="600" cellpadding="0" cellspacing="0"><tr><td><![endif]-->
+          <table class="container" width="600" cellpadding="0" cellspacing="0" style="width:100%;max-width:600px;background-color:#111115;border-radius:16px;border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+            <tr>
+              <td align="center" style="padding:36px 36px 4px;">
+                <img src="cid:logo@bhg" alt="BioHealthGroup" width="180" style="width:180px;height:auto;display:block;border:0;outline:none;">
+              </td>
+            </tr>
+            <tr>
+              <td class="content" style="padding:16px 36px 28px;color:#e5e5e5;font-size:15px;line-height:1.7;">
+                <%= yield %>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding:16px 36px 24px;border-top:1px solid rgba(255,255,255,0.05);text-align:center;color:#555;font-size:12px;line-height:1.6;">
+                <p style="margin:0 0 2px;">&copy; 2025 BioHealthGroup &mdash; Todos los derechos reservados</p>
+                <p style="margin:0;">Montevideo, Uruguay</p>
+              </td>
+            </tr>
+          </table>
+          <!--[if mso]></td></tr></table><![endif]-->
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

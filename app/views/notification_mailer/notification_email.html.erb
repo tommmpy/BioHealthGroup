@@ -1,0 +1,18 @@
+<h1 style="font-family: system-ui, sans-serif; color: #fff; font-size: 20px; margin: 0 0 12px 0;">
+  <%= @notification.title %>
+</h1>
+
+<% if @notification.body.present? %>
+  <p style="font-family: system-ui, sans-serif; color: #aaa; font-size: 15px; line-height: 1.5; margin: 0 0 20px 0;">
+    <%= @notification.body %>
+  </p>
+<% end %>
+
+<% if @notification.notifiable.is_a?(Chat::Conversation) %>
+  <p style="margin: 0;">
+    <a href="<%= conversation_url(@notification.notifiable) %>"
+       style="font-family: system-ui, sans-serif; display: inline-block; background: linear-gradient(135deg, #f97316, #ea580c); color: #000; text-decoration: none; padding: 12px 24px; border-radius: 12px; font-size: 14px; font-weight: 700;">
+      Ver conversación
+    </a>
+  </p>
+<% end %>

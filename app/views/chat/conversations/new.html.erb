@@ -1,0 +1,165 @@
+<div class="max-w-2xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="mb-6 lg:mb-8">
+    <%= link_to conversations_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Volver a mensajes
+    <% end %>
+    <h1 class="text-2xl lg:text-3xl font-black text-white m-0 tracking-tight">Nuevo chat</h1>
+    <p class="text-gray-400 text-sm mt-1"><%= current_user.paciente? ? "Contanos en qué podemos ayudarte." : "Selecciona un usuario para iniciar una conversación." %></p>
+  </div>
+
+  <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
+       style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
+    <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+
+    <% if current_user.paciente? %>
+      <%= form_with url: conversations_path, method: :post, local: true, class: "flex flex-col gap-4" do |f| %>
+        <div class="flex flex-col gap-2">
+          <label for="patient-title" class="text-xs font-black text-orange-500 uppercase tracking-wider">Asunto *</label>
+          <input type="text" name="title" id="patient-title" required
+                 placeholder="Ej: Consulta sobre mis estudios"
+                 class="w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600">
+        </div>
+        <button type="submit" class="bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-4 px-6 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02]">
+          Enviar
+        </button>
+      <% end %>
+    <% else %>
+      <div x-data="{
+        q: '',
+        title: '',
+        selected: [],
+        error: '',
+        users: <%= User.where.not(id: current_user.id).order(:first_name).map { |u|
+          { id: u.id, first_name: u.first_name, last_name: u.last_name,
+            name: "#{u.first_name} #{u.last_name}",
+            initials: "#{u.first_name[0]}#{u.last_name[0]}",
+            role: u.role, role_human: u.role.humanize, email: u.email_address }
+        }.to_json %>,
+        get filtered() {
+          if (!this.q) return this.users
+          const s = this.q.toLowerCase()
+          return this.users.filter(u =>
+            u.name.toLowerCase().includes(s) ||
+            u.email.toLowerCase().includes(s) ||
+            u.role_human.toLowerCase().includes(s)
+          )
+        },
+        get selectedUsers() {
+          return this.users.filter(u => this.selected.includes(u.id))
+        },
+        get hasPaciente() {
+          return this.selectedUsers.some(u => u.role === 'paciente')
+        },
+        get pacienteCount() {
+          return this.selectedUsers.filter(u => u.role === 'paciente').length
+        },
+        toggleUser(id) {
+          this.error = ''
+          const idx = this.selected.indexOf(id)
+          if (idx === -1) { this.selected.push(id) }
+          else { this.selected.splice(idx, 1) }
+        },
+        createChat() {
+          this.error = ''
+          if (!this.title.trim()) { this.error = 'Debes agregar un asunto.'; return }
+          if (this.selected.length === 0) { this.error = 'Debes seleccionar al menos un usuario.'; return }
+          if (this.pacienteCount > 1) { this.error = 'Solo puede haber un paciente por conversación.'; return }
+          this.$refs.recipients.value = this.selected.join(',')
+          this.$refs.formTitle.value = this.title
+          this.$refs.form.submit()
+        }
+      }">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-5">
+          <div class="flex-1 flex flex-col gap-2 min-w-0">
+            <label class="text-xs font-black text-orange-500 uppercase tracking-wider">Asunto</label>
+            <input type="text" x-model="title" placeholder="Ej: Consulta sobre plantares..."
+                   class="w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm lg:text-base outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600">
+          </div>
+          <div class="flex flex-col gap-2 sm:w-48 shrink-0">
+            <label class="text-xs font-black text-orange-500 uppercase tracking-wider">Acción</label>
+            <button type="button" @click="createChat"
+                    class="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-3 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98]">
+              Crear chat
+            </button>
+          </div>
+        </div>
+
+        <div x-show="error" x-cloak class="mb-4 bg-red-500/10 border border-red-500/20 rounded-xl p-3 text-red-400 text-sm">
+          <span x-text="error"></span>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
+          <div class="flex-1 w-full sm:w-auto flex flex-col gap-2 min-w-0">
+            <label class="text-xs font-black text-orange-500 uppercase tracking-wider">Buscar usuario</label>
+            <div class="relative">
+              <svg class="absolute left-3 inset-y-0 w-[18px] h-full text-gray-500 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+              <input type="text" x-model="q" placeholder="Buscar por nombre, rol o email..."
+                     class="w-full pl-11 pr-4 py-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600">
+            </div>
+          </div>
+          <div class="flex items-center gap-2 shrink-0 pt-0 sm:pt-7">
+            <span class="text-[10px] font-black uppercase tracking-wider text-gray-500"
+                  x-show="selected.length > 0"
+                  x-text="selected.length + ' seleccionado' + (selected.length !== 1 ? 's' : '')"></span>
+            <button type="button" @click="q = ''; selected = []; error = ''" x-show="q || selected.length > 0"
+                    class="text-gray-500 text-[11px] font-bold bg-white/5 border border-white/10 px-3 py-2.5 rounded-lg cursor-pointer transition-all duration-200 hover:text-orange-400 hover:border-orange-500/30 hover:bg-orange-500/5">
+              Limpiar
+            </button>
+          </div>
+        </div>
+
+        <div x-show="selected.length > 0" class="mt-3 flex flex-wrap gap-1.5">
+          <template x-for="u in selectedUsers" :key="u.id">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold border transition-colors duration-200"
+                  :class="u.role === 'paciente' ? 'bg-blue-500/10 text-blue-400 border-blue-500/20' : 'bg-orange-500/10 text-orange-400 border-orange-500/20'">
+              <span x-text="u.name"></span>
+              <span class="text-[9px] font-black uppercase opacity-60" x-text="u.role_human"></span>
+              <button type="button" @click="toggleUser(u.id)" class="opacity-50 hover:opacity-100 cursor-pointer p-0 border-none bg-none text-sm leading-none ml-0.5">&times;</button>
+            </span>
+          </template>
+        </div>
+
+        <div class="mt-4 flex flex-col gap-2 max-h-72 lg:max-h-80 overflow-y-auto rounded-xl">
+          <template x-for="u in filtered" :key="u.id">
+            <button type="button" @click="toggleUser(u.id)"
+                    class="w-full text-left bg-white/5 border rounded-xl p-3 sm:p-3.5 transition-all duration-200 cursor-pointer group"
+                    :class="selected.includes(u.id) ? 'border-orange-500/40 bg-orange-500/5' : 'border-white/10 hover:border-orange-500/20 hover:bg-white/[0.07]'">
+              <div class="flex items-center gap-3">
+                <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center text-xs sm:text-sm font-black text-black shrink-0 shadow-lg shadow-orange-500/20"
+                     x-text="u.initials"></div>
+                <div class="flex-1 min-w-0">
+                  <div class="font-bold text-white text-xs sm:text-sm truncate" x-text="u.name"></div>
+                  <div class="flex items-center gap-1.5 sm:gap-2 mt-0.5 flex-wrap">
+                    <span class="text-[9px] sm:text-[10px] font-bold uppercase px-1.5 py-0.5 rounded bg-white/5 text-gray-500 shrink-0" x-text="u.role_human"></span>
+                    <span class="text-[10px] sm:text-xs text-gray-600 truncate" x-text="u.email"></span>
+                  </div>
+                </div>
+                <svg class="w-4 h-4 shrink-0 transition-all duration-200"
+                     :class="selected.includes(u.id) ? 'text-orange-400' : 'text-gray-600 group-hover:text-orange-400'"
+                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"
+                        :d="selected.includes(u.id) ? 'M5 13l4 4L19 7' : 'M12 4v16m8-8H4'"/>
+                </svg>
+              </div>
+            </button>
+          </template>
+          <div x-show="filtered.length === 0" class="py-8 text-center text-gray-500 text-sm">
+            <span x-show="q">No se encontraron usuarios que coincidan con "<span x-text="q" class="text-orange-400"></span>"</span>
+            <span x-show="!q">No hay usuarios disponibles</span>
+          </div>
+        </div>
+
+        <form method="post" action="<%= conversations_path %>" x-ref="form" style="display: none;">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="hidden" name="recipient_ids" x-ref="recipients">
+          <input type="hidden" name="title" x-ref="formTitle">
+        </form>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+

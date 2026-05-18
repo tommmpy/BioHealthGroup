@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  nombre_completo: MyString
+  tipo_producto: 
+  cantidad_productos: 1
+  fecha_estudio: 2026-05-16 23:11:39
+  branch: one
+  medico_id: 1
+  metar_paciente: MyString
+  estado: 1
+
+two:
+  user: two
+  nombre_completo: MyString
+  tipo_producto: 
+  cantidad_productos: 1
+  fecha_estudio: 2026-05-16 23:11:39
+  branch: two
+  medico_id: 1
+  metar_paciente: MyString
+  estado: 1

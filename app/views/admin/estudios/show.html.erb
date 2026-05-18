@@ -1,0 +1,131 @@
+<div class="max-w-5xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+
+  <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
+    <div>
+      <%= link_to admin_estudios_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+        Volver al listado
+      <% end %>
+      <h1 class="text-3xl lg:text-4xl font-black m-0 tracking-tight">Estudio #<%= @estudio.id %></h1>
+      <p class="text-gray-500 mt-1 text-sm">Agendado para el <%= @estudio.fecha_estudio.strftime("%d/%m/%Y a las %H:%M") %> hs</p>
+    </div>
+    <div class="text-right">
+      <% 
+        color = case @estudio.estado
+                when "pendiente" then "#ff9f00"
+                when "en_progreso" then "#00a3ff"
+                when "finalizado" then "#00ff85"
+                else "#eee"
+                end
+      %>
+      <span class="text-black px-5 py-2 rounded-full text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-lg" style="background: <%= color %>; box-shadow: 0 0 20px <%= color %>40;">
+        <%= @estudio.estado.humanize %>
+      </span>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-5 lg:gap-6">
+
+    <div class="flex flex-col gap-5 lg:gap-6">
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Información del Paciente</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Nombre Completo</label>
+            <span class="text-lg font-bold"><%= @estudio.nombre_completo %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Cédula de Identidad</label>
+            <span class="text-lg font-bold"><%= @estudio.user&.ci %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Contacto / Empresa</label>
+            <span class="text-gray-400"><%= @estudio.user&.contacto_root.presence || "Sin datos de contacto" %></span>
+          </div>
+          <div>
+            <label class="text-gray-500 text-[11px] block mb-1">Sucursal</label>
+            <span class="text-gray-400"><%= @estudio.branch&.name %></span>
+          </div>
+        </div>
+      </div>
+
+      <% if @estudio.medico.present? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Médico Asignado</h3>
+          <div class="flex items-center gap-4">
+            <div class="bg-gradient-to-br from-orange-500 to-orange-600 w-12 h-12 rounded-full flex items-center justify-center text-lg font-black text-black shadow-lg shadow-orange-500/20 shrink-0">
+              <%= @estudio.medico.first_name[0] %><%= @estudio.medico.last_name[0] %>
+            </div>
+            <div class="min-w-0">
+              <span class="text-lg font-bold"><%= @estudio.medico.first_name %> <%= @estudio.medico.last_name %></span>
+              <div class="text-gray-500 text-sm mt-1 truncate"><%= @estudio.medico.email_address %></div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if @estudio.en_progreso? || @estudio.finalizado? %>
+        <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
+             style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+          <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+          <h3 class="text-orange-500 text-xs uppercase tracking-widest font-bold mb-5">Resultados Clínicos</h3>
+          <% if @estudio.metar_paciente.present? %>
+            <div class="bg-white/5 p-5 rounded-xl border-l-4 border-green-500 transition-all duration-200 hover:bg-white/[0.07]">
+              <label class="text-gray-500 text-[11px] block mb-2">VALORES METAR</label>
+              <span class="font-mono text-3xl lg:text-4xl font-black tracking-widest text-green-400 break-all drop-shadow-[0_0_10px_rgba(0,255,133,0.3)]">
+                <%= @estudio.metar_paciente %>
+              </span>
+            </div>
+          <% elsif @estudio.en_progreso? %>
+            <div class="text-center py-6 border-2 border-dashed border-white/10 rounded-xl">
+              <p class="text-gray-500 mb-0 text-sm">Esperando carga de resultados por el médico...</p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col gap-5 lg:gap-6">
+      <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
+           style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
+        <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+        <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Pedido</h3>
+        <div class="flex flex-col gap-2.5">
+          <% Array(@estudio.tipo_producto).each do |producto| %>
+            <div class="bg-white/5 border border-white/5 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/20">
+              <%= producto %>
+            </div>
+          <% end %>
+          <div class="mt-2.5 pt-2.5 border-t border-white/5 flex justify-between">
+            <span class="text-gray-500 text-xs">Cantidad:</span>
+            <span class="font-bold text-orange-500"><%= @estudio.cantidad_productos %></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2.5">
+        <% if is_medico? || is_administrador? %>
+          <% if @estudio.pendiente? %>
+            <%= button_to "INICIAR ESTUDIO", iniciar_admin_estudio_path(@estudio), 
+                method: :patch,
+                class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+          <% elsif @estudio.en_progreso? %>
+            <%= button_to "FINALIZAR ESTUDIO", finalizar_admin_estudio_path(@estudio), 
+                method: :patch,
+                class: "w-full bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
+          <% elsif @estudio.finalizado? %>
+            <div class="w-full border border-white/10 py-4 rounded-xl text-center text-black font-bold text-xs shadow-lg" style="background: <%= color %>; box-shadow: 0 0 20px <%= color %>40;">
+              ESTUDIO COMPLETADO
+            </div>
+            <%= link_to "DESCARGAR INFORME PDF", descargar_informe_admin_estudio_path(@estudio), target: "_blank", 
+                class: "w-full bg-white/5 text-white no-underline py-4 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

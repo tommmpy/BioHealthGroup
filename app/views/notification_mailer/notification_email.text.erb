@@ -1,0 +1,10 @@
+<%= @notification.title %>
+==============================
+
+<% if @notification.body.present? %>
+<%= @notification.body %>
+
+<% end %>
+<% if @notification.notifiable.is_a?(Chat::Conversation) %>
+Podés ver la conversación en: <%= conversation_url(@notification.notifiable) %>
+<% end %>

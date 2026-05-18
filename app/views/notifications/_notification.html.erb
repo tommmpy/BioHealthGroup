@@ -1,0 +1,42 @@
+<% notification = local_assigns[:notification] %>
+<% unread = !notification.read %>
+
+<% notif_style = case notification.kind
+  when "reopen_request"
+    { border: "border-l-red-500/60", bg: "bg-red-500/[0.04]", dot: "bg-red-500", icon: "alert", glow: "rgba(239,68,68,0.05)" }
+  when "new_ticket", "ticket_accepted"
+    { border: "border-l-orange-500/60", bg: "bg-orange-500/[0.04]", dot: "bg-orange-500", icon: "ticket", glow: "rgba(255,107,0,0.05)" }
+  when "new_message"
+    { border: "border-l-blue-500/60", bg: "bg-blue-500/[0.04]", dot: "bg-blue-500", icon: "message", glow: "rgba(59,130,246,0.05)" }
+  else
+    { border: "border-l-gray-500/40", bg: "bg-gray-500/[0.02]", dot: "bg-gray-500", icon: "info", glow: "rgba(107,114,128,0.03)" }
+  end %>
+
+<%= button_to mark_read_notification_path(notification), method: :patch,
+    class: "w-full text-left bg-transparent border-0 cursor-pointer p-0 m-0 group" do %>
+  <div class="<%= unread ? notif_style[:bg] : 'bg-black/80' %> backdrop-blur-xl border border-white/10 <%= notif_style[:border] %> border-l-4 rounded-xl p-4 transition-all duration-200 hover:border-l-orange-500/60 hover:bg-white/[0.02] flex items-start gap-3 relative overflow-hidden"
+       style="box-shadow: 0 0 15px <%= notif_style[:glow] %>, inset 0 1px 0 rgba(255,255,255,0.04);">
+    <div class="flex-1 min-w-0">
+      <div class="flex justify-between items-start gap-2">
+        <div class="flex items-center gap-2 min-w-0">
+          <% if unread %>
+            <div class="w-2 h-2 rounded-full <%= notif_style[:dot] %> shrink-0 shadow-lg" style="box-shadow: 0 0 6px <%= notif_style[:dot] == 'bg-red-500' ? 'rgba(239,68,68,0.5)' : notif_style[:dot] == 'bg-orange-500' ? 'rgba(255,107,0,0.5)' : 'rgba(59,130,246,0.5)' %>;"></div>
+          <% end %>
+          <h4 class="text-sm <%= unread ? 'text-white font-bold' : 'text-gray-300 font-semibold' %> m-0 truncate"><%= notification.title %></h4>
+          <% if notification.kind == "reopen_request" && unread %>
+            <span class="text-[9px] font-black text-red-400 uppercase tracking-wider bg-red-500/10 px-1.5 py-0.5 rounded animate-pulse">Urgente</span>
+          <% end %>
+        </div>
+        <span class="text-[10px] text-gray-600 shrink-0"><%= time_ago_in_words(notification.created_at) %></span>
+      </div>
+      <% if notification.body.present? %>
+        <p class="text-xs <%= unread ? 'text-gray-300' : 'text-gray-500' %> mt-1 mb-0"><%= notification.body %></p>
+      <% end %>
+      <% if notification.kind == "reopen_request" && unread %>
+        <div class="mt-2 flex items-center gap-1.5">
+          <span class="text-[10px] font-bold text-red-400 uppercase tracking-wider">Requiere atención</span>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

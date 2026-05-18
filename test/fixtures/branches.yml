@@ -1,0 +1,11 @@
+one:
+  name: Sucursal Centro
+  address: Av. 18 de Julio 1234
+  phone: 29001234
+  enabled: true
+
+two:
+  name: Sucursal Cordón
+  address: Av. Uruguay 5678
+  phone: 29005678
+  enabled: false

@@ -1,0 +1,60 @@
+<div class="max-w-3xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
+  <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-6 lg:p-8 relative"
+       style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
+    <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
+
+    <div class="flex items-center gap-3 mb-8">
+      <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-lg shadow-orange-500/20">
+        <svg class="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+      </div>
+      <h1 class="text-2xl font-black text-white m-0">Editar Testimonio</h1>
+    </div>
+
+    <%= form_with model: [:admin, @testimonial], local: true, class: "flex flex-col gap-5" do |f| %>
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <%= f.label :author_name, "Nombre del autor", class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+          <%= f.text_field :author_name, required: true, class: "w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+        </div>
+        <div>
+          <%= f.label :author_role, "Rol del autor", class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+          <%= f.text_field :author_role, placeholder: "Ej: Atleta, Paciente", class: "w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
+        </div>
+      </div>
+
+      <div>
+        <%= f.label :content, "Testimonio", class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+        <%= f.text_area :content, required: true, rows: 4, class: "w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600 resize-none" %>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div>
+          <%= f.label :sort_order, "Orden", class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+          <%= f.number_field :sort_order, class: "w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+        </div>
+        <div>
+          <%= f.label :active, class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+          <label class="flex items-center gap-3 cursor-pointer pt-2">
+            <%= f.check_box :active, class: "w-5 h-5 rounded border-white/10 bg-white/5 text-orange-500 focus:ring-orange-500" %>
+            <span class="text-white text-sm">Activo</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <%= f.label :avatar, "Foto del autor", class: "block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2" %>
+        <% if @testimonial.avatar.attached? %>
+          <div class="mb-3 w-16 h-16 rounded-full overflow-hidden border border-white/10">
+            <%= image_tag @testimonial.avatar, class: "w-full h-full object-cover" %>
+          </div>
+        <% end %>
+        <%= f.file_field :avatar, accept: "image/*", class: "w-full p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm outline-none transition-all duration-200 focus:border-orange-500/50 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-bold file:bg-gradient-to-r file:from-orange-500 file:to-orange-600 file:text-black cursor-pointer" %>
+      </div>
+
+      <div class="flex items-center gap-3 pt-4 border-t border-white/5">
+        <%= f.submit "Actualizar", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none px-8 py-3.5 rounded-xl text-sm font-bold cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-105" %>
+        <%= link_to "Cancelar", admin_testimonials_path, class: "text-gray-400 no-underline text-sm font-bold px-4 py-3.5 rounded-xl transition-all duration-200 hover:text-orange-400 hover:bg-white/5" %>
+      </div>
+    <% end %>
+  </div>
+</div>

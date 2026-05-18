@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <title>Sin conexión — BioHealthGroup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #000;
+        color: #fff;
+        text-align: center;
+        padding: 1.5rem;
+      }
+      .card {
+        background: rgba(0,0,0,0.8);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 1rem;
+        padding: 2.5rem 2rem;
+        max-width: 400px;
+        width: 100%;
+        box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);
+      }
+      .icon {
+        width: 56px;
+        height: 56px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, #ff6b00, #e65c00);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        box-shadow: 0 0 20px rgba(255,107,0,0.2);
+      }
+      .icon svg { width: 28px; height: 28px; color: #000; }
+      h1 {
+        font-size: 1.25rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.025em;
+      }
+      p {
+        color: #6b7280;
+        font-size: 0.875rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      button {
+        width: 100%;
+        padding: 0.875rem 1.5rem;
+        background: linear-gradient(135deg, #ff6b00, #e65c00);
+        color: #000;
+        border: none;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 700;
+        box-shadow: 0 0 20px rgba(255,107,0,0.25);
+        transition: all 0.3s;
+      }
+      button:hover {
+        box-shadow: 0 0 30px rgba(255,107,0,0.4);
+        transform: scale(1.02);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card">
+      <div class="icon">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m-2.829-2.829a5 5 0 000-7.07m-4.243 4.243a1 1 0 010-1.414"/>
+        </svg>
+      </div>
+      <h1>Sin conexión</h1>
+      <p>No se puede conectar al servidor. Verificá tu conexión a internet e intentá de nuevo.</p>
+      <form action="." method="get" aria-label="Reintentar cargar la página">
+        <button type="submit">Reintentar</button>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body style="margin: 0; padding: 0; background: #080808; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background: #080808;">
+      <tr>
+        <td align="center" style="padding: 30px 16px;">
+          <table role="presentation" width="540" cellpadding="0" cellspacing="0" style="max-width: 540px; width: 100%;">
+
+            <!-- Header -->
+            <tr>
+              <td style="background: linear-gradient(135deg, #0a0a0a 0%, #160800 100%); border: 1px solid rgba(255,107,0,0.12); border-radius: 16px 16px 0 0; padding: 28px 32px 20px; text-align: center;">
+                <% if attachments["logo_bhg.png"] %>
+                  <%= image_tag attachments["logo_bhg.png"].url, alt: "BioHealthGroup", width: "140", style: "display: block; margin: 0 auto 12px; max-width: 140px; height: auto;" %>
+                <% end %>
+                <div style="width: 40px; height: 3px; background: linear-gradient(90deg, #ff6b00, #ff8c00); border-radius: 2px; margin: 0 auto 10px;"></div>
+                <h1 style="margin: 0; font-size: 16px; font-weight: 800; color: #ff6b00; letter-spacing: 2px; text-transform: uppercase;">Nuevo mensaje de contacto</h1>
+              </td>
+            </tr>
+
+            <!-- Body -->
+            <tr>
+              <td style="background: #0f0f0f; border-left: 1px solid rgba(255,107,0,0.08); border-right: 1px solid rgba(255,107,0,0.08); padding: 0 32px;">
+                <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+
+                  <!-- Remitente -->
+                  <tr>
+                    <td style="border-bottom: 1px solid rgba(255,255,255,0.04); padding: 20px 0;">
+                      <table role="presentation" cellpadding="0" cellspacing="0">
+                        <tr>
+                          <td valign="middle" style="padding-right: 14px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #ff6b00, #ff8c00); text-align: center; vertical-align: middle; font-size: 17px; font-weight: 900; color: #000; line-height: 42px;">
+                                  <%= @name.strip[0].upcase %><%= @name.strip.split.last&.[](0)&.upcase %>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                          <td valign="middle">
+                            <div style="font-size: 15px; font-weight: 700; color: #fff; margin: 0 0 2px;"><%= @name %></div>
+                            <a href="mailto:<%= @email %>" style="font-size: 13px; color: #ff6b00; text-decoration: none;"><%= @email %></a>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+
+                  <!-- Mensaje -->
+                  <tr>
+                    <td style="padding: 20px 0;">
+                      <div style="font-size: 10px; font-weight: 800; color: #555; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 10px;">Mensaje</div>
+                      <div style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 10px; padding: 18px 20px;">
+                        <div style="font-size: 14px; line-height: 1.8; color: #bbb; margin: 0; white-space: pre-wrap;"><%= @message %></div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- Acciones -->
+                  <tr>
+                    <td style="padding: 0 0 20px;">
+                      <table role="presentation" cellpadding="0" cellspacing="0" style="width: 100%;">
+                        <tr>
+                          <td style="padding-bottom: 10px;">
+                            <table role="presentation" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="background: linear-gradient(135deg, #ff6b00, #ff8c00); border-radius: 8px; padding: 0;">
+                                  <a href="mailto:<%= @email %>?subject=Re: <%= URI.encode_www_form_component(@name) %>" style="display: inline-block; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #000; text-decoration: none; letter-spacing: 0.5px;">Responder por email</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <% if @registered && @chat_room_id %>
+                        <tr>
+                          <td>
+                            <table role="presentation" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="border: 1px solid rgba(255,107,0,0.3); border-radius: 8px; padding: 0;">
+                                  <a href="<%= @chat_room_url %>" style="display: inline-block; padding: 11px 24px; font-size: 13px; font-weight: 700; color: #ff6b00; text-decoration: none; letter-spacing: 0.5px;">Responder desde la web →</a>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <% end %>
+                      </table>
+                    </td>
+                  </tr>
+
+                </table>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style="background: linear-gradient(135deg, #0a0a0a 0%, #160800 100%); border: 1px solid rgba(255,107,0,0.12); border-top: none; border-radius: 0 0 16px 16px; padding: 16px 32px 24px; text-align: center;">
+                <div style="font-size: 10px; color: #444; margin-bottom: 8px; letter-spacing: 0.3px;">
+                  Enviado desde el formulario de contacto de
+                  <a href="<%= ENV.fetch('APPLICATION_URL', 'http://192.168.1.4:3000') %>" style="color: #ff6b00; text-decoration: none;">BioHealthGroup</a>
+                </div>
+                <div style="font-size: 10px; color: #444;">
+                  Responder a: <a href="mailto:<%= @email %>" style="color: #ff6b00; text-decoration: none;"><%= @email %></a>
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
