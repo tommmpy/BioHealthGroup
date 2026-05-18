@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   include Roleable
   include CedulaIdentidad
+  has_person_name
 
   STATUSES = { disponible: 0, ausente: 1, no_molestar: 2, desconectado: 3 }.freeze
   STATUS_LABELS = { "disponible" => "Conectado", "ausente" => "Ausente", "no_molestar" => "No molestar", "desconectado" => "Desconectado" }.freeze

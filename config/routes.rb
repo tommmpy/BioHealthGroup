@@ -122,4 +122,18 @@ Rails.application.routes.draw do
 
     resources :activities, only: [ :index ]
   end
+
+  # ============================================================================
+  # API (JSON REST)
+  # ============================================================================
+  namespace :api do
+    resource :session, only: [ :create, :destroy ]
+    resources :estudios, only: [ :index, :show ]
+    resource :profile, only: [ :show, :update ] do
+      get :notifications, on: :collection
+    end
+    resources :conversations, only: [ :index, :show, :create ] do
+      resources :messages, only: [ :create ]
+    end
+  end
 end

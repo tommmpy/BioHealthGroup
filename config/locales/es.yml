@@ -1,0 +1,818 @@
+es:
+  activerecord:
+    models:
+      user: "Usuario"
+      estudio: "Estudio"
+      branch: "Sucursal"
+      session: "Sesión"
+      notification: "Notificación"
+      hero_slide: "Slide de Hero"
+      process_step: "Paso del Proceso"
+      testimonial: "Testimonio"
+      chat/conversation: "Conversación"
+      chat/message: "Mensaje"
+      chat/participant: "Participante"
+      appointment: "Turno"
+      invoice: "Factura"
+      payment: "Pago"
+      product: "Producto"
+      production_order: "Orden de Producción"
+      notification_preference: "Preferencia de Notificación"
+
+    attributes:
+      user:
+        id: "ID"
+        first_name: "Nombre"
+        last_name: "Apellido"
+        ci: "Cédula de Identidad"
+        email_address: "Correo electrónico"
+        phone_number: "Teléfono"
+        address: "Dirección"
+        birthday: "Fecha de nacimiento"
+        password: "Contraseña"
+        password_digest: "Contraseña"
+        role: "Rol"
+        user_type: "Tipo de usuario"
+        status: "Estado"
+        branch_id: "Sucursal"
+        branch: "Sucursal"
+        contacto_root: "Contacto responsable"
+        last_active_at: "Última actividad"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+        notification_preference: "Preferencias de notificación"
+        notifications: "Notificaciones"
+        estudios: "Estudios"
+        invoices: "Facturas"
+        appointments: "Turnos"
+        sessions: "Sesiones"
+
+      estudio:
+        id: "ID"
+        nombre_completo: "Nombre completo"
+        tipo_producto: "Tipo de producto"
+        fecha_estudio: "Fecha del estudio"
+        estado: "Estado"
+        cantidad_productos: "Cantidad de productos"
+        metar_paciente: "Meta del paciente"
+        user_id: "Paciente"
+        user: "Paciente"
+        branch_id: "Sucursal"
+        branch: "Sucursal"
+        medico_id: "Médico"
+        medico: "Médico"
+        production_order: "Orden de producción"
+        files: "Archivos"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      branch:
+        id: "ID"
+        name: "Nombre"
+        phone: "Teléfono"
+        address: "Dirección"
+        enabled: "Habilitada"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+        users: "Usuarios"
+        appointments: "Turnos"
+
+      session:
+        id: "ID"
+        user_id: "Usuario"
+        user: "Usuario"
+        user_name: "Nombre de usuario"
+        ip_address: "Dirección IP"
+        user_agent: "Navegador"
+        last_url: "Última URL"
+        activity_log: "Registro de actividad"
+        user_status: "Estado del usuario"
+        terminated_at: "Finalizada"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      notification:
+        id: "ID"
+        title: "Título"
+        body: "Contenido"
+        kind: "Tipo"
+        read: "Leída"
+        user_id: "Usuario"
+        user: "Usuario"
+        notifiable_id: "ID de recurso"
+        notifiable_type: "Tipo de recurso"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      hero_slide:
+        id: "ID"
+        title: "Título"
+        subtitle: "Subtítulo"
+        cta_text: "Texto del botón"
+        cta_link: "Enlace del botón"
+        image: "Imagen"
+        sort_order: "Orden"
+        active: "Activo"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      process_step:
+        id: "ID"
+        step_number: "Número de paso"
+        title: "Título"
+        description: "Descripción"
+        icon: "Icono"
+        image: "Imagen"
+        active: "Activo"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      testimonial:
+        id: "ID"
+        author_name: "Nombre del autor"
+        author_role: "Rol del autor"
+        content: "Contenido"
+        avatar: "Avatar"
+        sort_order: "Orden"
+        active: "Activo"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      chat/conversation:
+        id: "ID"
+        title: "Título"
+        kind: "Tipo"
+        closed: "Cerrada"
+        assigned_to_id: "Asignado a"
+        assigned_to: "Asignado a"
+        reopen_requested_at: "Solicitud de reapertura"
+        messages: "Mensajes"
+        users: "Participantes"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      chat/message:
+        id: "ID"
+        content: "Contenido"
+        user_id: "Usuario"
+        user: "Usuario"
+        conversation: "Conversación"
+        chat_room_id: "Conversación"
+        created_at: "Enviado"
+        updated_at: "Actualizado"
+
+      chat/participant:
+        id: "ID"
+        user_id: "Usuario"
+        user: "Usuario"
+        conversation: "Conversación"
+        chat_room_id: "Conversación"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      appointment:
+        id: "ID"
+        title: "Título"
+        starts_at: "Inicio"
+        ends_at: "Fin"
+        status: "Estado"
+        notes: "Notas"
+        user_id: "Paciente"
+        user: "Paciente"
+        medico_id: "Médico"
+        medico: "Médico"
+        estudio_id: "Estudio"
+        estudio: "Estudio"
+        branch_id: "Sucursal"
+        branch: "Sucursal"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      invoice:
+        id: "ID"
+        invoice_number: "Número de factura"
+        subtotal: "Subtotal"
+        tax_rate: "Tasa de impuesto"
+        tax_amount: "Monto de impuesto"
+        total: "Total"
+        status: "Estado"
+        due_date: "Fecha de vencimiento"
+        paid_at: "Pagada el"
+        notes: "Notas"
+        user_id: "Cliente"
+        user: "Cliente"
+        estudio_id: "Estudio"
+        estudio: "Estudio"
+        payments: "Pagos"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      payment:
+        id: "ID"
+        amount: "Monto"
+        payment_method: "Método de pago"
+        paid_at: "Pagado el"
+        reference: "Referencia"
+        notes: "Notas"
+        invoice_id: "Factura"
+        invoice: "Factura"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      product:
+        id: "ID"
+        name: "Nombre"
+        description: "Descripción"
+        category: "Categoría"
+        unit_price: "Precio unitario"
+        stock_quantity: "Stock"
+        active: "Activo"
+        branch_id: "Sucursal"
+        branch: "Sucursal"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      production_order:
+        id: "ID"
+        status: "Estado"
+        notes: "Notas"
+        due_date: "Fecha de vencimiento"
+        completed_at: "Completada el"
+        estudio_id: "Estudio"
+        estudio: "Estudio"
+        assigned_to_id: "Asignado a"
+        assigned_to: "Asignado a"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+      notification_preference:
+        id: "ID"
+        email_notifications: "Notificaciones por correo"
+        in_app_notifications: "Notificaciones en la app"
+        reminder_appointments: "Recordatorios de turnos"
+        reminder_estudios: "Recordatorios de estudios"
+        marketing_emails: "Correos de marketing"
+        user_id: "Usuario"
+        user: "Usuario"
+        created_at: "Creado"
+        updated_at: "Actualizado"
+
+    enums:
+      user:
+        role:
+          paciente: "Paciente"
+          recepcionista: "Recepcionista"
+          medico: "Médico"
+          operario: "Operario"
+          administrador: "Administrador"
+          disenador: "Diseñador"
+        user_type:
+          persona: "Persona"
+          empresa: "Empresa"
+        status:
+          disponible: "Conectado"
+          ausente: "Ausente"
+          no_molestar: "No molestar"
+          desconectado: "Desconectado"
+
+      estudio:
+        estado:
+          pendiente: "Pendiente"
+          en_progreso: "En progreso"
+          finalizado: "Finalizado"
+
+      appointment:
+        status:
+          pending: "Pendiente"
+          confirmed: "Confirmado"
+          in_progress: "En progreso"
+          completed: "Completado"
+          cancelled: "Cancelado"
+
+      invoice:
+        status:
+          draft: "Borrador"
+          sent: "Enviada"
+          paid: "Pagada"
+          overdue: "Vencida"
+          cancelled: "Anulada"
+
+      payment:
+        payment_method:
+          cash: "Efectivo"
+          card: "Tarjeta"
+          transfer: "Transferencia"
+          mercadopago: "Mercado Pago"
+          other: "Otro"
+
+      production_order:
+        status:
+          pending: "Pendiente"
+          in_progress: "En progreso"
+          completed: "Completada"
+          cancelled: "Cancelada"
+
+      chat/conversation:
+        kind:
+          support: "Soporte"
+          system: "Sistema"
+          group: "Grupo"
+
+    errors:
+      messages:
+        record_invalid: "La validación falló: %{errors}"
+        restrict_dependent_destroy:
+          has_one: "No se puede eliminar el registro porque existe un %{record} dependiente"
+          has_many: "No se puede eliminar el registro porque existen %{record} dependientes"
+
+  common:
+    actions:
+      create: "Crear"
+      new: "Nuevo"
+      edit: "Editar"
+      update: "Actualizar"
+      save: "Guardar"
+      delete: "Eliminar"
+      cancel: "Cancelar"
+      back: "Volver"
+      show: "Ver"
+      confirm: "Confirmar"
+      search: "Buscar"
+      filter: "Filtrar"
+      clear: "Limpiar"
+      export: "Exportar"
+      import: "Importar"
+      download: "Descargar"
+      upload: "Subir"
+      print: "Imprimir"
+      close: "Cerrar"
+      yes: "Sí"
+      no: "No"
+      more_info: "Más información"
+      select: "Seleccionar"
+      actions: "Acciones"
+      submit: "Enviar"
+      send: "Enviar"
+      reset: "Reiniciar"
+      review: "Revisar"
+      reject: "Rechazar"
+      accept: "Aceptar"
+      enable: "Habilitar"
+      disable: "Deshabilitar"
+      assign: "Asignar"
+      unassign: "Desasignar"
+
+    confirm:
+      delete: "¿Está seguro de que desea eliminar este registro?"
+      cancel: "¿Está seguro de que desea cancelar esta operación?"
+      leave: "¿Está seguro de que desea salir? Los cambios no guardados se perderán."
+
+    validation:
+      required: "Este campo es obligatorio"
+      invalid_format: "Formato inválido"
+      too_short: "Demasiado corto (mínimo %{count} caracteres)"
+      too_long: "Demasiado largo (máximo %{count} caracteres)"
+
+  flash:
+    actions:
+      create:
+        notice: "%{model} creado exitosamente."
+        alert: "No se pudo crear %{model}."
+      update:
+        notice: "%{model} actualizado exitosamente."
+        alert: "No se pudo actualizar %{model}."
+      destroy:
+        notice: "%{model} eliminado exitosamente."
+        alert: "No se pudo eliminar %{model}."
+      save:
+        notice: "Guardado exitosamente."
+        alert: "No se pudo guardar."
+
+    auth:
+      signed_in: "Sesión iniciada exitosamente."
+      signed_out: "Sesión cerrada exitosamente."
+      signed_up: "Registro exitoso. Bienvenido."
+      already_signed_in: "Ya has iniciado sesión."
+      invalid_credentials: "Correo o contraseña inválidos."
+      password_reset_sent: "Se han enviado las instrucciones de recuperación a su correo."
+      password_reset_success: "Contraseña actualizada exitosamente."
+      password_changed: "Contraseña cambiada exitosamente."
+      account_updated: "Cuenta actualizada exitosamente."
+      not_authorized: "No tiene permisos para realizar esta acción."
+      session_expired: "Su sesión ha expirado. Por favor inicie sesión nuevamente."
+
+    contact:
+      sent: "Mensaje enviado exitosamente. Nos pondremos en contacto pronto."
+      error: "No se pudo enviar el mensaje. Por favor intente nuevamente."
+
+    notifications:
+      mark_all_read: "Todas las notificaciones han sido marcadas como leídas."
+      marked_read: "Notificación marcada como leída."
+
+  nav:
+    home: "Inicio"
+    dashboard: "Panel de Control"
+    contact: "Contacto"
+    admin_panel: "Panel de Administración"
+    profile: "Perfil"
+    logout: "Cerrar Sesión"
+    login: "Iniciar Sesión"
+    register: "Registrarse"
+    notifications: "Notificaciones"
+    settings: "Configuración"
+    users: "Usuarios"
+    branches: "Sucursales"
+    estudios: "Estudios"
+    appointments: "Turnos"
+    invoices: "Facturas"
+    products: "Productos"
+    production_orders: "Órdenes de Producción"
+    chat: "Chat"
+    conversations: "Conversaciones"
+    reports: "Reportes"
+    audits: "Auditoría"
+    hero_slides: "Slides de Hero"
+    process_steps: "Pasos del Proceso"
+    testimonials: "Testimonios"
+    my_account: "Mi Cuenta"
+
+  auth:
+    login: "Iniciar Sesión"
+    register: "Registrarse"
+    logout: "Cerrar Sesión"
+    email: "Correo electrónico"
+    password: "Contraseña"
+    current_password: "Contraseña actual"
+    new_password: "Nueva contraseña"
+    confirm_password: "Confirmar contraseña"
+    remember_me: "Recordarme"
+    forgot_password: "¿Olvidó su contraseña?"
+    reset_password: "Restablecer contraseña"
+    change_password: "Cambiar contraseña"
+    sign_up: "Crear cuenta"
+    login_title: "Inicie sesión en su cuenta"
+    register_title: "Cree una cuenta nueva"
+    no_account: "¿No tiene una cuenta?"
+    have_account: "¿Ya tiene una cuenta?"
+    or: "o"
+    first_name: "Nombre"
+    last_name: "Apellido"
+    ci: "Cédula de Identidad"
+    phone: "Teléfono"
+    address: "Dirección"
+    birthday: "Fecha de nacimiento"
+    password_confirmation: "Confirmación de contraseña"
+    accept_terms: "Acepto los términos y condiciones"
+
+  profile:
+    title: "Mi Perfil"
+    edit: "Editar Perfil"
+    personal_info: "Información personal"
+    account_info: "Información de la cuenta"
+    change_password: "Cambiar contraseña"
+    notification_settings: "Preferencias de notificación"
+    update: "Actualizar perfil"
+    sessions: "Sesiones activas"
+    terminate_session: "Cerrar sesión"
+
+  admin:
+    title: "Administración"
+    dashboard: "Panel de Administración"
+    users: "Usuarios"
+    branches: "Sucursales"
+    estudios: "Estudios"
+    appointments: "Turnos"
+    invoices: "Facturas"
+    products: "Productos"
+    production_orders: "Órdenes de Producción"
+    hero_slides: "Slides de Hero"
+    process_steps: "Pasos del Proceso"
+    testimonials: "Testimonios"
+    audits: "Auditoría"
+    statistics: "Estadísticas"
+    total_users: "Total de usuarios"
+    total_estudios: "Total de estudios"
+    total_appointments: "Total de turnos"
+    total_invoices: "Total de facturas"
+    users_per_day: "Usuarios por día"
+    estudios_per_day: "Estudios por día"
+    estudios_by_status: "Estudios por estado"
+    recent_registrations: "Registros recientes"
+    recent_estudios: "Estudios recientes"
+
+  pagy:
+    nav:
+      prev: "&lt; Anterior"
+      next: "Siguiente &gt;"
+      gap: "..."
+    info:
+      no_items: "No se encontraron registros"
+      single_page: "Mostrando %{count} registro(s)"
+      multiple_pages: "Mostrando %{from}-%{to} de %{count} registros"
+      item_name:
+        one: "registro"
+        other: "registros"
+
+  ransack:
+    search: "Buscar"
+    predicate: "predicado"
+    and: "y"
+    or: "o"
+    any: "cualquier"
+    all: "todos"
+    placeholder: "Buscar..."
+    clear: "Limpiar filtros"
+    sort:
+      asc: "ascendente"
+      desc: "descendente"
+    predicates:
+      eq: "igual a"
+      not_eq: "no igual a"
+      matches: "contiene"
+      does_not_match: "no contiene"
+      lt: "menor que"
+      lteq: "menor o igual que"
+      gt: "mayor que"
+      gteq: "mayor o igual que"
+      in: "en"
+      not_in: "no en"
+      present: "presente"
+      blank: "vacío"
+      null: "nulo"
+      not_null: "no nulo"
+      start: "comienza con"
+      end: "termina con"
+      cont: "contiene"
+      not_cont: "no contiene"
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d de %b"
+      long: "%d de %B de %Y"
+      long_ordinal: "%d de %B de %Y"
+      only_day: "%d"
+      month_day: "%d de %B"
+      compact: "%d/%m/%Y"
+      iso: "%Y-%m-%d"
+    day_names: [Domingo, Lunes, Martes, Miércoles, Jueves, Viernes, Sábado]
+    abbr_day_names: [Dom, Lun, Mar, Mié, Jue, Vie, Sáb]
+    month_names: [~, Enero, Febrero, Marzo, Abril, Mayo, Junio, Julio, Agosto, Septiembre, Octubre, Noviembre, Diciembre]
+    abbr_month_names: [~, Ene, Feb, Mar, Abr, May, Jun, Jul, Ago, Sep, Oct, Nov, Dic]
+    order:
+      - day
+      - month
+      - year
+
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+      short: "%d %b %H:%M"
+      long: "%d de %B de %Y %H:%M"
+      time: "%H:%M"
+      date: "%d/%m/%Y"
+      datetime: "%d/%m/%Y %H:%M"
+      compact: "%d/%m %H:%M"
+      iso: "%Y-%m-%dT%H:%M:%S%z"
+    am: "a. m."
+    pm: "p. m."
+
+  number:
+    format:
+      separator: ","
+      delimiter: "."
+      precision: 2
+      significant: false
+      strip_insignificant_zeros: false
+    currency:
+      format:
+        format: "%u%n"
+        unit: "$"
+        separator: ","
+        delimiter: "."
+        precision: 2
+    percentage:
+      format:
+        delimiter: ""
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ""
+    human:
+      format:
+        delimiter: ""
+        precision: 1
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: "Byte"
+            other: "Bytes"
+          kb: "KB"
+          mb: "MB"
+          gb: "GB"
+          tb: "TB"
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: "mil"
+          million: "millón"
+          billion: "billón"
+          trillion: "trillón"
+          quadrillion: "cuatrillón"
+
+  support:
+    array:
+      words_connector: ", "
+      two_words_connector: " y "
+      last_word_connector: " y "
+
+  datetime:
+    distance_in_words:
+      half_a_minute: "medio minuto"
+      less_than_x_seconds:
+        one: "menos de 1 segundo"
+        other: "menos de %{count} segundos"
+      x_seconds:
+        one: "1 segundo"
+        other: "%{count} segundos"
+      less_than_x_minutes:
+        one: "menos de 1 minuto"
+        other: "menos de %{count} minutos"
+      x_minutes:
+        one: "1 minuto"
+        other: "%{count} minutos"
+      about_x_hours:
+        one: "aproximadamente 1 hora"
+        other: "aproximadamente %{count} horas"
+      x_days:
+        one: "1 día"
+        other: "%{count} días"
+      about_x_months:
+        one: "aproximadamente 1 mes"
+        other: "aproximadamente %{count} meses"
+      x_months:
+        one: "1 mes"
+        other: "%{count} meses"
+      about_x_years:
+        one: "aproximadamente 1 año"
+        other: "aproximadamente %{count} años"
+      over_x_years:
+        one: "más de 1 año"
+        other: "más de %{count} años"
+      almost_x_years:
+        one: "casi 1 año"
+        other: "casi %{count} años"
+    prompts:
+      year: "Año"
+      month: "Mes"
+      day: "Día"
+      hour: "Hora"
+      minute: "Minuto"
+      second: "Segundo"
+
+  roles:
+    paciente: "Paciente"
+    recepcionista: "Recepcionista"
+    medico: "Médico"
+    operario: "Operario"
+    administrador: "Administrador"
+    disenador: "Diseñador"
+
+  user_types:
+    persona: "Persona"
+    empresa: "Empresa"
+
+  user_statuses:
+    disponible: "Conectado"
+    ausente: "Ausente"
+    no_molestar: "No molestar"
+    desconectado: "Desconectado"
+
+  notification_kinds:
+    reopen_request: "Solicitud de reapertura"
+    ticket_accepted: "Ticket aceptado"
+    new_ticket: "Nuevo ticket"
+    new_message: "Nuevo mensaje"
+    reopened: "Reabierto"
+
+  chat:
+    title: "Chat"
+    new_conversation: "Nueva conversación"
+    send_message: "Enviar mensaje"
+    type_message: "Escriba un mensaje..."
+    close_conversation: "Cerrar conversación"
+    reopen_conversation: "Solicitar reapertura"
+    no_messages: "No hay mensajes aún"
+    conversation_closed: "Conversación cerrada"
+    conversation_reopened: "Conversación reabierta"
+    assign_to_me: "Asignarme"
+
+  landing:
+    hero:
+      title: "BioHealthGroup"
+      subtitle: "Soluciones de salud biomecánica"
+      cta: "Conozca más"
+    features:
+      title: "Nuestros Servicios"
+    process:
+      title: "¿Cómo funciona?"
+    testimonials:
+      title: "Lo que dicen nuestros pacientes"
+    contact:
+      title: "Contáctenos"
+      name: "Nombre"
+      email: "Correo electrónico"
+      phone: "Teléfono"
+      message: "Mensaje"
+      send: "Enviar mensaje"
+
+  helpers:
+    actions:
+      new: "Nuevo %{model}"
+      edit: "Editar %{model}"
+      delete: "Eliminar %{model}"
+      show: "Ver %{model}"
+    submit:
+      create: "Crear %{model}"
+      update: "Actualizar %{model}"
+      submit: "Guardar %{model}"
+    label:
+      user:
+        first_name: "Nombre"
+        last_name: "Apellido"
+        email_address: "Correo electrónico"
+      empresa:
+        company: false
+    select:
+      prompt: "Seleccione una opción"
+    file:
+      prompt: "Seleccione un archivo"
+
+  titles:
+    index: "Listado de %{model}"
+    new: "Nuevo %{model}"
+    create: "Crear %{model}"
+    edit: "Editar %{model}"
+    update: "Actualizar %{model}"
+    show: "Detalle de %{model}"
+    delete: "Eliminar %{model}"
+
+  confirmations:
+    destroy: "¿Está seguro de eliminar este %{model}?"
+    cancel: "¿Está seguro?"
+
+  errors:
+    messages:
+      not_saved:
+        one: "1 error impidió guardar este %{resource}:"
+        other: "%{count} errores impidieron guardar este %{resource}:"
+      model_invalid: "La validación falló: %{errors}"
+      restricted_dependent_destroy:
+        has_one: "No se puede eliminar porque existe un %{record} dependiente"
+        has_many: "No se puede eliminar porque existen %{record} dependientes"
+    forbidden: "Acceso denegado"
+    not_found: "Página no encontrada"
+    internal_server_error: "Error interno del servidor"
+    unauthorized: "No autorizado"
+
+  contacts:
+    title: "Contacto"
+    name: "Nombre"
+    email: "Correo electrónico"
+    phone: "Teléfono"
+    message: "Mensaje"
+    send: "Enviar mensaje"
+    sent: "Mensaje enviado exitosamente"
+    name_placeholder: "Su nombre"
+    email_placeholder: "su@correo.com"
+    phone_placeholder: "099 123 456"
+    message_placeholder: "Escriba su mensaje aquí..."
+
+  search:
+    placeholder: "Buscar..."
+    no_results: "No se encontraron resultados"
+    results: "Resultados de búsqueda"
+
+  export:
+    title: "Exportar"
+    format_pdf: "PDF"
+    format_csv: "CSV"
+    format_xlsx: "Excel"
+
+  mailer:
+    contact:
+      subject: "Nuevo mensaje de contacto de %{name}"
+    notification:
+      subject: "%{title}"
+    appointment:
+      reminder_subject: "Recordatorio de turno - %{date}"
+      created_subject: "Nuevo turno agendado"
+      cancelled_subject: "Turno cancelado"
+
+  footer:
+    rights: "Todos los derechos reservados"
+    terms: "Términos y condiciones"
+    privacy: "Política de privacidad"
+    contact: "Contacto"

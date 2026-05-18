@@ -19,6 +19,10 @@ module BioHealthGroup
     config.eager_load_paths << Rails.root.join("app/policies")
     config.time_zone = "Montevideo"
 
+    config.i18n.default_locale = :es
+    config.i18n.available_locales = [ :es, :en ]
+    config.i18n.fallbacks = [ :en ]
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
