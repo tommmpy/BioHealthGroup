@@ -1,0 +1,8 @@
+<% message = local_assigns[:message] %>
+<% current_user = local_assigns[:current_user] %>
+<div id="message-<%= message.id %>" class="flex <%= message.user_id == current_user&.id ? 'justify-end' : 'justify-start' %>">
+  <div class="max-w-[80%] lg:max-w-[65%] <%= message.user_id == current_user&.id ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-black' : 'bg-white/5 text-white border border-white/10' %> rounded-2xl px-4 py-2.5 <%= message.user_id == current_user&.id ? 'rounded-br-md' : 'rounded-bl-md' %>">
+    <div class="text-sm leading-relaxed break-words" style="overflow-wrap: break-word; word-wrap: break-word;"><%= message.content %></div>
+    <div class="text-[10px] mt-1 <%= message.user_id == current_user&.id ? 'text-black/60' : 'text-gray-600' %>"><%= message.created_at.strftime("%H:%M") %></div>
+  </div>
+</div>

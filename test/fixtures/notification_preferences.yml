@@ -1,0 +1,39 @@
+one:
+  user: one
+  email_notifications: true
+  in_app_notifications: true
+  reminder_estudios: true
+  reminder_appointments: true
+  marketing_emails: false
+
+two:
+  user: two
+  email_notifications: true
+  in_app_notifications: true
+  reminder_estudios: true
+  reminder_appointments: true
+  marketing_emails: false
+
+menor:
+  user: menor
+  email_notifications: true
+  in_app_notifications: true
+  reminder_estudios: true
+  reminder_appointments: true
+  marketing_emails: false
+
+sin_birthday:
+  user: sin_birthday
+  email_notifications: true
+  in_app_notifications: true
+  reminder_estudios: true
+  reminder_appointments: true
+  marketing_emails: false
+
+admin:
+  user: admin
+  email_notifications: true
+  in_app_notifications: true
+  reminder_estudios: true
+  reminder_appointments: true
+  marketing_emails: false

@@ -20,6 +20,15 @@ class NotificationService
       NotificationMailer.notification_email(notification).deliver_later
     end
 
+    NotificationChannel.broadcast_to(@user, {
+      type: "new_notification",
+      notification_id: notification.id,
+      unread_count: @user.notifications.unread.count,
+      title: @title,
+      kind: @kind,
+      body: @body
+    })
+
     notification
   end
 

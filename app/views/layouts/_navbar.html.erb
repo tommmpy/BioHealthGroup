@@ -38,12 +38,13 @@
         <% end %>
         <% if authenticated? %>
           <% unread_count = current_user.notifications.unread.count %>
-          <%= link_to notifications_path, class: "relative no-underline text-gray-300 transition-colors duration-200 hover:text-orange-400 p-1.5" do %>
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
-            <% if unread_count > 0 %>
-              <span class="absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-orange-500 text-black text-[9px] font-black flex items-center justify-center shadow-lg shadow-orange-500/30"><%= unread_count > 9 ? "9+" : unread_count %></span>
+          <div data-controller="notifications">
+            <%= link_to notifications_path, class: "relative no-underline text-gray-300 transition-colors duration-200 hover:text-orange-400 p-1.5" do %>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+              <span data-notifications-target="badge"
+                    class="<%= unread_count > 0 ? '' : 'hidden' %> absolute -top-0.5 -right-0.5 w-4 h-4 rounded-full bg-orange-500 text-black text-[9px] font-black flex items-center justify-center shadow-lg shadow-orange-500/30"><%= unread_count > 9 ? "9+" : unread_count %></span>
             <% end %>
-          <% end %>
+          </div>
           <div class="flex items-center gap-2 relative"
                x-data="{ open: false }"
                @click.away="open = false">
@@ -114,9 +115,8 @@
           <%= link_to notifications_path, class: "text-gray-400 no-underline text-base font-bold py-2 transition-colors duration-200 hover:text-orange-400 flex items-center gap-2" do %>
             Notificaciones
             <% unread_count = current_user.notifications.unread.count %>
-            <% if unread_count > 0 %>
-              <span class="w-4 h-4 rounded-full bg-orange-500 text-black text-[9px] font-black flex items-center justify-center"><%= unread_count > 9 ? "9+" : unread_count %></span>
-            <% end %>
+            <span data-notifications-target="badge"
+                  class="<%= unread_count > 0 ? '' : 'hidden' %> w-4 h-4 rounded-full bg-orange-500 text-black text-[9px] font-black flex items-center justify-center"><%= unread_count > 9 ? "9+" : unread_count %></span>
           <% end %>
           <div class="border-t border-gray-800 pt-3 flex flex-col gap-1">
             <div class="text-[11px] font-black text-gray-500 uppercase tracking-wider px-1 mb-1">Estado</div>

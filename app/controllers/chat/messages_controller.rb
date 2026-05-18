@@ -8,6 +8,14 @@ module Chat
       )
 
       if @message.save
+        html = render_to_string(partial: "chat/messages/message", locals: { message: @message, current_user: nil })
+        ChatChannel.broadcast_to(@conversation, {
+          type: "new_message",
+          message_id: @message.id,
+          html: html,
+          user_id: current_user.id
+        })
+
         NotificationService.notify_participants(
           conversation: @conversation,
           kind: "new_message",

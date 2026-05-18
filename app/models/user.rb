@@ -23,6 +23,8 @@ class User < ApplicationRecord
   has_many :conversations, through: :chat_room_participants, source: :conversation
   has_many :messages, class_name: "Chat::Message", dependent: :destroy, foreign_key: :user_id
   has_many :notifications, dependent: :destroy
+  has_one :notification_preference, dependent: :destroy
+  accepts_nested_attributes_for :notification_preference
   has_many :appointments, dependent: :nullify
   has_many :assigned_appointments, class_name: "Appointment", foreign_key: :medico_id, dependent: :nullify
 
@@ -51,6 +53,7 @@ class User < ApplicationRecord
   end
 
   after_initialize :set_default_role, if: :new_record?
+  after_create :create_notification_preference
 
   STATUSES.each_key do |k|
     define_method("#{k}?") do
@@ -104,5 +107,9 @@ class User < ApplicationRecord
 
   def set_default_role
     self.role ||= :paciente
+  end
+
+  def create_notification_preference
+    build_notification_preference.save!
   end
 end

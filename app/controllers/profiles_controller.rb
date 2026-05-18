@@ -39,6 +39,7 @@ class ProfilesController < ApplicationController
 
   def set_user
     @user = current_user
+    @user.build_notification_preference unless @user.notification_preference
   end
 
   def user_params
@@ -53,7 +54,11 @@ class ProfilesController < ApplicationController
       :ci,
       :birthday,
       :contacto_root,
-      :status
+      :status,
+      notification_preference_attributes: %i[
+        id email_notifications in_app_notifications
+        reminder_estudios reminder_appointments marketing_emails
+      ]
     )
     if permitted[:status].present?
       permitted[:status] = User::STATUSES[permitted[:status].to_sym]

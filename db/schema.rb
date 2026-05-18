@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.2].define(version: 2026_05_18_173000) do
+ActiveRecord::Schema[8.2].define(version: 2026_05_18_180000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -151,6 +151,18 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_173000) do
     t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
+  create_table "notification_preferences", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.boolean "email_notifications", default: true
+    t.boolean "in_app_notifications", default: true
+    t.boolean "marketing_emails", default: false
+    t.boolean "reminder_appointments", default: true
+    t.boolean "reminder_estudios", default: true
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_notification_preferences_on_user_id", unique: true
+  end
+
   create_table "notifications", force: :cascade do |t|
     t.text "body"
     t.datetime "created_at", null: false
@@ -235,6 +247,7 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_173000) do
   add_foreign_key "estudios", "users"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "notification_preferences", "users"
   add_foreign_key "notifications", "users"
   add_foreign_key "sessions", "users"
   add_foreign_key "users", "branches"
