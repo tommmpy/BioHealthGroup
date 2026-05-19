@@ -89,7 +89,8 @@ Rails.application.configure do
   config.hosts = [
     ENV.fetch("APPLICATION_HOST", nil),
     /.*\.biohealthgroup\.uy/,
-    /.*\.sslip\.io/
+    /.*\.sslip\.io/,
+    "186.53.255.50"
   ].compact
 
   # Skip DNS rebinding protection for the default health check endpoint.
