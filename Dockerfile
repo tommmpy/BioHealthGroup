@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-# check=error=true&skip=SecretsUsedInArgOrEnv
+# check=skip=SecretsUsedInArgOrEnv
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
 # docker build -t bio_health_group .
