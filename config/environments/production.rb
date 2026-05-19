@@ -86,19 +86,12 @@ Rails.application.configure do
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # Also allow sslip.io domains (used by Coolify deployments).
-  allowed_hosts = [
+  config.hosts = [
     ENV.fetch("APPLICATION_HOST", nil),
     /.*\.biohealthgroup\.uy/,
     /.*\.sslip\.io/
   ].compact
 
-  config.hosts = allowed_hosts
-
   # Skip DNS rebinding protection for the default health check endpoint.
-  # Must set both allowed and exclude in one hash (config.host_authorization
-  # is a plain Hash at this point, not an OrderedOptions).
-  config.host_authorization = {
-    allowed: allowed_hosts,
-    exclude: ->(request) { request.path == "/up" }
-  }
+  config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 end
