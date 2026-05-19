@@ -17,9 +17,8 @@ class RegistrationsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   rescue => e
-    Rails.logger.error "REGISTRATION ERROR: #{e.class}: #{e.message}"
-    e.backtrace.first(15).each { |line| Rails.logger.error "  #{line}" }
-    flash[:alert] = "Error: #{e.class} - #{e.message}"
+    Rails.logger.error "Registration error: #{e.class}: #{e.message}"
+    flash[:alert] = "Error al registrarse: #{e.message}"
     redirect_to new_registration_path
   end
 

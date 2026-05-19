@@ -10,8 +10,7 @@ Construido con **Ruby on Rails 8**, **Tailwind CSS 4**, **PostgreSQL** y **Hotwi
 - **Tailwind CSS 4** + **Alpine.js** (CDN) — frontend
 - **Propshaft** — asset pipeline (sin Sprockets)
 - **Solid Cache / Solid Queue / Solid Cable** — adaptadores数据库
-- **Puma** + **Thruster** — servidor web y proxy
-- **Kamal** — deploy
+- **Puma** — servidor web
 
 ## Requisitos
 
@@ -47,15 +46,13 @@ Copiá `.env.example` a `.env` y completá según corresponda.
 
 ## Deploy
 
-Usa Kamal. Configurar variables en `config/deploy.yml`:
+No configurado. Para deploy manual:
 
 ```bash
-kamal env push
-kamal deploy
+RAILS_ENV=production bin/rails db:prepare db:seed
+RAILS_ENV=production bin/rails assets:precompile
+RAILS_ENV=production bin/rails server
 ```
-
-Requerimientos: servidor con Docker, registro de contenedores (Docker Hub / GHCR),
-dominio con SSL, y las env vars documentadas en `.env.example`.
 
 ## Roles de usuario
 

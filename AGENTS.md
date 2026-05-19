@@ -4,7 +4,7 @@
 - Rails 8 (main branch) + Propshaft (no Sprockets)
 - Tailwind CSS v4 + Alpine.js (CDN)
 - PostgreSQL, Solid Cache, Solid Queue
-- Kamal for deployment
+- Puma for local server
 
 ## Quick Commands
 - `bin/dev` — server + Tailwind watcher
