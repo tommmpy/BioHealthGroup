@@ -12,7 +12,7 @@ class RegistrationsController < ApplicationController
     @user.skip_contacto_root = true
     if @user.save
       start_new_session_for @user
-      WelcomeMailer.welcome(@user).deliver_now
+      WelcomeMailer.welcome(@user).deliver_later
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
