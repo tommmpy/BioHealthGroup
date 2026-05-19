@@ -1,7 +1,5 @@
 class RegistrationsController < ApplicationController
   allow_unauthenticated_access
-  rate_limit to: 5, within: 30.minutes, only: :create,
-    with: -> { redirect_to new_registration_path, alert: "Demasiados registros desde esta IP. Intenta de nuevo más tarde." }
 
   def new
     seed_branches_if_empty
@@ -13,11 +11,7 @@ class RegistrationsController < ApplicationController
     @user.skip_contacto_root = true
     if @user.save
       start_new_session_for @user
-      begin
-        WelcomeMailer.welcome(@user).deliver_later
-      rescue => e
-        Rails.logger.error "Welcome mail failed: #{e.message}"
-      end
+      WelcomeMailer.welcome(@user).deliver_now
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
@@ -25,7 +19,8 @@ class RegistrationsController < ApplicationController
   rescue => e
     Rails.logger.error "REGISTRATION ERROR: #{e.class}: #{e.message}"
     e.backtrace.first(15).each { |line| Rails.logger.error "  #{line}" }
-    render :new, status: :internal_server_error
+    flash[:alert] = "Error: #{e.class} - #{e.message}"
+    redirect_to new_registration_path
   end
 
   private
