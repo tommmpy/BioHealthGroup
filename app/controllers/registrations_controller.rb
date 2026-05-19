@@ -13,7 +13,11 @@ class RegistrationsController < ApplicationController
     @user.skip_contacto_root = true
     if @user.save
       start_new_session_for @user
-      WelcomeMailer.welcome(@user).deliver_later
+      begin
+        WelcomeMailer.welcome(@user).deliver_later
+      rescue => e
+        Rails.logger.error "Welcome mail failed: #{e.message}"
+      end
       redirect_to root_path
     else
       render :new, status: :unprocessable_entity
