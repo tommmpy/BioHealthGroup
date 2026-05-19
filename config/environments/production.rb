@@ -48,6 +48,7 @@ Rails.application.configure do
 
   # Replace the default file-based cache store with a more robust alternative.
   config.cache_store = :solid_cache_store
+  config.solid_cache.connects_to = { database: { writing: :cache } }
 
   # Replace the default in-process and non-durable queuing backend for Active Job.
   config.active_job.queue_adapter = :solid_queue
