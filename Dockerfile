@@ -16,7 +16,7 @@ WORKDIR /rails
 
 # Install base packages
 RUN apt-get update -qq && \
-    apt-get install --no-install-recommends -y curl libjemalloc2 libvips postgresql-client && \
+    apt-get install --no-install-recommends -y curl wget libjemalloc2 libvips postgresql-client && \
     # Create jemalloc symlink only if the library exists (some distros differ in path)
     if [ -f "/usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2" ]; then \
       ln -sf /usr/lib/$(uname -m)-linux-gnu/libjemalloc.so.2 /usr/local/lib/libjemalloc.so; \
