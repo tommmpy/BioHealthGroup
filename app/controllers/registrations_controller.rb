@@ -22,6 +22,10 @@ class RegistrationsController < ApplicationController
     else
       render :new, status: :unprocessable_entity
     end
+  rescue => e
+    Rails.logger.error "REGISTRATION ERROR: #{e.class}: #{e.message}"
+    e.backtrace.first(15).each { |line| Rails.logger.error "  #{line}" }
+    render :new, status: :internal_server_error
   end
 
   private
