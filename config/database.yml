@@ -88,9 +88,6 @@ production:
   primary: &primary_production
     <<: *default
     url: <%= ENV["DATABASE_URL"] %>
-    database: bio_health_group_production
-    username: bio_health_group
-    password: <%= ENV["BIO_HEALTH_GROUP_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: bio_health_group_production_cache

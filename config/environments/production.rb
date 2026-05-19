@@ -76,7 +76,7 @@ Rails.application.configure do
   config.i18n.fallbacks = true
 
   config.lograge.enabled = true
-  config.lograge.formatter = Lograge::Formatters::Logstash.new
+  config.lograge.formatter = Lograge::Formatters::Json.new
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
