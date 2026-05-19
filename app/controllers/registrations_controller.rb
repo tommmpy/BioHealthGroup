@@ -22,7 +22,6 @@ class RegistrationsController < ApplicationController
   private
 
   def user_params
-    # Agregamos :branch_id a la lista
     params.require(:user).permit(
       :email_address,
       :password,
