@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def create
     if user = User.authenticate_by(params.permit(:email_address, :password))
-      if user.sessions.any?
+      if user.sessions.recently_active.any?
         session[:pending_user_id] = user.id
         redirect_to choose_session_path
       else
@@ -55,7 +55,7 @@ class SessionsController < ApplicationController
     existing.update!(terminated_at: nil)
     status = existing.user_status == User::STATUSES[:desconectado] ? User::STATUSES[:disponible] : existing.user_status
     user.update_columns(status: status, last_active_at: Time.current)
-    cookies.signed[:session_id] = { value: existing.id, httponly: true, same_site: :lax }
+    cookies.signed[:session_id] = { value: existing.id, httponly: true, same_site: :lax, expires: 2.days.from_now }
     Current.session = existing
     Current.user = user
     log_event("Recuperó una sesión anterior")

@@ -192,7 +192,8 @@ module Authentication
       cookies.signed[:session_id] = {
         value: new_session.id,
         httponly: true,
-        same_site: :lax
+        same_site: :lax,
+        expires: 2.days.from_now
       }
       Current.session = new_session
       Current.user = user
