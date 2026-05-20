@@ -53,9 +53,9 @@
 
             <% coords = @branch_coordinates[branch.id] %>
             <% if coords %>
-              <div class="h-[180px] rounded-xl overflow-hidden mb-5 border border-white/5 relative"
+              <div class="h-[200px] rounded-xl overflow-hidden mb-5 border border-white/5 relative"
                    style="box-shadow: 0 0 15px rgba(255,107,0,0.05);">
-                <iframe style="width:100%; height:calc(100% + 50px); border:0; position:absolute; top:0; left:0;" loading="lazy"
+                <iframe style="width:100%; height:calc(100% + 100px); border:0; position:absolute; top:0; left:0;" loading="lazy"
                   src="https://www.openstreetmap.org/export/embed.html?bbox=<%= coords[:lon] - 0.015 %>,<%= coords[:lat] - 0.015 %>,<%= coords[:lon] + 0.015 %>,<%= coords[:lat] + 0.015 %>&layer=mapnik&marker=<%= coords[:lat] %>,<%= coords[:lon] %>">
                 </iframe>
               </div>
