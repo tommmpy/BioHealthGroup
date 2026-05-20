@@ -1,0 +1,8 @@
+development:
+  database: primary
+
+test:
+  database: primary
+
+production:
+  database: primary
