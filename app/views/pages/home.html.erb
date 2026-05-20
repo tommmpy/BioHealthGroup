@@ -280,9 +280,14 @@
           </div>
         </div>
 
-        <div class="mt-6 h-32 lg:h-24 bg-black/50 rounded-xl overflow-hidden border border-white/5"
-             data-controller="branch-map"
-             data-branch-map-address-value="<%= branch.address %>"></div>
+        <% coords = @branch_coordinates[branch.id] %>
+        <% if coords %>
+          <div class="mt-6 h-32 lg:h-24 rounded-xl overflow-hidden border border-white/5">
+            <iframe width="100%" height="100%" style="border:0; filter: contrast(1.1) brightness(1.1);" loading="lazy"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=<%= coords[:lon] - 0.015 %>,<%= coords[:lat] - 0.015 %>,<%= coords[:lon] + 0.015 %>,<%= coords[:lat] + 0.015 %>&layer=mapnik&marker=<%= coords[:lat] %>,<%= coords[:lon] %>">
+            </iframe>
+          </div>
+        <% end %>
       </div>
     <% end %>
       </div>

@@ -18,6 +18,9 @@ module Admin
           search_query, search_query, search_query
         )
       end
+
+      @branch_coordinates = {}
+      @branches.each { |b| @branch_coordinates[b.id] = Branches::Geocoder.coordinates_for(b.address) }
     end
 
     def show
