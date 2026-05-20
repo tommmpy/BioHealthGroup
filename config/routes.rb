@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       post :force_new
     end
   end
+  get "/session", to: redirect("/session/new")
   resources :passwords, param: :token, only: [ :new, :create, :edit, :update ]
   resources :registrations, only: %i[new create]
 
