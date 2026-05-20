@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.2].define(version: 2026_05_18_200002) do
+ActiveRecord::Schema[8.2].define(version: 2026_05_20_031550) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -144,10 +144,10 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_200002) do
   create_table "invoices", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.date "due_date", null: false
-    t.bigint "estudio_id"
     t.string "invoice_number", null: false
     t.text "notes"
     t.datetime "paid_at"
+    t.bigint "production_order_id"
     t.integer "status", default: 0
     t.decimal "subtotal", precision: 12, scale: 2, null: false
     t.decimal "tax_amount", precision: 12, scale: 2, default: "0.0"
@@ -155,8 +155,8 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_200002) do
     t.decimal "total", precision: 12, scale: 2, null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.index ["estudio_id"], name: "index_invoices_on_estudio_id"
     t.index ["invoice_number"], name: "index_invoices_on_invoice_number", unique: true
+    t.index ["production_order_id"], name: "index_invoices_on_production_order_id"
     t.index ["user_id"], name: "index_invoices_on_user_id"
   end
 
@@ -302,7 +302,7 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_18_200002) do
   add_foreign_key "chat_rooms", "users", column: "assigned_to_id"
   add_foreign_key "estudios", "branches"
   add_foreign_key "estudios", "users"
-  add_foreign_key "invoices", "estudios"
+  add_foreign_key "invoices", "production_orders"
   add_foreign_key "invoices", "users"
   add_foreign_key "messages", "chat_rooms"
   add_foreign_key "messages", "users"

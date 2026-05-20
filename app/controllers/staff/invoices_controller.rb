@@ -4,7 +4,7 @@ Prawn::Fonts::AFM.hide_m17n_warning = true
 module Staff
   class InvoicesController < Staff::BaseController
     def index
-      @q = Invoice.includes(:user, :estudio).ransack(params[:q])
+      @q = Invoice.includes(:user, :production_order).ransack(params[:q])
       @invoices = @q.result.order(created_at: :desc)
       if params[:status].present? && Invoice.statuses.key?(params[:status])
         @invoices = @invoices.where(status: Invoice.statuses[params[:status]])
@@ -18,7 +18,7 @@ module Staff
     end
 
     def show
-      @invoice = Invoice.includes(:user, :estudio, :payments).find(params[:id])
+      @invoice = Invoice.includes(:user, :production_order, :payments).find(params[:id])
       @payment = @invoice.payments.new
     end
 
@@ -48,7 +48,7 @@ module Staff
     end
 
     def download_pdf
-      @invoice = Invoice.includes(:user, :estudio, :payments).find(params[:id])
+      @invoice = Invoice.includes(:user, :production_order, :payments).find(params[:id])
       pdf = Prawn::Document.new(page_size: "A4", margin: [ 40, 40, 40, 40 ])
       pdf.bounding_box([ 0, pdf.cursor ], width: pdf.bounds.width, height: 90) do
         pdf.text "BIOHEALTH GROUP", size: 24, style: :bold, color: "FF6B00"
@@ -78,7 +78,7 @@ module Staff
       pdf.move_down 5
       pdf.stroke_horizontal_rule
       pdf.move_down 10
-      desc = @invoice.estudio.present? ? "Estudio biomecánico - #{@invoice.estudio.nombre_completo}" : "Servicios profesionales"
+      desc = @invoice.production_order.present? ? "Orden de fabricación ##{@invoice.production_order.id}" : "Servicios profesionales"
       pdf.text desc, size: 10, style: :bold
       pdf.move_up 12
       pdf.text "$ #{@invoice.subtotal}", align: :right, size: 10
@@ -105,7 +105,7 @@ module Staff
     private
 
     def invoice_params
-      params.require(:invoice).permit(:user_id, :estudio_id, :subtotal, :tax_rate, :tax_amount, :total, :due_date, :notes)
+      params.require(:invoice).permit(:user_id, :production_order_id, :subtotal, :tax_rate, :tax_amount, :total, :due_date, :notes)
     end
   end
 end

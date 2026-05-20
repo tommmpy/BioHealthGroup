@@ -3,13 +3,11 @@ require "test_helper"
 class InvoiceTest < ActiveSupport::TestCase
   setup do
     @user = users(:one)
-    @estudio = estudios(:one)
   end
 
   test "should be valid with valid attributes" do
     invoice = Invoice.new(
       user: @user,
-      estudio: @estudio,
       subtotal: 100.00,
       total: 122.00,
       tax_rate: 22.00,

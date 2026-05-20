@@ -54,7 +54,7 @@
         <div class="space-y-3">
           <div class="flex justify-between items-center py-2 border-b border-white/5">
             <span class="text-gray-400 text-sm">
-              <%= @invoice.estudio.present? ? "Estudio biomecánico - #{@invoice.estudio.nombre_completo}" : "Servicios profesionales" %>
+              <%= @invoice.production_order.present? ? "Orden de fabricación ##{@invoice.production_order.id}" : "Servicios profesionales" %>
             </span>
             <span class="text-white font-semibold">$ <%= number_with_delimiter(@invoice.subtotal) %></span>
           </div>
@@ -183,18 +183,18 @@
         </div>
       </div>
 
-      <% if @invoice.estudio.present? %>
+      <% if @invoice.production_order.present? %>
         <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-6 relative"
              style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
           <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
-          <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Estudio vinculado</h3>
+          <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Orden de fabricación vinculada</h3>
           <div class="flex items-center justify-between">
             <div>
-              <div class="font-bold text-white text-sm"><%= @invoice.estudio.nombre_completo %></div>
-              <div class="text-gray-500 text-xs mt-0.5"><%= @invoice.estudio.fecha_estudio.strftime("%d/%m/%Y") %></div>
+              <div class="font-bold text-white text-sm">Orden #<%= @invoice.production_order.id %></div>
+              <div class="text-gray-500 text-xs mt-0.5">Estado: <%= @invoice.production_order.status %></div>
             </div>
-            <%= link_to admin_estudio_path(@invoice.estudio), class: "text-orange-500 no-underline text-sm font-bold transition-colors duration-200 hover:text-orange-400" do %>
-              Ver estudio →
+            <%= link_to staff_production_order_path(@invoice.production_order), class: "text-orange-500 no-underline text-sm font-bold transition-colors duration-200 hover:text-orange-400" do %>
+              Ver orden →
             <% end %>
           </div>
         </div>

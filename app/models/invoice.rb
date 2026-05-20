@@ -1,7 +1,7 @@
 class Invoice < ApplicationRecord
   audited
   belongs_to :user
-  belongs_to :estudio, optional: true
+  belongs_to :production_order, optional: true
   has_many :payments, dependent: :destroy
 
   enum :status, { draft: 0, sent: 1, paid: 2, overdue: 3, cancelled: 4 }
