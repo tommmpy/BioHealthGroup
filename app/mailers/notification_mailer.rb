@@ -1,5 +1,5 @@
 class NotificationMailer < ApplicationMailer
-  default from: "notificaciones@biohealthgroup.com.uy"
+  default from: ENV.fetch("MAILER_FROM", "noreply@biohealthgroup.uy")
 
   def notification_email(notification)
     @notification = notification

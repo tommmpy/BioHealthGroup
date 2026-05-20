@@ -59,7 +59,6 @@ group :development, :test do
 end
 
 group :development do
-  gem "kamal", require: false
   gem "web-console"
   gem "letter_opener"
   gem "rack-mini-profiler"

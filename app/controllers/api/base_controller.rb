@@ -17,19 +17,19 @@ module Api
     end
 
     def find_session
-      session_id = cookies.signed[:session_id] || request.headers["X-Session-Id"]
-      if session_id
-        sess = Session.active.find_by(id: session_id)
-        if sess
-          if sess.updated_at < 2.days.ago
-            terminate_session
-            return nil
-          end
-          sess.touch
-          return sess
-        end
+      session_id = cookies.signed[:session_id]
+      return nil unless session_id
+
+      sess = Session.active.find_by(id: session_id)
+      return nil unless sess
+
+      if sess.updated_at < 2.days.ago
+        terminate_session
+        return nil
       end
-      nil
+
+      sess.touch
+      sess
     end
   end
 end

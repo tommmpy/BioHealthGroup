@@ -1,7 +1,5 @@
 module Admin
   class DashboardController < Admin::BaseController
-    skip_before_action :require_staff!, only: [ :index ]
-
     def index
       @total_users = User.count
       @recent_users = User.order(created_at: :desc).limit(5)

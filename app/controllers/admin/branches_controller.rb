@@ -18,7 +18,6 @@ module Admin
           search_query, search_query, search_query
         )
       end
-
     end
 
     def show

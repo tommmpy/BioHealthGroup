@@ -6,9 +6,19 @@ class RegistrationsController < ApplicationController
   end
 
   def create
+    ip = request.remote_ip
+    key = "reg_rate_limit_#{ip}"
+    attempts = Rails.cache.read(key).to_i
+    if attempts >= 5
+      flash[:alert] = "Demasiados intentos. Intenta de nuevo más tarde."
+      return redirect_to new_registration_path
+    end
+    Rails.cache.write(key, attempts + 1, expires_in: 1.hour)
+
     @user = User.new(user_params.merge(user_type: :persona))
     @user.skip_contacto_root = true
     if @user.save
+      Rails.cache.delete(key)
       start_new_session_for @user
       WelcomeMailer.welcome(@user).deliver_now
       redirect_to root_path

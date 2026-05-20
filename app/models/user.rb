@@ -19,15 +19,15 @@ class User < ApplicationRecord
 
   belongs_to :branch
   has_many :sessions, dependent: :destroy
-  has_many :estudios, dependent: :nullify
+  has_many :estudios, dependent: :restrict_with_error
   has_many :chat_room_participants, class_name: "Chat::Participant", dependent: :destroy, foreign_key: :user_id
   has_many :conversations, through: :chat_room_participants, source: :conversation
   has_many :messages, class_name: "Chat::Message", dependent: :destroy, foreign_key: :user_id
   has_many :notifications, dependent: :destroy
   has_one :notification_preference, dependent: :destroy
   accepts_nested_attributes_for :notification_preference
-  has_many :invoices, dependent: :nullify
-  has_many :appointments, dependent: :nullify
+  has_many :invoices, dependent: :restrict_with_error
+  has_many :appointments, dependent: :restrict_with_error
   has_many :assigned_appointments, class_name: "Appointment", foreign_key: :medico_id, dependent: :nullify
 
   validates :user_type, presence: true
