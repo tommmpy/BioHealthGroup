@@ -20,10 +20,10 @@ module Admin
       assert_select "h1", text: "Panel de Sedes"
     end
 
-    test "index renders when authenticated as non-admin" do
+    test "index redirects when authenticated as non-admin" do
       sign_in_as(users(:one))
       get admin_branches_path
-      assert_response :success
+      assert_redirected_to root_path
     end
 
     test "index filters by enabled status" do

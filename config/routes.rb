@@ -60,23 +60,9 @@ Rails.application.routes.draw do
   end
 
   # ============================================================================
-  # Admin panel
+  # Staff panel (recepcionista, medico, operario, disenador, administrador)
   # ============================================================================
-  namespace :admin do
-    get "dashboard", to: "dashboard#index"
-
-    resources :users do
-      member do
-        get :historial
-      end
-    end
-
-    resources :branches do
-      member do
-        patch :toggle_status
-      end
-    end
-
+  namespace :staff do
     resources :estudios do
       member do
         patch :iniciar
@@ -87,10 +73,6 @@ Rails.application.routes.draw do
         get :buscar_pacientes
       end
     end
-
-    resources :hero_slides
-    resources :process_steps
-    resources :testimonials
 
     resources :appointments do
       member do
@@ -111,15 +93,36 @@ Rails.application.routes.draw do
       resources :payments, only: [ :index, :create ]
     end
 
-    resources :products
-
     resources :production_orders do
       member do
         patch :start
         patch :complete
       end
     end
+  end
 
+  # ============================================================================
+  # Admin panel (solo administrador)
+  # ============================================================================
+  namespace :admin do
+    get "dashboard", to: "dashboard#index"
+
+    resources :users do
+      member do
+        get :historial
+      end
+    end
+
+    resources :branches do
+      member do
+        patch :toggle_status
+      end
+    end
+
+    resources :hero_slides
+    resources :process_steps
+    resources :testimonials
+    resources :products
     resources :activities, only: [ :index ]
   end
 

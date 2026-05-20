@@ -4,7 +4,9 @@ module Admin
     before_action :require_admin!
 
     def index
-      @users = User.includes(:branch, :estudios).order(:role, :first_name)
+      @q = User.includes(:branch, :estudios).ransack(params[:q])
+      base = @q.result.order(:role, :first_name)
+      @pagy, @users = pagy(base, limit: 25)
     end
 
     def new

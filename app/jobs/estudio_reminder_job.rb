@@ -2,7 +2,7 @@ class EstudioReminderJob < ApplicationJob
   queue_as :default
 
   def perform
-    Estudio.pendiente
+    Estudio.where(estado: Estudio.estados[:pendiente])
            .where("created_at < ?", 7.days.ago)
            .find_each(batch_size: 100) do |estudio|
       next if Notification.exists?(notifiable: estudio, kind: "estudio_reminder")

@@ -28,9 +28,9 @@
         </div>
       </div>
       <% if is_paciente? %>
-        <%= link_to "Ver mis estudios", admin_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block" %>
+        <%= link_to "Ver mis estudios", staff_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block" %>
       <% elsif is_medico? || is_recepcionista? || is_administrador? %>
-        <%= link_to "Gestionar agenda", admin_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block" %>
+        <%= link_to "Gestionar agenda", staff_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block" %>
       <% end %>
     </div>
 
@@ -50,7 +50,7 @@
         <p class="text-sm text-gray-500 m-0">No tienes estudios registrados.</p>
         <% end %>
       </div>
-      <%= link_to "Ver historial completo", admin_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block mt-5" %>
+      <%= link_to "Ver historial completo", staff_estudios_path, class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black no-underline px-4 py-3 rounded-xl text-sm font-black uppercase tracking-wider text-center shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] block mt-5" %>
     </div>
     <% end %>
 

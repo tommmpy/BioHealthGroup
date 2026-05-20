@@ -5,7 +5,7 @@
 
   <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
     <div>
-      <%= link_to admin_invoices_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+      <%= link_to staff_invoices_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver al listado
       <% end %>
@@ -169,16 +169,16 @@
         <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Acciones</h3>
         <div class="flex flex-col gap-2.5">
           <% if @invoice.draft? %>
-            <%= button_to "Marcar como enviada", mark_sent_admin_invoice_path(@invoice), method: :patch,
+            <%= button_to "Marcar como enviada", mark_sent_staff_invoice_path(@invoice), method: :patch,
                 class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-3.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
           <% end %>
 
           <% if @invoice.sent? || @invoice.overdue? %>
-            <%= button_to "Marcar como pagada", mark_paid_admin_invoice_path(@invoice), method: :patch,
+            <%= button_to "Marcar como pagada", mark_paid_staff_invoice_path(@invoice), method: :patch,
                 class: "w-full bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-3.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
           <% end %>
 
-          <%= link_to "Descargar PDF", download_pdf_admin_invoice_path(@invoice), target: "_blank",
+          <%= link_to "Descargar PDF", download_pdf_staff_invoice_path(@invoice), target: "_blank",
               class: "w-full bg-white/5 text-white no-underline py-3.5 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
         </div>
       </div>

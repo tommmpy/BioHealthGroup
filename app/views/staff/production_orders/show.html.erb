@@ -10,7 +10,7 @@
 
   <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
     <div>
-      <%= link_to admin_production_orders_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+      <%= link_to staff_production_orders_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver a órdenes
       <% end %>
@@ -118,7 +118,7 @@
              style="box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);">
           <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
           <h3 class="text-gray-500 text-xs uppercase tracking-widest mb-4">Asignar Operario</h3>
-          <%= form_with model: @production_order, url: admin_production_order_path(@production_order), method: :patch, local: true do |f| %>
+          <%= form_with model: @production_order, url: staff_production_order_path(@production_order), method: :patch, local: true do |f| %>
             <div class="flex flex-col gap-3">
               <%= f.collection_select :assigned_to_id, User.where(role: User.roles[:operario]).order(:first_name), :id, ->(u) { "#{u.first_name} #{u.last_name}" }, { prompt: "Seleccionar operario...", selected: @production_order.assigned_to_id }, class: "w-full p-2.5 bg-white/5 border border-white/10 rounded-lg text-sm text-white outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_12px_rgba(255,107,0,0.08)]" %>
               <%= f.submit "Asignar", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-3 rounded-xl text-sm font-black cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
@@ -129,11 +129,11 @@
 
       <div class="flex flex-col gap-2.5">
         <% if @production_order.pending? && (is_administrador? || is_operario?) %>
-          <%= button_to "INICIAR PRODUCCIÓN", start_admin_production_order_path(@production_order),
+          <%= button_to "INICIAR PRODUCCIÓN", start_staff_production_order_path(@production_order),
               method: :patch,
               class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
         <% elsif @production_order.in_progress? && (is_administrador? || is_operario?) %>
-          <%= button_to "COMPLETAR PRODUCCIÓN", complete_admin_production_order_path(@production_order),
+          <%= button_to "COMPLETAR PRODUCCIÓN", complete_staff_production_order_path(@production_order),
               method: :patch,
               class: "w-full bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
         <% elsif @production_order.completed? %>

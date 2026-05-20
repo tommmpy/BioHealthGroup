@@ -25,17 +25,13 @@ module Authentication
   end
 
   def set_current
-    if (session_id = cookies.signed[:session_id]) && (sess = Session.active.find_by(id: session_id))
-      Current.session = sess
-      Current.user = sess.user
-    end
-  end
-
-  def resume_session
     sess = find_session
     Current.session = sess
     Current.user = sess&.user
-    sess
+  end
+
+  def resume_session
+    Current.session
   end
 
   def track_activity

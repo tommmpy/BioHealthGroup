@@ -13,7 +13,7 @@ module Admin
       @estudios_by_day = Estudio.where(created_at: 30.days.ago..Time.current)
                                 .group_by_day(:created_at).count
 
-      @pending_orders = ProductionOrder.pending.count
+      @pending_orders = ProductionOrder.pending_orders.count
       @low_stock_products = Product.active.where("stock_quantity <= ?", 5).order(:stock_quantity)
 
       @recent_activities = Session.where("jsonb_array_length(activity_log) > 0")

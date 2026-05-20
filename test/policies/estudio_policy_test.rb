@@ -18,7 +18,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Recepcionista", last_name: "Test",
       ci: valid_ci(300_001), phone_number: "099160001",
       address: "Calle Recep", branch: branches(:one),
-      user_type: :persona, role: :recepcionista
+      user_type: :persona, role: :recepcionista, birthday: "1990-01-01"
     )
     @medico  = User.create!(
       email_address: "pol.medico@test.com", password: "Password1",
@@ -26,7 +26,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Medico", last_name: "Principal",
       ci: valid_ci(300_002), phone_number: "099160002",
       address: "Calle Med", branch: branches(:one),
-      user_type: :persona, role: :medico
+      user_type: :persona, role: :medico, birthday: "1990-01-01"
     )
     @medico_otro = User.create!(
       email_address: "pol.medico2@test.com", password: "Password1",
@@ -34,7 +34,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Medico", last_name: "Otro",
       ci: valid_ci(300_003), phone_number: "099160003",
       address: "Calle Med2", branch: branches(:two),
-      user_type: :persona, role: :medico
+      user_type: :persona, role: :medico, birthday: "1990-01-01"
     )
     @operario = User.create!(
       email_address: "pol.op@test.com", password: "Password1",
@@ -42,7 +42,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Operario", last_name: "Test",
       ci: valid_ci(300_004), phone_number: "099160004",
       address: "Calle Op", branch: branches(:one),
-      user_type: :persona, role: :operario
+      user_type: :persona, role: :operario, birthday: "1990-01-01"
     )
     @paciente = User.create!(
       email_address: "pol.pac@test.com", password: "Password1",
@@ -50,7 +50,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Paciente", last_name: "Test",
       ci: valid_ci(300_005), phone_number: "099160005",
       address: "Calle Pac", branch: branches(:one),
-      user_type: :persona, role: :paciente
+      user_type: :persona, role: :paciente, birthday: "1990-01-01"
     )
     @disenador = User.create!(
       email_address: "pol.disen@test.com", password: "Password1",
@@ -58,7 +58,7 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       first_name: "Disenador", last_name: "Test",
       ci: valid_ci(300_006), phone_number: "099160006",
       address: "Calle Dis", branch: branches(:one),
-      user_type: :persona, role: :disenador
+      user_type: :persona, role: :disenador, birthday: "1990-01-01"
     )
 
     @estudio_pendiente = Estudio.create!(
@@ -236,6 +236,15 @@ class EstudioPolicyTest < ActiveSupport::TestCase
     end
   end
 
+  test "iniciar? allows medico for own assigned and pendiente estudios" do
+    assert EstudioPolicy.new(@medico, @estudio_asignado).iniciar?
+    assert EstudioPolicy.new(@medico, @estudio_pendiente).iniciar?
+  end
+
+  test "iniciar? allows medico for estudio assigned to another medico" do
+    assert EstudioPolicy.new(@medico, @estudio_otro_medico).iniciar?
+  end
+
   test "finalizar? only for administrador and medico" do
     %i[administrador medico].each do |role|
       user = @all_roles[role]
@@ -247,6 +256,15 @@ class EstudioPolicyTest < ActiveSupport::TestCase
       assert_not EstudioPolicy.new(user, @estudio_pendiente).finalizar?,
                  "#{role} should NOT be able to finalizar"
     end
+  end
+
+  test "finalizar? allows medico for own assigned and pendiente estudios" do
+    assert EstudioPolicy.new(@medico, @estudio_asignado).finalizar?
+    assert EstudioPolicy.new(@medico, @estudio_pendiente).finalizar?
+  end
+
+  test "finalizar? allows medico for estudio assigned to another medico" do
+    assert EstudioPolicy.new(@medico, @estudio_otro_medico).finalizar?
   end
 
   # ── descargar_informe? ──────────────────────────────────────

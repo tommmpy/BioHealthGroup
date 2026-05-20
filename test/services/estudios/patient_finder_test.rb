@@ -22,7 +22,8 @@ class Estudios::PatientFinderTest < ActiveSupport::TestCase
       address: "Calle 1",
       branch: branches(:one),
       user_type: :persona,
-      role: :paciente
+      role: :paciente,
+      birthday: "1990-01-01"
     )
 
     @paciente2 = User.create!(
@@ -36,7 +37,8 @@ class Estudios::PatientFinderTest < ActiveSupport::TestCase
       address: "Calle 2",
       branch: branches(:one),
       user_type: :persona,
-      role: :paciente
+      role: :paciente,
+      birthday: "1990-01-01"
     )
   end
 
@@ -74,7 +76,8 @@ class Estudios::PatientFinderTest < ActiveSupport::TestCase
       address: "Calle 3",
       branch: branches(:one),
       user_type: :persona,
-      role: :paciente
+      role: :paciente,
+      birthday: "1990-01-01"
     )
     results = Estudios::PatientFinder.call(query: "Pedro")
     assert_equal 2, results.size
@@ -93,7 +96,8 @@ class Estudios::PatientFinderTest < ActiveSupport::TestCase
         address: "Calle Batch #{n}",
         branch: branches(:one),
         user_type: :persona,
-        role: :paciente
+        role: :paciente,
+        birthday: "1990-01-01"
       )
     end
     results = Estudios::PatientFinder.call(query: "BatchPaciente")
@@ -127,7 +131,8 @@ class Estudios::PatientFinderTest < ActiveSupport::TestCase
       address: "Calle Admin",
       branch: branches(:one),
       user_type: :persona,
-      role: :medico
+      role: :medico,
+      birthday: "1990-01-01"
     )
     results = Estudios::PatientFinder.call(query: "Pedro")
     assert_not_includes results.map(&:last_name), "Admin"

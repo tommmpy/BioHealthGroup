@@ -2,7 +2,7 @@
 
   <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
     <div>
-      <%= link_to admin_estudios_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+      <%= link_to staff_estudios_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver al listado
       <% end %>
@@ -112,18 +112,18 @@
       <div class="flex flex-col gap-2.5">
         <% if is_medico? || is_administrador? %>
           <% if @estudio.pendiente? %>
-            <%= button_to "INICIAR ESTUDIO", iniciar_admin_estudio_path(@estudio), 
+            <%= button_to "INICIAR ESTUDIO", iniciar_staff_estudio_path(@estudio), 
                 method: :patch,
                 class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
           <% elsif @estudio.en_progreso? %>
-            <%= button_to "FINALIZAR ESTUDIO", finalizar_admin_estudio_path(@estudio), 
+            <%= button_to "FINALIZAR ESTUDIO", finalizar_staff_estudio_path(@estudio), 
                 method: :patch,
                 class: "w-full bg-gradient-to-r from-green-500 to-green-600 text-black border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-green-500/25 transition-all duration-300 hover:shadow-green-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
           <% elsif @estudio.finalizado? %>
             <div class="w-full border border-white/10 py-4 rounded-xl text-center text-black font-bold text-xs shadow-lg" style="background: <%= color %>; box-shadow: 0 0 20px <%= color %>40;">
               ESTUDIO COMPLETADO
             </div>
-            <%= link_to "DESCARGAR INFORME PDF", descargar_informe_admin_estudio_path(@estudio), target: "_blank", 
+            <%= link_to "DESCARGAR INFORME PDF", descargar_informe_staff_estudio_path(@estudio), target: "_blank", 
                 class: "w-full bg-white/5 text-white no-underline py-4 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
           <% end %>
         <% end %>

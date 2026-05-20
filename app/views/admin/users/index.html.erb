@@ -186,4 +186,10 @@
       </div>
     </div>
   </div>
+
+  <% if @pagy && @pagy.pages > 1 %>
+    <div class="mt-6 flex justify-center">
+      <%== pagy_nav(@pagy) %>
+    </div>
+  <% end %>
 </div>

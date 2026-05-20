@@ -35,15 +35,18 @@ class User < ApplicationRecord
 
   validates :contacto_root, presence: true, if: :contacto_root_required?
 
-  validates :first_name, :last_name, :ci, :email_address, :phone_number, :branch_id, :address, presence: true
+  validates :first_name, :last_name, :ci, :email_address, :branch_id, presence: true
   validates :first_name, :last_name, length: { minimum: 2, maximum: 50 }
   validates :first_name, :last_name, format: { with: /\A[\p{L}\s']+\z/, message: "solo permite letras y espacios" }
   validates :email_address, uniqueness: { case_sensitive: false },
                             format: { with: URI::MailTo::EMAIL_REGEXP }
   normalizes :email_address, with: ->(email) { email.strip.downcase }
 
-  validates :phone_number, format: { with: /\A(\+?598|0)9\d{7}\z/, message: "debe ser un formato de celular válido (ej: 099123456)" }
-  validates :address, length: { maximum: 100 }
+  validates :birthday, presence: true, if: :persona?
+
+  validates :phone_number, format: { with: /\A(\+?598|0)9\d{7}\z/, message: "debe ser un formato de celular válido (ej: 099123456)" },
+                           allow_blank: true
+  validates :address, length: { maximum: 100 }, allow_blank: true
   validates :password, length: { minimum: 8 }, if: -> { password.present? }
   validates :password, format: {
     with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*\z/,
@@ -88,8 +91,10 @@ class User < ApplicationRecord
 
   def age
     return nil if birthday.blank?
-    now = Time.zone.now.to_date
-    now.year - birthday.year - ((now.month > birthday.month || (now.month == birthday.month && now.day >= birthday.day)) ? 0 : 1)
+    today = Time.zone.today
+    years = today.year - birthday.year
+    years -= 1 if today < birthday + years.years
+    years
   end
 
   def self.ransackable_attributes(auth_object = nil)

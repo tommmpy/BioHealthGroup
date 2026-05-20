@@ -31,7 +31,7 @@
          x-transition:enter-start="opacity-0 -translate-y-2"
          x-transition:enter-end="opacity-100 translate-y-0"
          class="mt-3">
-      <%= search_form_for @q, url: admin_production_orders_path, method: :get, local: true, class: "bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 lg:p-5 relative",
+      <%= search_form_for @q, url: staff_production_orders_path, method: :get, local: true, class: "bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-4 lg:p-5 relative",
           style: "box-shadow: 0 0 30px rgba(255,107,0,0.03), inset 0 1px 0 rgba(255,255,255,0.05);" do |f| %>
         <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
@@ -54,7 +54,7 @@
         </div>
         <div class="flex items-center gap-3 pt-2 border-t border-white/5">
           <%= f.submit "Filtrar", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none px-6 py-2.5 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-200 hover:shadow-orange-500/40 hover:scale-105" %>
-          <%= link_to admin_production_orders_path, class: "text-gray-400 no-underline text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 hover:text-orange-400 hover:bg-white/5" do %>
+          <%= link_to staff_production_orders_path, class: "text-gray-400 no-underline text-sm font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 hover:text-orange-400 hover:bg-white/5" do %>
             <svg class="w-4 h-4 inline mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
             Limpiar
           <% end %>
@@ -113,16 +113,16 @@
 
             <div class="flex items-center gap-2 shrink-0">
               <% if order.pending? && (is_administrador? || is_operario?) %>
-                <%= button_to "Iniciar producción", start_admin_production_order_path(order), method: :patch,
+                <%= button_to "Iniciar producción", start_staff_production_order_path(order), method: :patch,
                     form: { data: { turbo_confirm: "¿Desea iniciar esta orden de producción?" } },
                     class: "bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none px-4 py-2.5 rounded-lg text-[11px] font-bold cursor-pointer shadow-lg shadow-blue-500/20 transition-all duration-200 hover:shadow-blue-500/30 hover:scale-105 whitespace-nowrap" %>
               <% end %>
               <% if order.in_progress? && (is_administrador? || is_operario?) %>
-                <%= button_to "Completar", complete_admin_production_order_path(order), method: :patch,
+                <%= button_to "Completar", complete_staff_production_order_path(order), method: :patch,
                     form: { data: { turbo_confirm: "¿Confirma que la producción ha finalizado?" } },
                     class: "bg-gradient-to-r from-green-500 to-green-600 text-black border-none px-4 py-2.5 rounded-lg text-[11px] font-bold cursor-pointer shadow-lg shadow-green-500/20 transition-all duration-200 hover:shadow-green-500/30 hover:scale-105 whitespace-nowrap" %>
               <% end %>
-              <%= link_to "Detalle", admin_production_order_path(order),
+              <%= link_to "Detalle", staff_production_order_path(order),
                   class: "border border-white/10 text-gray-400 no-underline px-4 py-2.5 rounded-lg text-[11px] font-bold text-center transition-all duration-200 hover:border-orange-500/50 hover:text-orange-400 hover:bg-orange-500/5" %>
             </div>
           </div>

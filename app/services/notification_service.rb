@@ -16,7 +16,8 @@ class NotificationService
       notifiable: @notifiable
     )
 
-    if @user.paciente?
+    pref = @user.notification_preference
+    if pref&.email_notifications?
       NotificationMailer.notification_email(notification).deliver_later
     end
 

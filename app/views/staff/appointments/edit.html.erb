@@ -1,7 +1,7 @@
 <div class="max-w-2xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
 
   <div class="mb-6 lg:mb-8">
-    <%= link_to admin_appointment_path(@appointment), class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+    <%= link_to staff_appointment_path(@appointment), class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
       Cancelar y volver al detalle
     <% end %>
@@ -13,7 +13,7 @@
        style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
     <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
 
-    <%= form_with model: [:admin, @appointment], local: true do |f| %>
+    <%= form_with model: [:staff, @appointment], local: true do |f| %>
       <% if @appointment.errors.any? %>
         <div class="bg-red-950/80 backdrop-blur border border-red-500/20 p-4 rounded-xl mb-6">
           <p class="text-red-400 text-sm font-bold mb-1">Errores al actualizar el turno:</p>
@@ -85,7 +85,7 @@
         <%# Acciones %>
         <div class="flex flex-col sm:flex-row gap-3 mt-2">
           <%= f.submit "Guardar cambios", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-4 px-6 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] flex-[2]" %>
-          <%= link_to "Cancelar", admin_appointment_path(@appointment), class: "bg-white/5 text-gray-400 no-underline py-4 px-6 rounded-xl text-sm font-bold text-center border border-white/10 flex-1 transition-all duration-200 hover:text-white hover:border-orange-500/50 hover:bg-orange-500/5" %>
+          <%= link_to "Cancelar", staff_appointment_path(@appointment), class: "bg-white/5 text-gray-400 no-underline py-4 px-6 rounded-xl text-sm font-bold text-center border border-white/10 flex-1 transition-all duration-200 hover:text-white hover:border-orange-500/50 hover:bg-orange-500/5" %>
         </div>
 
       </div>

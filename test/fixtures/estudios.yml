@@ -2,22 +2,22 @@
 
 one:
   user: one
-  nombre_completo: MyString
-  tipo_producto: 
+  nombre_completo: Juan Pérez
+  tipo_producto:
+    - Plantar de uso diario
   cantidad_productos: 1
   fecha_estudio: 2026-05-16 23:11:39
   branch: one
-  medico_id: 1
-  metar_paciente: MyString
+  metar_paciente: METAR-001
   estado: 1
 
 two:
   user: two
-  nombre_completo: MyString
-  tipo_producto: 
+  nombre_completo: María García
+  tipo_producto:
+    - Plantar de uso deportivo
   cantidad_productos: 1
   fecha_estudio: 2026-05-16 23:11:39
-  branch: two
-  medico_id: 1
-  metar_paciente: MyString
+  branch: one
+  metar_paciente: METAR-002
   estado: 1

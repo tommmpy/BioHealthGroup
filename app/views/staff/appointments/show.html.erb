@@ -2,7 +2,7 @@
 
   <div class="flex flex-col sm:flex-row justify-between items-start gap-4 mb-8">
     <div>
-      <%= link_to admin_appointments_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+      <%= link_to staff_appointments_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
         Volver al listado
       <% end %>
@@ -106,25 +106,25 @@
     <%# Sidebar acciones %>
     <div class="flex flex-col gap-3">
       <% if @appointment.pending? && (is_administrador? || is_recepcionista?) %>
-        <%= button_to "CONFIRMAR TURNO", confirm_admin_appointment_path(@appointment),
+        <%= button_to "CONFIRMAR TURNO", confirm_staff_appointment_path(@appointment),
             method: :patch,
             class: "w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none py-4 rounded-xl font-bold text-sm cursor-pointer shadow-lg shadow-blue-500/25 transition-all duration-300 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98]" %>
       <% end %>
 
       <% if !@appointment.cancelled? && !@appointment.completed? && (is_administrador? || is_recepcionista? || (is_medico? && @appointment.medico_id == current_user.id) || (is_paciente? && @appointment.user_id == current_user.id)) %>
-        <%= button_to "CANCELAR TURNO", cancel_admin_appointment_path(@appointment),
+        <%= button_to "CANCELAR TURNO", cancel_staff_appointment_path(@appointment),
             method: :patch,
             form: { data: { turbo_confirm: "¿Confirma que desea cancelar este turno?" } },
             class: "w-full border border-red-500/30 text-red-400 bg-transparent py-4 rounded-xl font-bold text-sm cursor-pointer transition-all duration-200 hover:bg-red-500/10 hover:border-red-500/50" %>
       <% end %>
 
       <% if is_administrador? || is_recepcionista? || is_medico? %>
-        <%= link_to "EDITAR TURNO", edit_admin_appointment_path(@appointment),
+        <%= link_to "EDITAR TURNO", edit_staff_appointment_path(@appointment),
             class: "w-full bg-white/5 text-white no-underline py-4 rounded-xl font-bold text-sm text-center border border-white/10 block transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/50 hover:text-orange-400" %>
       <% end %>
 
       <% if is_administrador? %>
-        <%= button_to "ELIMINAR TURNO", admin_appointment_path(@appointment),
+        <%= button_to "ELIMINAR TURNO", staff_appointment_path(@appointment),
             method: :delete,
             form: { data: { turbo_confirm: "¿Está seguro? Esta acción no se puede deshacer." } },
             class: "w-full border border-red-500/30 text-red-400 bg-transparent py-4 rounded-xl font-bold text-sm cursor-pointer transition-all duration-200 hover:bg-red-500/10 hover:border-red-500/50" %>

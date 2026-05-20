@@ -1,24 +1,24 @@
 <div class="max-w-2xl mx-auto my-8 lg:my-10 px-4 animate-fade-up">
 
   <div class="mb-6 lg:mb-8">
-    <%= link_to admin_appointments_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
+    <%= link_to staff_estudios_path, class: "text-gray-500 no-underline text-sm flex items-center gap-1 mb-3 transition-colors duration-200 hover:text-orange-400" do %>
       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
       Volver al listado
     <% end %>
-    <h1 class="text-2xl lg:text-3xl font-black text-white m-0 tracking-tight">Agendar nuevo turno</h1>
-    <p class="text-gray-400 text-sm mt-1">Registra una cita para un paciente en la clínica</p>
+    <h1 class="text-2xl lg:text-3xl font-black text-white m-0 tracking-tight">Agendar nuevo estudio</h1>
+    <p class="text-gray-400 text-sm mt-1">Registra un estudio biomecánico para un paciente</p>
   </div>
 
   <div class="bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl p-5 lg:p-8 relative"
        style="box-shadow: 0 0 40px rgba(255,107,0,0.05), inset 0 1px 0 rgba(255,255,255,0.05);">
     <div class="absolute inset-0 bg-gradient-to-b from-orange-500/3 to-transparent rounded-2xl -z-10"></div>
 
-    <%= form_with model: [:admin, @appointment], local: true do |f| %>
-      <% if @appointment.errors.any? %>
+    <%= form_with model: [:staff, @estudio], local: true do |f| %>
+      <% if @estudio.errors.any? %>
         <div class="bg-red-950/80 backdrop-blur border border-red-500/20 p-4 rounded-xl mb-6">
-          <p class="text-red-400 text-sm font-bold mb-1">Errores al agendar el turno:</p>
+          <p class="text-red-400 text-sm font-bold mb-1">Errores al agendar el estudio:</p>
           <ul class="m-0 pl-5 text-gray-300 text-sm">
-            <% @appointment.errors.full_messages.each do |msg| %>
+            <% @estudio.errors.full_messages.each do |msg| %>
               <li class="mb-0.5"><%= msg %></li>
             <% end %>
           </ul>
@@ -27,14 +27,7 @@
 
       <div class="flex flex-col gap-5 lg:gap-6">
 
-        <%# Título %>
-        <div class="flex flex-col gap-2">
-          <%= f.label :title, "Motivo de la consulta", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
-          <%= f.text_field :title, placeholder: "Ej: Control de rutina, Estudio biomecánico...", required: true,
-              class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600" %>
-        </div>
-
-        <%# === BUSCADOR DE PACIENTES === %>
+        <%# === BUSCADOR DE PACIENTES (Alpine A) === %>
         <div x-data="{
           q: '',
           results: [],
@@ -45,7 +38,7 @@
           async search() {
             if (!this.q) { this.results = []; this.open = false; return }
             this.loading = true
-            let r = await fetch('<%= buscar_pacientes_admin_appointments_path %>?q=' + encodeURIComponent(this.q))
+            let r = await fetch('<%= buscar_pacientes_staff_estudios_path %>?q=' + encodeURIComponent(this.q))
             this.results = await r.json()
             this.open = this.results.length > 0
             this.idx = -1
@@ -58,10 +51,12 @@
             this.open = false
             this.idx = -1
             this.$refs.userId.value = p.id
+            this.$refs.nombre.value = p.first_name + ' ' + p.last_name
           },
           remove() {
             this.selected = null
             this.$refs.userId.value = ''
+            this.$refs.nombre.value = ''
           },
           keydown(e) {
             if (!this.open) return
@@ -71,7 +66,8 @@
             else if (e.key === 'Escape') { this.open = false }
           }
         }">
-          <%= f.hidden_field :user_id, "x-ref": "userId" %>
+          <input type="hidden" name="estudio[user_id]" x-ref="userId" />
+          <input type="hidden" name="estudio[nombre_completo]" x-ref="nombre" />
 
           <div class="flex flex-col gap-2 relative max-w-md w-full">
             <label class="block mb-2 text-xs font-black text-orange-500 uppercase tracking-wider">Paciente</label>
@@ -152,6 +148,8 @@
                   </span>
                   <a x-show="selected.email" :href="'mailto:' + selected.email" class="flex items-center gap-1 text-gray-500 no-underline hover:text-orange-400" x-text="selected.email">
                   </a>
+                  <span x-show="selected.phone" class="flex items-center gap-1" x-text="selected.phone">
+                  </span>
                 </div>
               </div>
               <button @click="remove()" class="bg-none border-none text-gray-500 cursor-pointer p-1 shrink-0 hover:text-red-400 transition-colors">
@@ -161,32 +159,34 @@
           </div>
         </div>
 
-        <%# Fecha y Hora %>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="flex flex-col gap-2">
-            <%= f.label :starts_at, "Inicio", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
-            <%= f.datetime_field :starts_at, class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]", required: true %>
-          </div>
-          <div class="flex flex-col gap-2">
-            <%= f.label :ends_at, "Fin", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
-            <%= f.datetime_field :ends_at, class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]", required: true %>
-          </div>
-        </div>
-
-        <%# Médico %>
+        <%# Tipo de producto %>
         <div class="flex flex-col gap-2">
-          <%= f.label :medico_id, "Médico asignado (opcional)", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
-          <%= f.collection_select :medico_id, @medicos, :id, ->(m) { "#{m.first_name} #{m.last_name}" }, { include_blank: "Sin médico asignado" }, class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+          <%= f.label :tipo_producto, "Tipo de producto(s)", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <%= hidden_field_tag "estudio[tipo_producto][]", "" %>
+            <% Estudio::PRODUCTOS_PERMITIDOS.each do |producto| %>
+              <label class="flex items-center gap-2.5 p-3 bg-white/5 border border-white/10 rounded-lg cursor-pointer transition-all duration-200 hover:bg-white/[0.07] hover:border-orange-500/30">
+                <%= check_box_tag "estudio[tipo_producto][]", producto, false, class: "accent-orange-500 w-[18px] h-[18px]" %>
+                <span class="text-gray-300 text-sm"><%= producto %></span>
+              </label>
+            <% end %>
+          </div>
         </div>
 
-        <%# Sucursal Alpine %>
+        <%# Fecha %>
+        <div class="flex flex-col gap-2">
+          <%= f.label :fecha_estudio, "Fecha del estudio", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
+          <%= f.datetime_field :fecha_estudio, class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-base w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]", required: true %>
+        </div>
+
+        <%# === SUCURSAL (Alpine B — independiente) === %>
         <div class="flex flex-col gap-2 relative"
              x-data="{
                open: false,
                selId: '',
                selName: '',
                idx: -1,
-               branches: <%= Branch.where(enabled: true).order(:name).map { |b| { id: b.id, name: b.name, address: b.address } }.to_json %>,
+               branches: <%= Branch.all.order(:name).map { |b| { id: b.id, name: b.name, address: b.address } }.to_json %>,
                toggle() { this.open = !this.open },
                pick(b) {
                  this.selId = b.id
@@ -197,7 +197,7 @@
              }"
              @click.away="open = false">
           <label class="block mb-2 text-xs font-black text-orange-500 uppercase tracking-wider">Sucursal</label>
-          <%= f.hidden_field :branch_id, "x-ref": "branchId" %>
+          <input type="hidden" name="estudio[branch_id]" x-ref="branchId" />
 
           <div class="relative">
             <div @click="toggle()"
@@ -230,17 +230,10 @@
           </div>
         </div>
 
-        <%# Notas %>
-        <div class="flex flex-col gap-2">
-          <%= f.label :notes, "Notas (opcional)", class: "text-xs font-black text-orange-500 uppercase tracking-wider" %>
-          <%= f.text_area :notes, rows: 3, placeholder: "Información adicional relevante...",
-              class: "p-3 border border-white/10 rounded-xl bg-white/5 text-white text-sm w-full box-border outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)] placeholder-gray-600 resize-none" %>
-        </div>
-
         <%# Acciones %>
         <div class="flex flex-col sm:flex-row gap-3 mt-2">
-          <%= f.submit "Agendar turno", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-4 px-6 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] flex-[2]" %>
-          <%= link_to "Cancelar", admin_appointments_path, class: "bg-white/5 text-gray-400 no-underline py-4 px-6 rounded-xl text-sm font-bold text-center border border-white/10 flex-1 transition-all duration-200 hover:text-white hover:border-orange-500/50 hover:bg-orange-500/5" %>
+          <%= f.submit "Agendar estudio", class: "bg-gradient-to-r from-orange-500 to-orange-600 text-black border-none py-4 px-6 rounded-xl text-sm font-black uppercase tracking-wider cursor-pointer shadow-lg shadow-orange-500/25 transition-all duration-300 hover:shadow-orange-500/40 hover:scale-[1.02] active:scale-[0.98] flex-[2]" %>
+          <%= link_to "Cancelar", staff_estudios_path, class: "bg-white/5 text-gray-400 no-underline py-4 px-6 rounded-xl text-sm font-bold text-center border border-white/10 flex-1 transition-all duration-200 hover:text-white hover:border-orange-500/50 hover:bg-orange-500/5" %>
         </div>
 
       </div>

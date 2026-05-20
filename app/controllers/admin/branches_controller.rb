@@ -1,7 +1,5 @@
 module Admin
   class BranchesController < Admin::BaseController
-    skip_before_action :require_staff!, only: [ :index ]
-
     def index
       @branches = Branch.left_joins(:users)
                         .group("branches.id")

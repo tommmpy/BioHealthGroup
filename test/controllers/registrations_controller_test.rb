@@ -53,7 +53,8 @@ class RegistrationsControllerTest < ActionDispatch::IntegrationTest
         ci: "44444444",
         phone_number: "099444444",
         address: "Calle 444",
-        branch_id: branches(:one).id
+        branch_id: branches(:one).id,
+        birthday: "2000-06-15"
       }
     }
     assert_redirected_to root_path

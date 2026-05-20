@@ -1,5 +1,5 @@
-module Admin
-  class PaymentsController < Admin::BaseController
+module Staff
+  class PaymentsController < Staff::BaseController
     before_action :set_invoice
 
     def index
@@ -9,11 +9,10 @@ module Admin
     def create
       @payment = @invoice.payments.new(payment_params)
       @payment.paid_at ||= Time.current
-
       if @payment.save
-        redirect_to admin_invoice_path(@invoice), notice: "Pago registrado correctamente."
+        redirect_to staff_invoice_path(@invoice), notice: "Pago registrado correctamente."
       else
-        redirect_to admin_invoice_path(@invoice), alert: "Error al registrar el pago: #{@payment.errors.full_messages.join(', ')}"
+        redirect_to staff_invoice_path(@invoice), alert: "Error al registrar el pago: #{@payment.errors.full_messages.join(', ')}"
       end
     end
 

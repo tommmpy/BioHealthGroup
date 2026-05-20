@@ -1,7 +1,6 @@
 class UserDashboardsController < ApplicationController
   def index
     user = current_user
-    return redirect_to new_session_path if user.nil?
 
     if is_paciente?
       estados_pendientes = [ Estudio.estados["pendiente"], Estudio.estados["en_progreso"] ]

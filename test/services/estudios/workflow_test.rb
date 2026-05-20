@@ -13,7 +13,8 @@ class Estudios::WorkflowTest < ActiveSupport::TestCase
       address: "Calle WF 123",
       branch: branches(:one),
       user_type: :persona,
-      role: :medico
+      role: :medico,
+      birthday: "1990-01-01"
     )
 
     @estudio = Estudio.create!(

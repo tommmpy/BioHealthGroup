@@ -216,3 +216,38 @@ input, select, textarea {
     padding-right: 2rem;
   }
 }
+
+/* Flash message stacking */
+.flash-stack {
+  position: fixed;
+  top: 4rem;
+  right: 1rem;
+  z-index: 110;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+@media (min-width: 640px) {
+  .flash-stack { top: 5rem; }
+}
+
+/* Accessibility: focus rings */
+*:focus-visible {
+  outline: 2px solid rgba(255, 107, 0, 0.7);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth transitions for interactive elements */
+button, a, input, select, textarea {
+  transition-property: color, background-color, border-color, box-shadow, transform, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Prevent layout shift on scrollbar appear */
+html {
+  scrollbar-gutter: stable;
+}

@@ -1,6 +1,6 @@
 class NotificationsController < ApplicationController
   def index
-    @notifications = current_user.notifications.recent.includes(:notifiable)
+    @notifications = current_user.notifications.prioritized.includes(:notifiable)
     @pagy, @notifications = pagy(@notifications, limit: 30)
   end
 

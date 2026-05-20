@@ -58,16 +58,7 @@ class Estudio < ApplicationRecord
   end
 
   def metar_paciente_present_if_finalizado
-    # Cuando el estado sea finalizado, requerimos metar_paciente presente
-    # `estado` es provisto por el enum y devuelve la clave como string (ej: 'finalizado')
-    is_finalizado = if respond_to?(:estado)
-      estado.to_s == "finalizado"
-    else
-      # Fallback: compare raw value against enum mapping
-      Estudio.respond_to?(:estados) && estado_before_type_cast == Estudio.estados["finalizado"]
-    end
-
-    if is_finalizado && metar_paciente.blank?
+    if finalizado? && metar_paciente.blank?
       errors.add(:metar_paciente, "es obligatorio para marcar el estudio como finalizado")
     end
   end

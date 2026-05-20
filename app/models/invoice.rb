@@ -39,12 +39,10 @@ class Invoice < ApplicationRecord
 
   def generate_invoice_number
     year = Time.current.year.to_s
-    last = Invoice.where("invoice_number LIKE ?", "FAC-#{year}-%").maximum(:invoice_number)
-    seq = if last
-            last.split("-").last.to_i + 1
-    else
-            1
-    end
-    self.invoice_number = "FAC-#{year}-#{seq.to_s.rjust(5, '0')}"
+    prefix = "FAC-#{year}-"
+    last_number = Invoice.where("invoice_number LIKE ?", "#{prefix}%")
+                         .maximum(:invoice_number)
+    seq = last_number ? last_number.split("-").last.to_i + 1 : 1
+    self.invoice_number = "#{prefix}#{seq.to_s.rjust(5, '0')}"
   end
 end

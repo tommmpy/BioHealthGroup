@@ -46,7 +46,8 @@ module Admin
             address: "Calle Admin 789",
             branch_id: @branch.id,
             user_type: :persona,
-            role: :paciente
+            role: :paciente,
+            birthday: "1990-01-01"
           }
         }
       end

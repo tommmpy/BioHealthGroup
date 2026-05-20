@@ -52,6 +52,7 @@ sin_birthday:
   address: Calle 222
   branch: one
   user_type: <%= User::USER_TYPES[:persona] %>
+  birthday: 1990-06-01
   contacto_root: ""
   status: <%= User::STATUSES[:desconectado] %>
 

@@ -6,12 +6,13 @@ class UserTest < ActiveSupport::TestCase
     assert_equal("downcased@example.com", user.email_address)
   end
 
-  test "age returns nil when birthday is blank" do
+  test "age returns correct integer for sin_birthday fixture" do
     user = users(:sin_birthday)
-    assert_nil user.age
+    assert_kind_of Integer, user.age
+    assert user.age >= 34
   end
 
-  test "age returns correct integer when birthday is set" do
+  test "age returns correct integer for users(:one)" do
     user = users(:one)
     assert_kind_of Integer, user.age
     assert user.age >= 24

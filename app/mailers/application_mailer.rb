@@ -10,7 +10,7 @@ class ApplicationMailer < ActionMailer::Base
     path = Rails.root.join("app/assets/images/logo_bhg_email.png")
     return unless File.exist?(path)
 
-    message.attachments["logo_bhg_email.png"] = File.read(path)
+    message.attachments["logo_bhg_email.png"] = File.binread(path)
     message.attachments.last["Content-ID"] = "<logo@bhg>"
     message.attachments.last["Content-Disposition"] = "inline"
 
