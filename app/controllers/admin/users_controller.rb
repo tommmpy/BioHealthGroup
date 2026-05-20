@@ -13,6 +13,7 @@ module Admin
 
     def create
       @user = User.new(user_params)
+      @user.role = permitted_role if params[:user][:role].present?
       @user.password = generate_random_password
       if @user.save
         PasswordsMailer.reset(@user).deliver_now
@@ -33,6 +34,7 @@ module Admin
     end
 
     def update
+      @user.role = permitted_role if params[:user][:role].present?
       if @user.update(user_params)
         redirect_to admin_users_path, notice: "Actualizado correctamente."
       else
@@ -64,10 +66,14 @@ module Admin
     def user_params
       params.require(:user).permit(
         :first_name, :last_name, :email_address, :ci,
-        :phone_number, :role, :address, :branch_id,
+        :phone_number, :address, :branch_id,
         :user_type, :contacto_root,
         :birthday
       )
+    end
+    def permitted_role
+      role = params[:user][:role].to_s.to_i
+      User::ROLES.value?(role) ? role : nil
     end
   end
 end

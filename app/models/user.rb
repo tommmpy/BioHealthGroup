@@ -46,7 +46,7 @@ class User < ApplicationRecord
   validates :address, length: { maximum: 100 }
   validates :password, length: { minimum: 8 }, if: -> { password.present? }
   validates :password, format: {
-    with: /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/,
+    with: /\A(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*\z/,
     message: "debe incluir al menos una mayúscula, una minúscula y un número"
   }, if: -> { password.present? }
 
