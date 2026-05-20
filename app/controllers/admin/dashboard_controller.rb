@@ -13,6 +13,9 @@ module Admin
       @estudios_by_day = Estudio.where(created_at: 30.days.ago..Time.current)
                                 .group_by_day(:created_at).count
 
+      @invoice_status_distribution = Invoice.group(:status).count
+      @revenue_by_day = Invoice.paid_in_range(30.days.ago..Time.current)
+                               .group_by_day(:paid_at).sum(:total)
       @pending_orders = ProductionOrder.pending_orders.count
       @low_stock_products = Product.active.where("stock_quantity <= ?", 5).order(:stock_quantity)
 

@@ -174,7 +174,7 @@
         <%= line_chart @revenue_by_day, colors: ["#ff6b00"], height: "200px", library: { backgroundColor: "transparent", legend: { labels: { fontColor: "#999" } } } %>
       </div>
       <div class="mt-6">
-        <%= pie_chart @invoice_status_distribution.map { |k, v| [Invoice.new.status_label, v] }, colors: ["#6b7280", "#3b82f6", "#22c55e", "#ef4444", "#6b7280"], height: "200px", library: { backgroundColor: "transparent", legend: { labels: { fontColor: "#999" } } } %>
+        <%= pie_chart @invoice_status_distribution.map { |k, v| [Invoice.new(status: k).status_label, v] }, colors: ["#6b7280", "#3b82f6", "#22c55e", "#ef4444", "#6b7280"], height: "200px", library: { backgroundColor: "transparent", legend: { labels: { fontColor: "#999" } } } %>
       </div>
     </div>
 
