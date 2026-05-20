@@ -44,18 +44,18 @@ ActiveRecord::Base.connection.execute(
 puts "--- Cargando las 12 sedes ---"
 
 branches_data = [
-  { name: "BHG - Casa Central",  address: "Dr. José María Montero 2613, Punta Carretas",          phone: "2710 1234" },
-  { name: "BHG - Carrasco",      address: "Cartagena 1642, Carrasco",                              phone: "2600 5678" },
-  { name: "BHG - Solymar",       address: "Av. Real de Azúa M90 S1, Solymar, Canelones",           phone: "2696 4321" },
-  { name: "BHG - Pando",         address: "Av. Dr. Correch 1119, Pando",                        phone: "2292 2222" },
-  { name: "BHG - Las Piedras",   address: "Aparicio Saravia 587, Las Piedras",                     phone: "2364 3333" },
-  { name: "BHG - Maldonado",     address: "Av. Roosevelt esq. Henry Dunant, Maldonado",            phone: "4224 8888" },
-  { name: "BHG - Mercedes",      address: "Cristóbal Colón 238, Mercedes",                         phone: "4532 1111" },
-  { name: "BHG - Paysandú",      address: "Montecaseros 721 esq. Colón, Paysandú",                 phone: "4722 9999" },
-  { name: "BHG - Minas",         address: "Juan Farina 401, Minas",                                phone: "4442 4444" },
-  { name: "BHG - Rosario",       address: "Cerrito 237, Rosario",                                  phone: "4552 5555" },
-  { name: "BHG - Salto",         address: "Treinta y Tres 42, Salto",                              phone: "4733 1111" },
-  { name: "BHG - Melo",          address: "Mata 525, Melo",                                        phone: "4642 6666" }
+  { name: "BHG - Casa Central",  address: "Dr. José María Montero 2613, Punta Carretas",          phone: "094 911 683 / 2716 5142" },
+  { name: "BHG - Carrasco",      address: "Cartagena 1642, Carrasco",                              phone: "096 963 613" },
+  { name: "BHG - Solymar",       address: "Av. Real de Azúa M90 S1, Solymar, Canelones",           phone: "097 621 700" },
+  { name: "BHG - Pando",         address: "Av. Dr. Correch 1119, Pando",                           phone: "096 677 536" },
+  { name: "BHG - Las Piedras",   address: "Aparicio Saravia 587, Las Piedras",                     phone: "096 315 152" },
+  { name: "BHG - Maldonado",     address: "Av. Roosevelt esq. Henry Dunant, Maldonado",            phone: "091 984 986" },
+  { name: "BHG - Mercedes",      address: "Cristóbal Colón 238, Mercedes",                         phone: "096 487 437" },
+  { name: "BHG - Paysandú",      address: "Montecaseros 721 esq. Colón, Paysandú",                 phone: "096 665 797" },
+  { name: "BHG - Minas",         address: "Juan Farina 401, Minas",                                phone: "096 815 350" },
+  { name: "BHG - Rosario",       address: "Cerrito 237, Rosario",                                  phone: "096 162 270" },
+  { name: "BHG - Salto",         address: "Treinta y Tres 42, Salto",                              phone: "096 573 701" },
+  { name: "BHG - Melo",          address: "Mata 525, Melo",                                        phone: "096 366 235" }
 ]
 
 branches = branches_data.map do |data|
