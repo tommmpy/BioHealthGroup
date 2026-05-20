@@ -26,8 +26,7 @@ development:
 
   username: <%= ENV.fetch("DEV_DB_USERNAME", "tom") %>
 
-  # Connect via Unix socket (peer auth). Use host for TCP.
-  host: <%= ENV.fetch("DEV_DB_HOST", "") %>
+  password: <%= ENV.fetch("DEV_DB_PASSWORD", "") %>
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public

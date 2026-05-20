@@ -6,7 +6,7 @@ Rails.application.configure do
     policy.object_src  :none
     policy.script_src  :self, :https, :unsafe_inline, :unsafe_eval
     policy.style_src   :self, :https, :unsafe_inline
-    policy.frame_src   :self, "https://maps.google.com"
+    policy.frame_src   :self
     policy.connect_src :self, :https
     policy.base_uri    :self
   end
