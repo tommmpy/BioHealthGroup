@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.2].define(version: 2026_05_20_031550) do
+ActiveRecord::Schema[8.2].define(version: 2026_05_20_034152) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -232,6 +232,21 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_20_031550) do
     t.index ["estudio_id"], name: "index_production_orders_on_estudio_id"
   end
 
+  create_table "production_tasks", force: :cascade do |t|
+    t.integer "assigned_role", default: 0, null: false
+    t.boolean "completed", default: false
+    t.datetime "completed_at"
+    t.bigint "completed_by_id"
+    t.datetime "created_at", null: false
+    t.string "name", null: false
+    t.integer "position", default: 0, null: false
+    t.bigint "production_order_id", null: false
+    t.datetime "updated_at", null: false
+    t.index ["completed_by_id"], name: "index_production_tasks_on_completed_by_id"
+    t.index ["production_order_id", "position"], name: "index_production_tasks_on_production_order_id_and_position"
+    t.index ["production_order_id"], name: "index_production_tasks_on_production_order_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.boolean "active", default: true
     t.bigint "branch_id"
@@ -311,6 +326,8 @@ ActiveRecord::Schema[8.2].define(version: 2026_05_20_031550) do
   add_foreign_key "payments", "invoices"
   add_foreign_key "production_orders", "estudios"
   add_foreign_key "production_orders", "users", column: "assigned_to_id"
+  add_foreign_key "production_tasks", "production_orders"
+  add_foreign_key "production_tasks", "users", column: "completed_by_id"
   add_foreign_key "products", "branches"
   add_foreign_key "sessions", "users"
   add_foreign_key "users", "branches"

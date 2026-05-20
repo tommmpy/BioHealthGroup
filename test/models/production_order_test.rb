@@ -16,13 +16,15 @@ class ProductionOrderTest < ActiveSupport::TestCase
     assert_includes order.errors[:estudio], "must exist"
   end
 
-  test "default status is pending" do
+  test "default status is awaiting_payment" do
     order = ProductionOrder.create!(estudio: @estudio)
-    assert order.pending?
+    assert order.awaiting_payment?
   end
 
   test "status enum" do
     order = ProductionOrder.create!(estudio: @estudio)
+    assert order.awaiting_payment?
+    order.pending!
     assert order.pending?
     order.in_progress!
     assert order.in_progress?

@@ -44,6 +44,9 @@ module Staff
     def mark_paid
       @invoice = Invoice.find(params[:id])
       @invoice.update(status: :paid, paid_at: Time.current)
+      if @invoice.production_order&.awaiting_payment?
+        @invoice.production_order.update!(status: :pending)
+      end
       redirect_to staff_invoice_path(@invoice), notice: "Factura marcada como pagada."
     end
 

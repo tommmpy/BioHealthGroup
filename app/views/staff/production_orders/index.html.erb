@@ -1,4 +1,5 @@
 <% status_config = {
+  "awaiting_payment" => { label: "Pendiente a pago", color: "text-gray-400", bg: "bg-gray-500/10", border: "border-gray-500/20", icon: "M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" },
   "pending" => { label: "Pendiente", color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" },
   "in_progress" => { label: "En producción", color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", icon: "M13 10V3L4 14h7v7l9-11h-7z" },
   "completed" => { label: "Completada", color: "text-green-400", bg: "bg-green-500/10", border: "border-green-500/20", icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" },
@@ -37,7 +38,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
           <div>
             <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Estado</label>
-            <%= f.select :status_eq, options_for_select(ProductionOrder.statuses.keys.map { |k| [k.humanize, k] }, params.dig(:q, :status_eq)), { include_blank: "Todos" }, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
+            <% status_labels = { "awaiting_payment" => "Pendiente a pago", "pending" => "Pendiente", "in_progress" => "En producción", "completed" => "Completada", "cancelled" => "Cancelada" } %>
+            <%= f.select :status_eq, options_for_select(ProductionOrder.statuses.keys.map { |k| [status_labels[k] || k.humanize, k] }, params.dig(:q, :status_eq)), { include_blank: "Todos" }, class: "w-full border border-white/10 rounded-xl bg-black/60 text-white text-sm py-2.5 px-3 outline-none transition-all duration-200 focus:border-orange-500/50 focus:shadow-[0_0_15px_rgba(255,107,0,0.1)]" %>
           </div>
           <div>
             <label class="text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-1.5 block">Asignado a</label>
@@ -86,7 +88,7 @@
                 <div class="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-sm">
                   <span class="text-gray-400">
                     <span class="text-gray-600">Estudio:</span>
-                    <%= link_to order.estudio.nombre_completo, admin_estudio_path(order.estudio), class: "text-white no-underline hover:text-orange-400 transition-colors" %>
+                    <%= link_to order.estudio.nombre_completo, staff_estudio_path(order.estudio), class: "text-white no-underline hover:text-orange-400 transition-colors" %>
                   </span>
                   <% if order.assigned_to.present? %>
                     <span class="text-gray-400">
@@ -116,11 +118,6 @@
                 <%= button_to "Iniciar producción", start_staff_production_order_path(order), method: :patch,
                     form: { data: { turbo_confirm: "¿Desea iniciar esta orden de producción?" } },
                     class: "bg-gradient-to-r from-blue-500 to-blue-600 text-white border-none px-4 py-2.5 rounded-lg text-[11px] font-bold cursor-pointer shadow-lg shadow-blue-500/20 transition-all duration-200 hover:shadow-blue-500/30 hover:scale-105 whitespace-nowrap" %>
-              <% end %>
-              <% if order.in_progress? && (is_administrador? || is_operario?) %>
-                <%= button_to "Completar", complete_staff_production_order_path(order), method: :patch,
-                    form: { data: { turbo_confirm: "¿Confirma que la producción ha finalizado?" } },
-                    class: "bg-gradient-to-r from-green-500 to-green-600 text-black border-none px-4 py-2.5 rounded-lg text-[11px] font-bold cursor-pointer shadow-lg shadow-green-500/20 transition-all duration-200 hover:shadow-green-500/30 hover:scale-105 whitespace-nowrap" %>
               <% end %>
               <%= link_to "Detalle", staff_production_order_path(order),
                   class: "border border-white/10 text-gray-400 no-underline px-4 py-2.5 rounded-lg text-[11px] font-bold text-center transition-all duration-200 hover:border-orange-500/50 hover:text-orange-400 hover:bg-orange-500/5" %>

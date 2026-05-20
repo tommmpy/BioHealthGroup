@@ -98,6 +98,7 @@ Rails.application.routes.draw do
       member do
         patch :start
         patch :complete
+        patch :complete_task
       end
     end
   end
